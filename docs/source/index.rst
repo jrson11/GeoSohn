@@ -9,6 +9,7 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
 
    Site Investigation <1_Site_Investigation.rst>
    Soil Lab Testing <2_Soil_Lab_Testing.rst>
