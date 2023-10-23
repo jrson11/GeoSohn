@@ -10,6 +10,6 @@ Contents
 
 .. toctree::
 
-   CPT <../1_Site_Investigation/CPT.rst>
+   Site Investigation <1_Site_Investigation.rst>
    Plaxis3D <./6_Numerical/Plaxis3D.rst>
    
