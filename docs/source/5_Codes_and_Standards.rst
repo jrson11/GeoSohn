@@ -50,6 +50,7 @@ App.E. Pile and plate anchor
   - E.3 Geotechnical design
   - E.5 Structural design
   - E.6 Installation
+    - Tolerance
   - E.7 Driven pile anchor
 
 API RP 2T: Tension leg
