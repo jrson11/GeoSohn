@@ -14,12 +14,15 @@ Issues to check
 3. Resistance
 
   3.a Sliding: API RP 2GEO-7.15
+
   3.b Overturning: API RP 2GEO-7.16
+
   3.c Torsional: ?
 
 4. Foundation settlement
 
   4.a Short-term: API RP 2GEO-7.8.1
+
   4.b Long-term: API RP 2GEO-7.8.2
 
 FAQ for shallow foundation
