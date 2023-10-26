@@ -40,6 +40,10 @@ API RP 2SK: Stationkeeping
   - M&K in T-N curve (Table3)
 7. Design criteria
   - Safety Factors (Table7)
+
+    - Intact condition FoS: Permanent Lateral:Axial=1.6:2.0, Mobile Lateral:Axial=1.2:1.5
+
+
 App.A. Mooring components
 App.E. Pile and plate anchor
   - E.3 Geotechnical design
