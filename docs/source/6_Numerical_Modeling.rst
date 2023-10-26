@@ -10,9 +10,11 @@ Mudmat
 Suction pile
 ............
 
-- Benchmark
+- Note
 
-  - Edger, Andresen, and Jostad, 2008, "Capacity analysis of suction anchors in clay by Plaxis 3D foundation"
+  - Benchmark: Edger, Andresen, and Jostad, 2008, "Capacity analysis of suction anchors in clay by Plaxis 3D foundation"
+  - Range of mooring line angle at padeye: 15 ~ 45 (API RP 2SK-R2015, Figure E.3)
+
 
 Slope Stability
 ...............
