@@ -42,6 +42,7 @@ API RP 2SK: Stationkeeping
   - Safety Factors (Table7)
 
     - Intact condition FoS: Permanent Lateral:Axial=1.6:2.0, Mobile Lateral:Axial=1.2:1.5
+    - Damaged condition FoS: Permanent Lateral:Axial=1.2:1.5, Mobile Lateral:Axial=1.0:1.2
 
 
 App.A. Mooring components
