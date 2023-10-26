@@ -39,6 +39,7 @@ DEAP: Suction pile by PLE
 ..........................
 
 - Note
+
   - API RP 2SK D.10 5th requirement, PLE may NOT be suitable for LAYERED soil profile.
   - API RP 2SK E., 3.2.3.2 is also skeptical in PLE.
 
