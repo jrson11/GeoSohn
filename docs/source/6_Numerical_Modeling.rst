@@ -35,6 +35,21 @@ ChainConfig: Mooring chain configuration
 AnchorPEN: pile embedment calculation
 .......................
 
+CAP: 2D mudmat
+...............
+
+- Inputs
+
+  - Shear strength
+  - V, Hx and My
+  - V, Hy and Mx
+
+- Outputs
+
+  - Safety factor versus Depth
+  - Force calculated for critical surface
+
+
 Fugro
 ------
 
