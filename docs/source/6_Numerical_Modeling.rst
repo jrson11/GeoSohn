@@ -54,3 +54,11 @@ DEAP: Suction pile by PLE
 
 DNV
 ----
+
+SESAM
+......
+
+- Many types
+  - Fixed structure
+  - Floating structure
+  - Pipeline
