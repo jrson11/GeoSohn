@@ -29,6 +29,7 @@ AGSPANC: pile capacity analyses
 ................................
 
 - Note
+
   - Randolph,2020, "A Lifetime of Offshore Geotechnics - Career Reflections and Lessons Learned" has AGSPANC in Fig. 12.
 
 
