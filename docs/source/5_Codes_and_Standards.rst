@@ -61,3 +61,27 @@ API RP 2T: Tension leg
 
 ISO
 ----
+
+
+
+NACE
+----
+
+
+DNV
+---
+
+DNVGL-RP-B401: CP Design
+.........................
+
+DNVGL-RP-C212: Offshore soil mechanics and geotechnical
+........................................................
+
+DNVGL-RP-E303: Geotechnical design and installation of Suction anchor in CLAY
+..............................................................................
+
+DNVGL-RP-F114: Pipe-Soil Interaction for submarine pipelines
+.............................................................
+
+DNVGL-RP-N103: Modelling and analysis of marine operations
+...........................................................
