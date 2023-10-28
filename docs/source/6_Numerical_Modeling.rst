@@ -23,62 +23,50 @@ Slope Stability
 - Slope 3D
 
 
+Geoconsulting companies
+------------------------
+
 NGI
-----
+...
 
-Bifurc: 2D suction pile
-.......................
+- Bifurc: 2D suction pile
+- ChainConfig: Mooring chain configuration
+- AnchorPEN: pile embedment calculation
+- CAP: 2D mudmat
 
-ChainConfig: Mooring chain configuration
-.......................
+  - Inputs
 
-AnchorPEN: pile embedment calculation
-.......................
+    - Shear strength
+    - V, Hx and My
+    - V, Hy and Mx
 
-CAP: 2D mudmat
-...............
+  - Outputs
 
-- Inputs
-
-  - Shear strength
-  - V, Hx and My
-  - V, Hy and Mx
-
-- Outputs
-
-  - Safety factor versus Depth
-  - Force calculated for critical surface
+    - Safety factor versus Depth
+    - Force calculated for critical surface
 
 
 Fugro
-------
+......
 
-AGSPANC: pile capacity analyses
-................................
-
-- Note
+- AGSPANC: pile capacity analyses
 
   - Randolph,2020, "A Lifetime of Offshore Geotechnics - Career Reflections and Lessons Learned" has AGSPANC in Fig. 12.
 
 
 Delmar
-------
+......
 
-DEAP: Suction pile by PLE
-..........................
-
-- Note
+- DEAP: Suction pile by PLE
 
   - API RP 2SK D.10 5th requirement, PLE may NOT be suitable for LAYERED soil profile.
   - API RP 2SK E., 3.2.3.2 is also skeptical in PLE.
 
 DNV
-----
+....
 
-SESAM
-......
+- SESAM
 
-- Many types
   - Fixed structure
   - Floating structure
   - Pipeline
