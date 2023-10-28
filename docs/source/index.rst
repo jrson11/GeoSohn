@@ -4,7 +4,6 @@ Welcome to GeoSohn
 Handbook of integrated geophysics and geotechnical engineering based on Python coding.
 
 .. note::
-
    This project is under active development.
 
 
