@@ -5,17 +5,15 @@ st.markdown('# GeoSohn Apps by Jung')
 
 ## Sidebar
 password = st.sidebar.text_input('Password?', 'password')
-st.text(password)
 
 
-'''
-if password == st.secrets['db_password']:
+if password == 'bpbp':
   #st.text('Ask Jung for the pw')
   selected_app = st.sidebar.selectbox("Select an App", ['Mudmat_Moments','TBD'])
 else:
   #st.text('This is for only bp teams')
   selected_app = st.sidebar.selectbox("Select an App", ['Mudmat_Moments','GoM_Kaskida'])
-'''
+
 
 '''
 # Main --------------------------------------------------
