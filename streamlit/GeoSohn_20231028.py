@@ -5,6 +5,8 @@ st.markdown('# GeoSohn Apps by Jung')
 
 ## Sidebar
 password = st.sidebar.text_input('Password?', 'password')
+st.text(password)
+
 
 '''
 if password == st.secrets['db_password']:
