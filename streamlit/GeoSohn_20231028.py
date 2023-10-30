@@ -1,7 +1,7 @@
 import streamlit as st
 
 # Initialization ----------------------------------------
-st.markdown('# Test page to keep secret')
+st.markdown('# GeoSohn Apps by Jung')
 password = st.sidebar.text_input('Password?', 'password')
 '''
 # Main --------------------------------------------------
