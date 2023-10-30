@@ -32,7 +32,8 @@ with col2:
   tab0,tab1,tab2,tab3,tab4 = st.tabs(['1-Structural_Coordinates','2-Structural_Loads','3-','4-','5-'])
 
   with tab0:
-    B = int(st.text_input('width (m) = '), value=10)
+    B = int(st.text_input('Width in x-axis (m) = '), value=10))
+    L = int(st.text_input('Length in y-axis (m) = '), value=5))
     st.text(str(B))
-
+    st.text(str(L))
 
