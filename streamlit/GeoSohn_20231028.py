@@ -31,4 +31,8 @@ with col2:
   st.text('col2')
   tab0,tab1,tab2,tab3,tab4 = st.tabs(['1-Structural_Coordinates','2-Structural_Loads','3-','4-','5-'])
 
+  with tab0:
+    B = int(st.text_input('width (m) = '), value=10)
+    st.text(str(B))
+
 
