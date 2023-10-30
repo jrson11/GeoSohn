@@ -31,8 +31,8 @@ Groundhog
 GeoSohn
 .......
 
-Geoconsulting companies
-------------------------
+Others
+-------
 
 NGI
 ...
