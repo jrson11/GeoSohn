@@ -18,6 +18,9 @@ else:
 ## Main --------------------------------------------------
 st.markdown('# GeoSohn Apps by Jung')
 
+
+if selected_app == 'Mudmat_Moments':
+  st.markdown('## Mudmat Moments')
   
 # Display two columns
 col1, col2 = st.columns(2)
