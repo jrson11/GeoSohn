@@ -29,6 +29,6 @@ with col1:
   st.text('col1')
 with col2:
   st.text('col2')
-  tab0,tab1,tab2,tab3,tab4,tab5 = st.tabs(['A.Map','B.Plasticity','C.Field.Su',"3.$S_u/σ'_{vc}$",'4.Norm.DSS','5.Est.DSS'])
+  tab0,tab1,tab2,tab3,tab4 = st.tabs(['1-Structural_Coordinates','2-Structural_Loads','3-','4-','5-'])
 
 
