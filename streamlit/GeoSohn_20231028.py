@@ -8,7 +8,7 @@ import streamlit as st
 password = st.sidebar.text_input('Password?', 'password')
 
 #if password == st.secrets['db_password']:
-if password == 'bpbp':
+if password == 'idk':
   st.sidebar.text('This is for only bp teams')
   selected_app = st.sidebar.selectbox("Select an App", ['Mudmat_Moments','GoM_Kaskida'])
 else:
@@ -17,7 +17,7 @@ else:
 
 ## Main --------------------------------------------------
 st.markdown('# GeoSohn Apps by Jung')
-st.set_page_config(layout="wide") # wide / centered 
+#st.set_page_config(layout="wide") # wide / centered 
 
 if selected_app == 'Mudmat_Moments':
   st.markdown('## Mudmat Moments')
