@@ -34,7 +34,7 @@ with col2:
   with tab0:
     B = st.text_input('Width in x-axis (m) = ', value=10)
     L = st.text_input('Length in y-axis (m) = ', value=5)
-    coordinates = st.select_box('positive in z-axis', ['Upward','Downward'])
+    coordinates = st.selectbox('positive in z-axis', ['Upward','Downward'])
     #st.text(str(B))
     #st.text(str(L))
 
