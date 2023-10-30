@@ -33,8 +33,8 @@ col1, col2 = st.columns(2)
 #
 with col1:
   st.text('Plots')
-  plot_topview()
-  plot_fontview()
+  #plot_topview()
+  #plot_fontview()
   
 with col2:
   st.text('Data')
