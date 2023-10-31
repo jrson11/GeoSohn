@@ -4,7 +4,6 @@
 # All rights reserved.
 
 import streamlit as st
-import matplotlib.pyplot as plt
 import mudmat_moments as mm
 
 ## Sidebar ----------------------------------------------
