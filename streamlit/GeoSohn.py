@@ -34,6 +34,6 @@ def moment_disp():
 
 if selected_app == 'Mudmat_Moments':
   st.text('mudmat')
-  
+  moment_disp
 else:
   st.text('Choose an app')
