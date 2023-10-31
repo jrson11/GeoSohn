@@ -32,7 +32,8 @@ if selected_app == 'Mudmat_Moments':
       B = st.text_input('B in x-axis(m) = ',10)
       L = st.text_input('L in y-axis(m) = ',5)
       Zcoord = st.selectbox('Positive in z-axis',['Down','Up'])
-      Origin = st.selectbox('Origin location',['Center','Left bottom','Right bottom']
+      Origin = st.selectbox('Origin location',['Center','Left bottom','Right bottom'])
+                            
     with tab2:
       st.text('tab2')
   
