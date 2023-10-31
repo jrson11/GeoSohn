@@ -36,7 +36,11 @@ if selected_app == 'Mudmat_Moments':
   st.text('mudmat')
   # Display two columns
   col1, col2 = st.columns(2)
-
+  #
+  with col1:
+    st.text('Data')
+  with col2:
+    st.text('Plots')
 
 
 
