@@ -30,6 +30,10 @@ if selected_app == 'Mudmat_Moments':
     st.text('Plots')
     tab1,tab2,tab3 = st.tabs(['1-Structural_Coordinates','2-Structural_Loads','3-'])
 
+    with tab1:
+      st.text('tab1')
+    with tab2:
+      st.text('tab2')
 
 
 else:
