@@ -4,6 +4,7 @@
 # All rights reserved.
 
 import streamlit as st
+import plotly.express as px
 import mudmat_moments as mm
 
 ## Sidebar ----------------------------------------------
