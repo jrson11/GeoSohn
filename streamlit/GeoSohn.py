@@ -22,6 +22,6 @@ st.markdown('# GeoSohn Apps by Jung')
 
 if selected_app == 'Mudmat_Moments':
   st.text('mudmat')
-  mm.mudmat_disp
+  mm.mudmat_disp()
 else:
   st.text('Choose an app')
