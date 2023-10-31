@@ -4,7 +4,7 @@
 # All rights reserved.
 
 import streamlit as st
-#import mudmat_moments as mm
+import mudmat_moments as mm
 
 ## Sidebar ----------------------------------------------
 password = st.sidebar.text_input('Password?', 'password')
@@ -18,8 +18,7 @@ else:
   selected_app = st.sidebar.selectbox("Select an App", ['Mudmat_Moments','TBD'])
 
 ## Main --------------------------------------------------
-st.markdown('# GeoSohn Apps by Jung')
-
+st.markdown('# GeoSohn Web Apps')
 
 if selected_app == 'Mudmat_Moments':
   # Display two columns
