@@ -1,14 +1,15 @@
-import streamlit as st
+# Name: GeoSohn.py
+# Purpose: To develop web app for geo engineers
+# Author: Jung.Sohn
+# All rights reserved.
 
-# =======================================================
-# Initialization 
-# =======================================================
+import streamlit as st
 
 ## Sidebar ----------------------------------------------
 password = st.sidebar.text_input('Password?', 'password')
 
 #if password == st.secrets['db_password']:
-if password == 'idk':
+if password == 'great':
   st.sidebar.text('This is for only bp teams')
   selected_app = st.sidebar.selectbox("Select an App", ['Mudmat_Moments','GoM_Kaskida'])
 else:
