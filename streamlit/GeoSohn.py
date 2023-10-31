@@ -4,6 +4,7 @@
 # All rights reserved.
 
 import streamlit as st
+import mudmat_moments as mm
 
 ## Sidebar ----------------------------------------------
 password = st.sidebar.text_input('Password?', 'password')
