@@ -18,4 +18,8 @@ else:
 
 ## Main --------------------------------------------------
 st.markdown('# GeoSohn Apps by Jung')
-st.set_page_config(layout="wide") # wide / centered 
+
+if selected_app == 'Mudmat_Moments':
+  st.text('mudmat')
+else:
+  st.text('Choose an app')
