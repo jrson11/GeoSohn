@@ -29,8 +29,9 @@ if selected_app == 'Mudmat_Moments':
     tab1,tab2,tab3 = st.tabs(['1-Structural_Coordinates','2-Structural_Loads','3-'])
     
     with tab1:
-      st.text('tab1')
-      st.text_input('B (m) = ',10)
+      B = st.text_input('B in x-axis(m) = ',10)
+      L = st.text_input('L in y-axis(m) = ',5)
+      Zcoord = st.selectbox('Positive in z-axis',['Up','Down'])
     with tab2:
       st.text('tab2')
   
