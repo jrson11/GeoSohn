@@ -15,3 +15,5 @@ def mudmat_disp():
     st.text('Data')
     #tab0,tab1,tab2,tab3,tab4 = st.tabs(['1-Structural_Coordinates','2-Structural_Loads','3-','4-','5-'])
 
+  return 1
+
