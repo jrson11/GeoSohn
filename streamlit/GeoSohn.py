@@ -34,6 +34,11 @@ def moment_disp():
 
 if selected_app == 'Mudmat_Moments':
   st.text('mudmat')
-  moment_disp
+  # Display two columns
+  col1, col2 = st.columns(2)
+
+
+
+
 else:
   st.text('Choose an app')
