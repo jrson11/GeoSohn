@@ -4,7 +4,7 @@
 # All rights reserved.
 
 import streamlit as st
-import mudmat_moments as mm
+#import mudmat_moments as mm
 
 ## Sidebar ----------------------------------------------
 password = st.sidebar.text_input('Password?', 'password')
@@ -34,6 +34,6 @@ def moment_disp():
 
 if selected_app == 'Mudmat_Moments':
   st.text('mudmat')
-  mm.mudmat_disp
+  
 else:
   st.text('Choose an app')
