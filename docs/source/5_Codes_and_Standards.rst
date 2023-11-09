@@ -9,17 +9,17 @@ API RP 2A-WSD: Fixed offshore
 
 8. Fatigue
 
-- 8.3 SCF (Stress Concent. Fac.)
-- 8.4 S-N curves
+  - 8.3 SCF (Stress Concent. Fac.)
+  - 8.4 S-N curves
 
 9. Foundation design
 
-- 9.2.2 Driven piles
-- 9.2.3 Drilled & grouped piles
+  - 9.2.2 Driven piles
+  - 9.2.3 Drilled & grouped piles
 
 15. Installation
 
-- 15.5 Pile installation
+  - 15.5 Pile installation
 
 
 API RP 2GEO: Geotech
