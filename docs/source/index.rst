@@ -1,8 +1,7 @@
 Welcome to GeoSohn
 ====================
 
-Handbook of integrated geophysics and geotechnical engineering based on Python coding.
-
+*GeoSohn* is an organized handbook of offshore geotechnical engineering with Python examples.
 
 
 Contents
