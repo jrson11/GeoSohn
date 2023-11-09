@@ -19,4 +19,4 @@ Contents
    Numerical Modeling <6_Numerical_Modeling.rst>
    
 .. image:: ../images/Canvas_of_Offshore_Geotech(Sep2023).png
-   :width: 400
+   :width: 800
