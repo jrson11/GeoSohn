@@ -1,7 +1,7 @@
 Numerical Modeling
 ===================
 
-Plaxid3D
+1. Plaxid3D
 ---------
 
 Mudmat
@@ -22,7 +22,7 @@ Slope Stability
 - Slope 2D
 - Slope 3D
 
-Python
+2. Python
 ------
 
 Groundhog
@@ -31,7 +31,7 @@ Groundhog
 GeoSohn
 .......
 
-Others
+3. Others
 -------
 
 NGI
