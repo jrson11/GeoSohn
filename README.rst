@@ -1,9 +1,5 @@
-Template for the Read the Docs tutorial
-=======================================
+# *GeoSohn*
+*GeoSohn* is an organized handbook of offshore geotechnical engineering with Python examples.
 
-This GitHub template includes fictional Python library
-with some basic Sphinx docs.
+<img src="https://github.com/jrson11/GeoSohn/blob/main/docs/images/GeoSon-concept_diagram-v2.png" width=400>
 
-Read the tutorial here:
-
-https://docs.readthedocs.io/en/stable/tutorial/
