@@ -1,9 +1,20 @@
 Foundation Design
 ==================
 
-
 Shallow Foundation
 -------------------
+
+A. API
+......
+
+B. GP
+......
+
+C. ISO
+......
+
+D. DNV 
+......
 
 
 Issues to check
@@ -35,6 +46,18 @@ FAQ for shallow foundation
 Deep Foundation
 ----------------
 
+
+A. API
+......
+
+B. GP
+......
+
+C. ISO
+......
+
+D. DNV 
+......
 
 
 
