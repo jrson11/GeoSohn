@@ -9,20 +9,20 @@ Standard Lab Testing
 Advanced Lab Testing
 ---------------------
 
-DSS
+1. DSS
 ....
 
-TX-CAU
+2. TX-CAU
 ......
 
-cyDSS
+3. cyDSS
 .....
 
-cyTX
+4. cyTX
 ....
 
-BE
+5. BE
 ...
 
-RC
+6. RC
 ..
