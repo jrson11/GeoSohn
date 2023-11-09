@@ -18,3 +18,5 @@ Contents
    Codes and Standards <5_Codes_and_Standards.rst>
    Numerical Modeling <6_Numerical_Modeling.rst>
    
+.. image:: ../images/GeoSon-concept_diagram-v2.png
+   :width: 400
