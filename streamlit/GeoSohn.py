@@ -1,8 +1,12 @@
 import streamlit as st
 
 def main():
-    st.title("Main Page")
 
+    # Sidebar
+    password = st.sidebar.text_input('Password?', '******')
+    
+    # Main Page
+    st.title("Main Page")
     st.markdown("## Welcome to the Main Page")
 
     # Link to App 1
