@@ -18,7 +18,7 @@ class Data:
         st.header(f"Imported Data for {self.selected_project}")
 
         # Load
-        file_path = f"https://github.com/jrson11/GeoSohn/edit/main/streamlit/"
+        file_path = f"https://github.com/jrson11/GeoSohn/edit/main/streamlit/db_csv/"
         file_K = "AGS_Kaskida_CSV.csv"
         df_K = pd.read_csv(file_path+file_K)
 
