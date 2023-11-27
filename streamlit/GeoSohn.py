@@ -31,7 +31,6 @@ class ShallowFoundation:
 
 # Initialization
 selected_analysis = st.selectbox("Select Analysis", ["Digitized Data", "Site Investigation", "Soil Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
-st.image("https://github.com/jrson11/GeoSohn/blob/main/docs/images/Canvas_of_Offshore_Geotech(Sep2023).png")
 st.image("https://raw.githubusercontent.com/jrson11/GeoSohn/main/docs/images/Canvas_of_Offshore_Geotech(Sep2023).png")
 
 # Sidebar
