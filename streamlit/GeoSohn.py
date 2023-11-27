@@ -10,9 +10,19 @@ import altair as alt
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Functions
 
-class ImportData:
+class Data:
     def __init__(self, selected_project):
         self.selected_project = selected_project
+
+    def run(self):
+        st.header(f"Imported Data for {self.selected_project}")
+
+        # Load
+        file_path = f"./src/"
+        file_K = "AGS_Kaskida_CSV.csv"
+        df_K = pd.read_csv(file_path+file_K)
+
+
 
 class SiteInvestigation:
     def __init__(self, selected_project):
@@ -42,7 +52,8 @@ else:
 
 # Main
 if selected_analysis == 'Digitized Data':
-    data = ImportData(selected_project)
+    data = Data(selected_project)
+    data.run()
 elif selected_analysis == 'Site Investigation':
     site_investigation = SiteInvestigation(selected_project)
 elif selected_analysis == 'Soil Lab Testing':
