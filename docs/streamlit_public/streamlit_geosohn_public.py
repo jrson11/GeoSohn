@@ -8,6 +8,10 @@ import altair as alt
 
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+# Functions
+
+    
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Main
 
 
@@ -16,4 +20,9 @@ selected_option = st.selectbox("Select Analysis", ["Digitized Data", "Site Inves
 
 
 # Sidebar
-selected_project = st.sidebar.selectbox("Select Project", ["None", "Kaskida", "Argos", "NaKika"])
+pw = st.sidebar = text_input('Password = ', '?')
+if pw == st.secrets['DB_pw']:
+  selected_project = st.sidebar.selectbox("Select Project", ["None", "Kaskida", "Argos", "NaKika"])
+else:
+  selected_project = st.sidebar.selectbox("Select Project", ["None"])
+
