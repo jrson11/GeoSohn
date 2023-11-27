@@ -46,6 +46,6 @@ if selected_analysis == 'Digitized Data':
 elif selected_analysis == 'Site Investigation':
     site_investigation = SiteInvestigation(selected_project)
 elif selected_analysis == 'Soil Lab Testing':
-    soil_lab_testing = Soil Lab Testing(selected_project)
+    soil_lab_testing = SoilLabTesting(selected_project)
 elif selected_analysis == 'Shallow Foundation':
     shallow_foundation = ShallowFoundation(selected_project)
