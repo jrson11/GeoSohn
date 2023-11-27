@@ -36,7 +36,7 @@ selected_analysis = st.selectbox("Select Analysis", ["Digitized Data", "Site Inv
 # Sidebar
 pw = st.sidebar.text_input('Password = ', '?')
 if pw == st.secrets['DB_pw']:
-  selected_project = st.sidebar.selectbox("Select Project", ["None", "Kaskida", "Argos", "NaKika"])
+  selected_project = st.sidebar.selectbox("Select Project", ["All", "Kaskida", "Argos", "NaKika"])
 else:
   selected_project = st.sidebar.selectbox("Select Project", ["None"])
 
