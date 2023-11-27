@@ -11,7 +11,7 @@ import altair as alt
 # Main
 
 # Sidebar
-selected_project = st.sidebar.selectbox("Select Project", ["None", "Kaskida", "Argos", "NaKika"])
+selected_project = st.sidebar.selectbox("#Select Project", ["None", "Kaskida", "Argos", "NaKika"])
 
 # Main content
-selected_option = st.selectbox("Select Option", ["Data", "Site Investigation", "Soil Lab Testing", "Foundation Design"])
+selected_option = st.selectbox("#Select Analysis", ["Data", "Site Investigation", "Soil Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
