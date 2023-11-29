@@ -37,9 +37,9 @@ class ImportData:
         self.SCPT = pd.read_excel(file, sheet_name="SCPT", header=2)
         
 ## Project Kaskida
-df_Kaskida = ImportData("./src_AGS/AGS_Kaskida(24Nov23).xlsx")
-df_NaKika = ImportData("./src_AGS/AGS_NaKika(24Nov23).xlsx")
-df_Argos = ImportData("./src_AGS/AGS_Argos(24Nov23).xlsx")
+df_Kaskida = ImportData("https://github.com/jrson11/GeoSohn/blob/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx")
+#df_NaKika = ImportData("./src_AGS/AGS_NaKika(24Nov23).xlsx")
+#df_Argos = ImportData("./src_AGS/AGS_Argos(24Nov23).xlsx")
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # B. Sidebar
