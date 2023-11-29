@@ -1,13 +1,23 @@
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Purpose: To develop python script to manage geotechnical engineering skills
 # Author: J.S.
+# ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 # Contents
-#     1. Data (AGS format digitized)
-#     2. Site Investigation (CPT + MV + TV)
-#     3. Lab Testing
-#     4. Shallow Foundation
-#     5. Deep Foundation
-#     6. Risk Assessment
-
+#    1. Data (AGS format digitized)
+#    2. Site Investigation (CPT + MV + TV)
+#    3. Lab Testing
+#    4. Shallow Foundation
+#    5. Deep Foundation
+#    6. Risk Assessment
+# ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+# Structure
+#    A. Functions
+#    B. Sidebar (pw + project)
+#    C. Main
+#        C-1. Calculation
+#        C-2. Control
+#        C-3. Plot
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 
 import streamlit as st
 import pandas as pd
