@@ -1,7 +1,18 @@
+# Purpose: To develop python script to manage geotechnical engineering skills
+# Author: J.S.
+# Contents
+#     1. Data (AGS format digitized)
+#     2. Site Investigation (CPT + MV + TV)
+#     3. Lab Testing
+#     4. Shallow Foundation
+#     5. Deep Foundation
+#     6. Risk Assessment
+
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import altair as alt
+
 
 ## Setup main streamlit options
 #st.set_page_config(layout="wide") # wide / centered 
@@ -10,37 +21,10 @@ import altair as alt
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Functions
 
-class Data:
-    def __init__(self, selected_project):
-        self.selected_project = selected_project
-
-    def run(self):
-        st.header(f"Imported Data for {self.selected_project}")
-
-        # Load
-        file_path = "https://github.com/jrson11/GeoSohn/edit/main/streamlit/DB/"
-        file_K = "AGS_Kaskida(24Nov23).xlsx"
-        df_K = pd.read_excel(file_path+file_K,sheetname="PROJ",header=3)
-        # Check
-        st.dataframe(df_K)
-
-
-
-class SiteInvestigation:
-    def __init__(self, selected_project):
-        self.selected_project = selected_project
-
-class SoilLabTesting:
-    def __init__(self, selected_project):
-        self.selected_project = selected_project
-
-class ShallowFoundation:
-    def __init__(self, selected_project):
-        self.selected_project = selected_project
     
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Main
-
+'''
 # Initialization
 selected_analysis = st.selectbox("Select Analysis", ["Digitized Data", "Site Investigation", "Soil Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
 st.image("https://raw.githubusercontent.com/jrson11/GeoSohn/main/docs/images/Canvas_of_Offshore_Geotech(Sep2023).png")
@@ -62,3 +46,4 @@ elif selected_analysis == 'Soil Lab Testing':
     soil_lab_testing = SoilLabTesting(selected_project)
 elif selected_analysis == 'Shallow Foundation':
     shallow_foundation = ShallowFoundation(selected_project)
+'''
