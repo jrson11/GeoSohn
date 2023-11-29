@@ -35,9 +35,13 @@ class ImportData:
         self.LOCA = pd.read_excel(file, sheet_name="LOCA", header=2)
         self.GEOL = pd.read_excel(file, sheet_name="GEOL", header=2)
         self.SCPT = pd.read_excel(file, sheet_name="SCPT", header=2)
-        
+
+# Note: Use the raw file URL on GitHub to get the correct file content
+url_Kaskida = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx"
+df_Kaskida = ImportData(url_Kaskida)
+
 ## Project Kaskida
-df_Kaskida = ImportData("https://github.com/jrson11/GeoSohn/blob/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx")
+#df_Kaskida = ImportData("https://github.com/jrson11/GeoSohn/blob/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx")
 #df_NaKika = ImportData("./src_AGS/AGS_NaKika(24Nov23).xlsx")
 #df_Argos = ImportData("./src_AGS/AGS_Argos(24Nov23).xlsx")
 
