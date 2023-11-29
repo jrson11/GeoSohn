@@ -13,10 +13,7 @@
 # Structure
 #    A. Functions
 #    B. Sidebar (pw + project)
-#    C. Main
-#    D. Calculation
-#    E. Control
-#    F. Plot
+#    C. Main (Calculation + Control + Plot)
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 
 import streamlit as st
@@ -29,7 +26,7 @@ import matplotlib.pyplot as plt
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # A. Functions
-class ImportData:
+class Data:
     def __init__(self, file):
         self.PROJ = pd.read_excel(file, sheet_name="PROJ", header=2)
         self.LOCA = pd.read_excel(file, sheet_name="LOCA", header=2)
@@ -57,20 +54,13 @@ else:
 # C. Main
 
 ## Intro
-selected_analysis = st.selectbox("Select Analysis", ["Data", "Site Investigation", "Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
+selected_analysis = st.selectbox("Select Analysis", ["AGS Data", "Site Investigation", "Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
 st.image("https://raw.githubusercontent.com/jrson11/GeoSohn/main/docs/images/Canvas_of_Offshore_Geotech(Sep2023).png")
 
 ## Analysis
-#if selected_analysis = 'Data':
-#    data = DATA(selected_project)
+if selected_analysis = 'AGS Data':
+    st.dataframe(Data.PROJ)
 
-# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# D. Calculation
 
-# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# E. Control
-
-# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# F. Plot
 
 
