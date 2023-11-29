@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # A. Functions
-class Data:
+class ImportData:
     def __init__(self, file):
         self.PROJ = pd.read_excel(file, sheet_name="PROJ", header=2)
         self.LOCA = pd.read_excel(file, sheet_name="LOCA", header=2)
