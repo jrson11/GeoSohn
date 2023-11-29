@@ -59,7 +59,7 @@ st.image("https://raw.githubusercontent.com/jrson11/GeoSohn/main/docs/images/Can
 
 ## Analysis
 if selected_analysis == 'AGS Data':
-    st.dataframe(Data.PROJ)
+    st.dataframe(df_Kaskida.PROJ)
 
 
 
