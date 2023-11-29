@@ -14,9 +14,9 @@
 #    A. Functions
 #    B. Sidebar (pw + project)
 #    C. Main
-#        C-1. Calculation
-#        C-2. Control
-#        C-3. Plot
+#    D. Calculation
+#    E. Control
+#    F. Plot
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 
 import streamlit as st
