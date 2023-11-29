@@ -28,17 +28,34 @@ import matplotlib.pyplot as plt
 
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# Functions
+# A. Functions
 class A():
     a = 10
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# Sidebar
+# B. Sidebar
+pw_input = st.sidebar.text_input('Password = ', '?')
+if pw_input == st.secrets['DB_pw']:
+  selected_project = st.sidebar.selectbox("Select Project", ["All", "Kaskida", "Argos", "NaKika"])
+else:
+  selected_project = st.sidebar.selectbox("Select Project", ["None"])
     
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# Main
-selected_analysis = st.selectbox("Select Analysis", ["Digitized Data", "Site Investigation", "Soil Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
+# C. Main
+
+selected_analysis = st.selectbox("Select Analysis", ["Data", "Site Investigation", "Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
 st.image("https://raw.githubusercontent.com/jrson11/GeoSohn/main/docs/images/Canvas_of_Offshore_Geotech(Sep2023).png")
+
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+# D. Calculation
+
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+# E. Control
+
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+# F. Plot
+
+
 
 '''
 # Initialization
