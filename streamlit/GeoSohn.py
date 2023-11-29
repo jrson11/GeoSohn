@@ -1,5 +1,5 @@
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# Purpose: To develop python script to manage geotechnical engineering skills
+# Purpose: To develop a Python script to manage geotechnical engineering skills
 # Author: J.S.
 # ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 # Contents
@@ -12,8 +12,9 @@
 # ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 # Structure
 #    A. Functions
-#    B. Sidebar (pw + project)
-#    C. Main (Calculation + Control + Plot)
+#    B. Setup
+#    C. Sidebar (pw + project)
+#    D. Main (Calculation + Control + Plot)
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 
 import streamlit as st
@@ -21,7 +22,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 ## Setup main streamlit options
-#st.set_page_config(layout="wide") # wide / centered 
+st.set_page_config(layout="wide") # wide / centered 
 
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
@@ -33,13 +34,29 @@ class ImportData:
         self.GEOL = pd.read_excel(file, sheet_name="GEOL", header=2)
         self.SCPT = pd.read_excel(file, sheet_name="SCPT", header=2)
 
+
+class SiteInvestigation:
+    def __init__(self, df_project):
+        self.df = df_project
+        
+    def run(self):
+        st.dataframe(self.df.SCPT)
+        
+class LabTesting:
+    def __init__(self, df_project):
+        self.df = df_project
+        
+    def run(self):
+        st.dataframe(self.df.IVAN)
+
+
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+# B. Setup
+
 # Note: Use the raw file URL on GitHub to get the correct file content
-url_Kaskida = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx"
-url_Argos = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Argos(24Nov23).xlsx"
-url_NaKika = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_NaKika(24Nov23).xlsx"
-#url_Kaskida = "./src_AGS/AGS_Kaskida(24Nov23).xlsx"
-#url_Argos = "./src_AGS/AGS_Argos(24Nov23).xlsx"
-#url_NaKika = "./src_AGS/AGS_NaKika(24Nov23).xlsx"
+url_Kaskida = "./src_AGS/AGS_Kaskida(24Nov23).xlsx"
+url_Argos = "./src_AGS/AGS_Argos(24Nov23).xlsx"
+url_NaKika = "./src_AGS/AGS_NaKika(24Nov23).xlsx"
 df_Kaskida = ImportData(url_Kaskida)
 df_Argos = ImportData(url_Argos)
 df_NaKika = ImportData(url_NaKika)
@@ -52,18 +69,19 @@ project_data = {
     'NaKika': df_NaKika
 }
 
-# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# B. Sidebar
-# pw_input = st.sidebar.text_input('Password = ', '?')
-# if pw_input == st.secrets['DB_pw']:
-#     selected_project = st.sidebar.selectbox("Select Project", ["All", "Kaskida", "Argos", "NaKika"])
-# else:
-#     selected_project = st.sidebar.selectbox("Select Project", ["None"])
 
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+# C. Sidebar
 selected_project = st.sidebar.selectbox("Select Project", ["All", "Kaskida", "Argos", "NaKika"])
 
+#pw_input = st.sidebar.text_input('Password = ', '?')
+#if pw_input == st.secrets['DB_pw']:
+#  selected_project = st.sidebar.selectbox("Select Project", ["All", "Kaskida", "Argos", "NaKika"])
+#else:
+#  selected_project = st.sidebar.selectbox("Select Project", ["None"])
+
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
-# C. Main
+# D. Main
 
 ## Intro
 selected_analysis = st.selectbox("Select Analysis", ["AGS Data", "Site Investigation", "Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
@@ -83,4 +101,5 @@ elif selected_project in project_data:
             st.dataframe(selected_df.PROJ)
 
         elif selected_analysis == 'Site Investigation':
-            st.dataframe(selected_df.SCPT)
+            SI = SiteInvestigation(selected_df)
+            SI.run()
