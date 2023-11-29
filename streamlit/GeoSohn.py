@@ -30,10 +30,16 @@ import matplotlib.pyplot as plt
 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Functions
+class A():
+    a = 10
 
+# ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
+# Sidebar
     
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Main
+
+
 '''
 # Initialization
 selected_analysis = st.selectbox("Select Analysis", ["Digitized Data", "Site Investigation", "Soil Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
