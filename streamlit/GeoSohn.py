@@ -58,7 +58,7 @@ selected_analysis = st.selectbox("Select Analysis", ["AGS Data", "Site Investiga
 st.image("https://raw.githubusercontent.com/jrson11/GeoSohn/main/docs/images/Canvas_of_Offshore_Geotech(Sep2023).png")
 
 ## Analysis
-if selected_analysis = 'AGS Data':
+if selected_analysis == 'AGS Data':
     st.dataframe(Data.PROJ)
 
 
