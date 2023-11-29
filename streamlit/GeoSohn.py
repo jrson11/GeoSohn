@@ -34,14 +34,14 @@ class ImportData:
         self.SCPT = pd.read_excel(file, sheet_name="SCPT", header=2)
 
 # Note: Use the raw file URL on GitHub to get the correct file content
-#url_Kaskida = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx"
-url_Kaskida = "./src_AGS/AGS_Kaskida(24Nov23).xlsx"
+url_Kaskida = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx"
+url_Argos = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Argos(24Nov23).xlsx"
+url_NaKika = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_NaKika(24Nov23).xlsx"
+#url_Kaskida = "./src_AGS/AGS_Kaskida(24Nov23).xlsx"
+#url_Argos = "./src_AGS/AGS_Argos(24Nov23).xlsx"
+#url_NaKika = "./src_AGS/AGS_NaKika(24Nov23).xlsx"
 df_Kaskida = ImportData(url_Kaskida)
-#url_Argos = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Argos(24Nov23).xlsx"
-url_Argos = "./src_AGS/AGS_Argos(24Nov23).xlsx"
 df_Argos = ImportData(url_Argos)
-#url_NaKika = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_NaKika(24Nov23).xlsx"
-url_NaKika = "./src_AGS/AGS_NaKika(24Nov23).xlsx"
 df_NaKika = ImportData(url_NaKika)
 
 # Create a dictionary to store data frames based on project names
