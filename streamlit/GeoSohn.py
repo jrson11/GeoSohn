@@ -23,7 +23,6 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 ## Setup main streamlit options
 #st.set_page_config(layout="wide") # wide / centered 
 
@@ -38,7 +37,8 @@ class A():
     
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Main
-
+selected_analysis = st.selectbox("Select Analysis", ["Digitized Data", "Site Investigation", "Soil Lab Testing", "Shallow Foundation", "Deep Foundation", "Risk Assessment"])
+st.image("https://raw.githubusercontent.com/jrson11/GeoSohn/main/docs/images/Canvas_of_Offshore_Geotech(Sep2023).png")
 
 '''
 # Initialization
