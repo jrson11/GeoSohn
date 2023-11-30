@@ -1,7 +1,7 @@
 Numerical Modeling
 ===================
 
-Plaxid3D
+Plaxis3D
 ---------
 
 1. Mudmat
