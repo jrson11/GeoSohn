@@ -1,6 +1,7 @@
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # Purpose: To develop python script to manage geotechnical engineering skills
 # Author: J.S.
+# Date: 12/1/2023
 # ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 # Contents
 #    1. Data (AGS format digitized)
@@ -70,15 +71,18 @@ class SiteInvestigation:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.text('col1')
             # Enngineering Analysis
             list_SCPT_LOCA_ID = list(pd.unique(df_SCPT['LOCA_ID_x']))
             n_SCPT_LOCA_ID = len(list_SCPT_LOCA_ID)
                 
             # Control Panel
+            st.text('Control Panel')
             selected_cpt_loca_id = st.selectbox('Location of CPT',list(['ALL'])+list_SCPT_LOCA_ID)
-            selected_cpt_zmax = int(st.text_input('Max depth of CPT (m) =', 50))
-            selected_qcmax = int(st.text_input('Max qc (MPa) =', 2))            
+            selected_cpt_zmax = int(st.text_input('Max depth of CPT (m) =', 40))
+            selected_qcmax = int(st.text_input('Max qc (MPa) =', 2))      
+            
+            # Note
+            st.text('Note')
             
         with col2:
             # Plot
@@ -89,89 +93,157 @@ class SiteInvestigation:
                     loca_id = list_SCPT_LOCA_ID[i]
                     ii = loca_id == df_SCPT['LOCA_ID_x']
                     ax[0].plot(df_SCPT.loc[ii,'SCPT_RES_MPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1)
-                    ax[1].plot(df_SCPT.loc[ii,'SCPT_CPOD_kPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1,label=loca_id)
+                    ax[1].plot(df_SCPT.loc[ii,'SCPT_QNET_kPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1,label=loca_id)
             else:
                 ii = selected_cpt_loca_id == df_SCPT['LOCA_ID_x']
                 ax[0].plot(df_SCPT.loc[ii,'SCPT_RES_MPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1)
-                ax[1].plot(df_SCPT.loc[ii,'SCPT_CPOD_kPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1,label=selected_cpt_loca_id)            
+                ax[1].plot(df_SCPT.loc[ii,'SCPT_QNET_kPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1,label=selected_cpt_loca_id)            
             #
             ax[0].set_ylabel("Depth (m)")
-            ax[0].set_xlabel("Cone Resistance (MPa)")
+            ax[0].set_xlabel("qc (MPa)")
             ax[0].set_xlim([0,selected_qcmax])
-            ax[1].set_xlabel("In-situ stress (kPa)")
+            ax[1].set_ylabel("Depth (m)")
+            ax[1].set_xlabel("qnet (kPa)")
+            ax[1].set_xlim([0,selected_qcmax*1000])
             #
             for j in range(2):
                 ax[j].set_ylim([selected_cpt_zmax,0])
                 ax[j].grid(linestyle='dotted')
                 ax[j].minorticks_on()
-            ax[1].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
+            ax[1].legend(loc=0, fancybox=True, shadow=True, fontsize=10, ncol=1)
             #
+            plt.tight_layout()
             st.pyplot(fig)
             
-    def Su(self, df_SCPT, df_IVAN):
+    def Su(self, df_SCPT, df_IVAN, df_GEOL):
         col1, col2 = st.columns(2)
         
         with col1:
-            # Enngineering Analysis
+            # Enngineering Analysis        
+            list_SCPT_LOCA_ID = list(pd.unique(df_SCPT['LOCA_ID_x']))
             list_IVAN_LOCA_ID = list(pd.unique(df_IVAN['LOCA_ID_x']))
-            ii = df_IVAN['IVAN_TYPE_x'] == 'MV'
-            list_MV_LOCA_ID = list(pd.unique(df_IVAN.loc[ii,'LOCA_ID_x']))
+            list_GEOL_PROJ_ID = list(pd.unique(df_GEOL['PROJ_ID_x']))
+            #st.write(list_GEOL_PROJ_ID)
+            MV = df_IVAN['IVAN_TYPE_x'] == 'MV'
+            list_MV_LOCA_ID = list(pd.unique(df_IVAN.loc[MV,'LOCA_ID_x']))
+            #st.write(list_MV_LOCA_ID)
             n_MV_LOCA_ID = len(list_MV_LOCA_ID)
+            TV = df_IVAN['IVAN_TYPE_x'] == 'TV'
+            list_TV_LOCA_ID = list(pd.unique(df_IVAN.loc[TV,'LOCA_ID_x']))
+            #st.write(list_TV_LOCA_ID)
+            n_TV_LOCA_ID = len(list_TV_LOCA_ID)
                 
             # Control Panel
+            st.text('Control Panel')
             selected_su_loca_id = st.selectbox('Location of Su',list(['ALL'])+list_IVAN_LOCA_ID)
-            selected_Nkt = int(st.text_input('Nkt (-) =', 20))    
-            selected_su_zmax = int(st.text_input('Max depth of Su (m) =', 50))
-            #selected_qnetmax = int(st.text_input('Max qnet (kPa) =', 2000))    
-
-
+            selected_su_zmax = int(st.text_input('Max depth of Su (m) =', 35))
+            selected_sumax = int(st.text_input('Max su (kPa) =', 50))    
+            
+            # Note
+            st.text('Note')
+            st.text('No. of MV = '+str(n_MV_LOCA_ID)+' , No. of TV = '+str(n_TV_LOCA_ID))
+            
+            # CPT
+            onCPT = st.toggle('Activate CPT profiles with Nkt')
+            if onCPT:
+                selected_Nkt = int(st.text_input('Nkt (-) =', 25))
+                selected_su_cpt_id = st.selectbox('Location of CPT for Su',list(['ALL'])+list_SCPT_LOCA_ID)
+                
+            # Recommended profiles
+            onBP = st.toggle('Activate recomended profiles')
+            if onBP:
+                selected_su_proj_id = st.selectbox('Recommended Su',list_GEOL_PROJ_ID)
+                kk = selected_su_proj_id == df_GEOL['PROJ_ID_x']
+                st.dataframe(df_GEOL.loc[kk,['GEOL_TOP_m','GEOL_SU_kPa']])
+            
         with col2:
             # Plot
             fig,ax = plt.subplots(1,2,figsize=(7,7), dpi=100)
             #
             if selected_su_loca_id == 'ALL':
+                # MV
                 for i in range(n_MV_LOCA_ID):
                     loca_id = list_MV_LOCA_ID[i]
+                    color_idx = list_IVAN_LOCA_ID.index(loca_id)
                     ii = loca_id == df_IVAN['LOCA_ID_x']
-                    ax[0].plot(df_IVAN.loc[ii,'IVAN_IVAN_ksf'],df_IVAN.loc[ii,'IVAN_DPTH_x'],'.',alpha=0.5)
-                   #ax[1].plot(df_SCPT.loc[ii,'SCPT_CPOD_kPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1,label=loca_id)
+                    ax[0].plot(df_IVAN.loc[ii&MV,'IVAN_IVAN_kPa'],df_IVAN.loc[ii&MV,'IVAN_DPTH_m'],'o',color='C'+str(color_idx),alpha=0.5)
+                    ax[1].plot(df_IVAN.loc[ii&MV,'IVAN_IVAN_ksf'],df_IVAN.loc[ii&MV,'IVAN_DPTH_ft'],'o',color='C'+str(color_idx),alpha=0.5,label=loca_id)
+                
+                # TV
+                for i in range(n_TV_LOCA_ID):
+                    loca_id = list_TV_LOCA_ID[i]
+                    color_idx = list_IVAN_LOCA_ID.index(loca_id)
+                    ii = loca_id == df_IVAN['LOCA_ID_x']
+                    ax[0].plot(df_IVAN.loc[ii&TV,'IVAN_IVAN_kPa'],df_IVAN.loc[ii&TV,'IVAN_DPTH_m'],'x',color='C'+str(color_idx),alpha=0.5,label=loca_id)
+                    ax[1].plot(df_IVAN.loc[ii&TV,'IVAN_IVAN_ksf'],df_IVAN.loc[ii&TV,'IVAN_DPTH_ft'],'x',color='C'+str(color_idx),alpha=0.5)
+                    
+                # CPT
+                if onCPT:
+                    if selected_su_cpt_id == 'ALL':
+                        ax[0].plot(df_SCPT['SCPT_QNET_kPa']/selected_Nkt,df_SCPT['SCPT_DPTH_m'],'.',c='grey',alpha=0.1)
+                    else:
+                        jj = selected_su_cpt_id == df_SCPT['LOCA_ID_x']
+                        ax[0].plot(df_SCPT.loc[jj,'SCPT_QNET_kPa']/selected_Nkt,df_SCPT.loc[jj,'SCPT_DPTH_m'],'.',c='grey',alpha=0.1)
+                
+                # Recommended Su
+                if onBP:
+                    kk = selected_su_proj_id == df_GEOL['PROJ_ID_x']
+                    #st.dataframe(df_GEOL.loc[kk,'GEOL_SU_kPa'])
+                    #st.dataframe(df_GEOL.loc[kk,'GEOL_TOP_m'])
+                    ax[0].plot(df_GEOL.loc[kk,'GEOL_SU_kPa'],df_GEOL.loc[kk,'GEOL_TOP_m'],'r--')
+                    
             else:
                 ii = selected_su_loca_id == df_IVAN['LOCA_ID_x']
-                ax[0].plot(df_IVAN.loc[ii,'IVAN_IVAN_ksf'],df_IVAN.loc[ii,'IVAN_DPTH_x'],'.',alpha=0.5)
-                #ax[1].plot(df_SCPT.loc[ii,'SCPT_CPOD_kPa'],df_SCPT.loc[ii,'SCPT_DPTH_m'],'.',alpha=0.1,label=selected_su_loca_id)            
+                color_idx = list_IVAN_LOCA_ID.index(selected_su_loca_id)
+                # MV
+                ax[0].plot(df_IVAN.loc[ii&MV,'IVAN_IVAN_kPa'],df_IVAN.loc[ii&MV,'IVAN_DPTH_m'],'o',color='C'+str(color_idx),alpha=0.5)
+                ax[1].plot(df_IVAN.loc[ii&MV,'IVAN_IVAN_ksf'],df_IVAN.loc[ii&MV,'IVAN_DPTH_ft'],'o',color='C'+str(color_idx),alpha=0.5,label=selected_su_loca_id)
+                # TV
+                ax[0].plot(df_IVAN.loc[ii&TV,'IVAN_IVAN_kPa'],df_IVAN.loc[ii&TV,'IVAN_DPTH_m'],'x',color='C'+str(color_idx),alpha=0.5,label=selected_su_loca_id)
+                ax[1].plot(df_IVAN.loc[ii&TV,'IVAN_IVAN_ksf'],df_IVAN.loc[ii&TV,'IVAN_DPTH_ft'],'x',color='C'+str(color_idx),alpha=0.5)                         
             #
             ax[0].set_ylabel("Depth (m)")
-            ax[0].set_xlabel("Su (ksf)")
-            #ax[0].set_xlim([0,selected_qnetmax])
-            #ax[1].set_xlabel("In-situ stress (kPa)")
+            ax[0].set_xlabel("Su (kPa)")
+            ax[0].set_xlim([0,selected_sumax])
+            ax[0].set_ylim([selected_su_zmax,0])
+            ax[1].set_ylabel("Depth (ft)")
+            ax[1].set_xlabel("Su (ksf)")
+            ax[1].set_xlim([0,selected_sumax/47.880])
+            ax[1].set_ylim([selected_su_zmax*3.280,0])
+            ax[0].text(selected_sumax*0.7,selected_su_zmax*0.9,'o MV \n x TV', bbox=dict(facecolor='white', edgecolor='black', boxstyle='round,pad=1'))
             #
             for j in range(2):
-                ax[j].set_ylim([selected_su_zmax,0])
-            #    ax[j].grid(linestyle='dotted')
-            #    ax[j].minorticks_on()
-            #ax[1].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
+                ax[j].grid(linestyle='dotted')
+                ax[j].minorticks_on()
+                ax[j].legend(loc=0, fancybox=True, shadow=True, fontsize=10, ncol=1)
             #
+            plt.tight_layout()
             st.pyplot(fig)
+
+    def SUW(self, df_SCPT, df_IVAN):
+        col1, col2 = st.columns(2)
 
             
     def run(self):
         st.dataframe(self.DB.df_PROJ)
         
-        tab0, tab1, tab2 = st.tabs(['0.Map', '1.CPT', '2.Su'])
+        tab0, tab1, tab2, tab3 = st.tabs(['0.Map', '1.CPT', '2.Su', '3.SUW'])
             
         with tab0:
-            st.text('Map')
+            #st.text('Map')
             self.MAP(self.DB.df_LOCA)
                 
         with tab1:
-            st.text('CPT')
+            #st.text('CPT')
             self.CPT(self.DB.df_SCPT)
                 
         with tab2:
-            st.text('Su')
-            self.Su(self.DB.df_SCPT, self.DB.df_IVAN)
+            #st.text('Su')
+            self.Su(self.DB.df_SCPT, self.DB.df_IVAN, self.DB.df_GEOL)
 
-
+        with tab3:
+            #st.text('Su')
+            self.SUW(self.DB.df_SCPT, self.DB.df_IVAN)
                 
 # ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== ===== =====
 # B. Setup
@@ -180,9 +252,9 @@ class SiteInvestigation:
 #url_Kaskida = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Kaskida(24Nov23).xlsx"
 #url_Argos = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_Argos(24Nov23).xlsx"
 #url_NaKika = "https://github.com/jrson11/GeoSohn/raw/main/streamlit/src_AGS/AGS_NaKika(24Nov23).xlsx"
-url_Kaskida = "./src_AGS/AGS_Kaskida(24Nov23).xlsx"
-url_Argos = "./src_AGS/AGS_Argos(24Nov23).xlsx"
-url_NaKika = "./src_AGS/AGS_NaKika(24Nov23).xlsx"
+url_Kaskida = "./src_AGS/AGS_Kaskida(01Dec23).xlsx"
+url_Argos = "./src_AGS/AGS_Argos(01Dec23).xlsx"
+url_NaKika = "./src_AGS/AGS_NaKika(01Dec23).xlsx"
 df_Kaskida = ImportData(url_Kaskida)
 df_Argos = ImportData(url_Argos)
 df_NaKika = ImportData(url_NaKika)
