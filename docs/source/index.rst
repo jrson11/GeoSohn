@@ -16,6 +16,7 @@ Contents
    Risk Assessment <4-Risk_Assessment.rst>
    Codes and Standards <5-Codes_and_Standards.rst>
    Numerical Modeling <6-Numerical_Modeling.rst>
+   Offshore History <7-Offshore_History.rst>
    
 .. image:: ../images/Canvas_of_Offshore_Geotech(Sep2023).png
    :width: 800
