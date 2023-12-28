@@ -93,3 +93,7 @@ Piston coring involves driving a tube into the seabed with a piston to retrieve 
   - Jumbo Piston Core
 
 Jumbo piston coring is similar to piston coring but is designed for retrieving longer and larger-diameter cores. It is employed for deep-sea research and obtaining extended sediment records.
+
+
+Integration
+--------------------
