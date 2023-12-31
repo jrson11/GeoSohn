@@ -26,22 +26,27 @@ API RP 2GEO: Geotech
 ........
 
 6. Site characterization
+
 7. Shallow foundation
   - Bearing capacity
   - Settlement
   - Sliding/Overturning/Torsion
+
 8. Pile foundation
   - Capacity: compression/pullout
   - Soil reaction: axial/lateral
   - Pile group
+
 9. Soil-structure interaction
   - Soil design depth > 3*diameter
+
 
 API RP 2SK: Stationkeeping
 ..........
 
 6. Fatigue
   - M&K in T-N curve (Table3)
+
 7. Design criteria
   - Safety Factors (Table7)
 
@@ -50,6 +55,7 @@ API RP 2SK: Stationkeeping
 
 
 App.A. Mooring components
+
 App.E. Pile and plate anchor
   - E.3 Geotechnical design
   - E.5 Structural design
