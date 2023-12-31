@@ -36,19 +36,21 @@ Offshore Geotechnical Surveys
 
 1. Seabed Sampling
 
-2. Cone Penetration Testing (CPT)
-
-3. T-Bar Testing
-
-3. Field Laboratory Testing
-
-4. Box Core, Piston Core, and Jumbo Piston Core
+2. Core Sampling Methods
 
   - Box Core
 
   - Piston Core
 
   - Jumbo Piston Core
+
+3. Cone Penetration Testing (CPT)
+
+4. T-Bar Testing
+
+5. Field Laboratory Testing
+
+
 
 
 Integration
