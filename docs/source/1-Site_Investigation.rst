@@ -4,20 +4,6 @@ Site Investigation
 Offshore Geophysical Surveys
 --------------------
 
-Objectives
-...........
-
-1. Identifying Subsurface Structures:
-
-2. Mapping Seabed Topography:
-
-3. Detecting Hazards and Anomalies:
-
-4. Providing Input for Seabed Characterization:
-
-Types
-.....
-
 1. Seismic Profiling:
 
 2. Side-Scan Sonar:
