@@ -1,40 +1,42 @@
-Foundation Design
+Offshore Foundation Design
 ==================
 
 Shallow Foundation
 -------------------
 
+Mudmat
+.......
 
+1. Bearing capacity (API RP 2GEO)
+2. Resistance: Sliding (API RP 2GEO-7.15) / Overturning (API RP 2GEO-7.16) / Torsion
+3. Settlement (API RP 2GEO-7.8.1 / API RP 2GEO-7.8.2)
+4. Skirt penetration (DNV CN30.4 / API RP 2GEO-7.12)
 
+Others
+.......
 
-Issues to check
-................
-
-1. Skirt penetration: DNV CN30.4 / API RP 2GEO-7.12
-2. Bearing capacity: API RP 2GEO
-3. Resistance
-
-  3.a Sliding: API RP 2GEO-7.15
-
-  3.b Overturning: API RP 2GEO-7.16
-
-  3.c Torsional: ?
-
-4. Foundation settlement
-
-  4.a Short-term: API RP 2GEO-7.8.1
-
-  4.b Long-term: API RP 2GEO-7.8.2
-
-FAQ for shallow foundation
-...........................
-
-  - API RP 2GEO-7.15 used internal soil friction angle (phi'), but also mentioned different angle (delta) between the foundation soil and the structure. How can we estimate delta?
-  - API RP 2GEO-7.16 mentioned torsional stability, but has no equation. How can we check torsional stability?
-
+1. Plate anchor
+2. Torpedo anchor
+3. Drag embedded anchor
+4. Gravity-based foundation
 
 Deep Foundation
 ----------------
+
+Driven Pile
+............
+
+1. PISA design model
+2. Pile Driving Analysis (PDA)
+
+Suction Pile
+.............
+
+1. Geotechnical holding capacity
+2. Geotechnical suction pressure
+3. Structural yield and buckling
+4. Fabrication / Lifting / Transportation / Installation
+5. Operation: Corrosion / Fatigue
 
 
 
