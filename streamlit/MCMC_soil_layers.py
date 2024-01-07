@@ -61,7 +61,7 @@ xq_obs = xq
 def fig_ini_UW():
     fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=100)
     #
-    ax[0].plot(df_Raw['UW_kNm2'],df_Raw['Depth_m'],'.', label='Raw data',alpha=0.2)  
+    ax[0].plot(df_Raw[x_header],df_Raw[z_header],'.', label='Raw data',alpha=0.2)  
     ax[0].plot(xq,zq,'k--', label='Interpolated')
     ax[0].set_title('Observed vertical profile')
     
