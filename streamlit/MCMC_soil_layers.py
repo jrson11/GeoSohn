@@ -225,8 +225,10 @@ def run_MCMC():
             #print('Iteration Number = '+str(j)+' -Reject: bay_alpha = '+str(round(bay_alpha,2)))
         print('Iteration Number = '+str(j)+' / '+str(ns))
 
+    return MCx1,MCx2,MCzi,MCzq,MCyErr
+
 if st.button('2nd click: run MCMC iteration'):
-    run_MCMC()
+    MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC()
     st.write('MCMC completed')
 
 ## Plot to check
