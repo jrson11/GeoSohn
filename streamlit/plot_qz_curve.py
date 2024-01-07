@@ -32,12 +32,3 @@ if st.button('Generate Load-Settlement Curve'):
     plt.title('Load-Settlement Curve for Pile')
     plt.grid(True)
     st.pyplot(plt)
-
-# Instructions to run the script
-st.markdown("""
-To run this script:
-1. Save this code in a Python file, e.g., `load_settlement_app.py`.
-2. Open a terminal and navigate to the directory containing the file.
-3. Run the app using the command `streamlit run load_settlement_app.py`.
-4. The app should open in your default web browser.
-""")
