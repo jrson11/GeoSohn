@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches  
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # =============================================================================
 # Import raw data
