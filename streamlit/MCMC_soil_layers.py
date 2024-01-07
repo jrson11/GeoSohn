@@ -61,7 +61,7 @@ def FWD(zq,zi,x1,x2):
     z2 = []
     x_dummy = []
     z_dummy = []
-    for i in range(len(x1): # To check each layer
+    for i in range(len(x1)): # To check each layer
         z1.append(round(zq[zi1[i]],3))
         z2.append(round(zq[zi2[i]],3))
         x_dummy.append(x1[i])
