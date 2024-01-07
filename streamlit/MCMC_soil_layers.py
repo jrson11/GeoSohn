@@ -87,6 +87,7 @@ def fig_ini_UW():
         ax[1].add_patch(patches.Rectangle((xmin,zq[zi_ini[j]]),width,height,color='C'+str(j),alpha=0.1))
     
     plt.tight_layout()
+    return fig
     
 fig = fig_ini_UW()
 st.pyplot(fig)
