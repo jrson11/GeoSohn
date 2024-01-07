@@ -2,6 +2,10 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
+# 서브 스크립트에서 사이드바 링크 추가
+from sidebar_links import add_sidebar_links
+add_sidebar_links()
+
 def terzaghi_bearing_capacity(width, length, unit_weight, cohesion, phi, depth):
     """
     Calculate the ultimate bearing capacity using Terzaghi's formula.
@@ -34,9 +38,7 @@ def elastic_settlement(q_applied, width, modulus_of_elasticity, poisson_ratio):
     settlement = (1 - poisson_ratio ** 2) * q_applied * width / (modulus_of_elasticity * np.pi)
     return settlement * 1000  # Convert to mm
 
-# 서브 스크립트에서 사이드바 링크 추가
-from sidebar_links import add_sidebar_links
-add_sidebar_links()
+
 
 # Streamlit app
 st.title("Shallow Foundation Analysis")
