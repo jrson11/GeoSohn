@@ -122,6 +122,8 @@ MCzi = np.zeros([ns,nk+1]).astype(int)
 MCzq = np.zeros([ns,nk+1])
 MCyErr = np.zeros(ns)
 
+st.write("No. of MCMC iteration:", str(ns))
+
 ## Initial samples
 MCx1[0] = x1_ini
 MCx2[0] = x2_ini
