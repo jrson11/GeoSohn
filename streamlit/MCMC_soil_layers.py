@@ -212,6 +212,7 @@ def run_MCMC():
             MCyErr[j] = np.linalg.norm(xq_cur - xq_obs)
             nreject = nreject + 1
             print('Iteration Number = '+str(j)+' -Reject: bay_alpha = '+str(round(bay_alpha,2)))
+        st.write('Iteration Number = '+str(j))
 
 if st.button('2nd click: run MCMC iteration'):
     run_MCMC()
