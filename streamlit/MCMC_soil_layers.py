@@ -226,7 +226,6 @@ def run_MCMC():
         print('Iteration Number = '+str(j)+' / '+str(ns))
 
 if st.button('2nd click: run MCMC iteration'):
-    st.write('Starting MCMC')
     run_MCMC()
     st.write('MCMC completed')
 
