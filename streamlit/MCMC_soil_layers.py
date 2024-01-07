@@ -279,3 +279,112 @@ if st.button('3nd click: plot convergence'):
     
 # =============================================================================
 # Post-processing
+    
+## Average after burn-in point
+x1_mean = np.mean(st.session_state.MCx1[nb:], axis=0)
+x2_mean = np.mean(st.session_state.MCx2[nb:], axis=0)
+zi_mean = np.mean(st.session_state.MCzi[nb:], axis=0).astype(int)
+zq_mean = np.mean(st.session_state.MCzq[nb:], axis=0)
+xq_mean = FWD(zq,zi_mean,x1_mean,x2_mean)
+
+## Std after burn-in point
+x1_std = np.std(st.session_state.MCx1[nb:], axis=0)
+x2_std = np.std(st.session_state.MCx2[nb:], axis=0)
+zi_std = np.std(st.session_state.MCzi[nb:], axis=0)
+zq_std = np.std(st.session_state.MCzq[nb:], axis=0)
+
+
+def fig_realizations():
+    fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=100)
+    
+    # 1st plot shows vertical realizations
+    ax[0].plot(df_Raw[x_header],df_Raw[z_header],'.', label='Raw data',alpha=0.2)  
+    ax[0].plot(xq_ini,zq,'r--', label='Initial guess')
+    ax[0].set_title('Estimated stratigraphic model')
+    
+    # Plot realizations in the 1st plot
+    for i in np.arange(nb,ns,50):
+        x1_temp = st.session_state.MCx1[nb,:]
+        x2_temp = st.session_state.MCx2[nb,:]
+        zi_temp = st.session_state.MCzi[nb,:]
+        xq_temp = FWD(zq,zi_temp,x1_temp,x2_temp)
+        ax[0].plot(xq_temp,zq,color='y',alpha=0.1,linewidth=5)
+    ax[0].plot(xq_temp,zq,color='y',label='Realizations',alpha=0.1)
+    ax[0].plot(xq_mean,zq,'k-', label='Final estimation')
+    ax[0].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
+    
+    # Label of 1st plot
+    ax[0].set_xlabel(x_header)
+    ax[0].set_ylabel(z_header)
+    ax[0].set_xlim([xmin,xmax])
+    ax[0].set_ylim([zmax,0])    
+    
+    # Add patch in the 1st plot
+    for j in range(nk):
+        width = xmax-xmin
+        height = zq[zi_mean[j+1]]-zq[zi_mean[j]]
+        ax[0].add_patch(patches.Rectangle((xmin,zq[zi_mean[j]]),width,height,color='C'+str(j),alpha=0.1))
+    
+    # 2nd plot shows histogram in vertical direction
+    for j in range(nk-1):
+        ax[1].hist(st.session_state.MCzq[nb:,j+1], bins=5, density=True, orientation='horizontal',alpha=0.6, color='C'+str(j+1), edgecolor='k', label="layer "+str(j+2));
+        ax[1].text(1,zq_mean[j+1],'mean = '+str(round(zq_mean[j+1],2)))
+        ax[1].text(2.2,zq_mean[j+1],'std = '+str(round(zq_std[j+1],2)))
+    
+    # Label of 2nd plot
+    ax[1].set_xlabel('Probability Density')
+    ax[1].set_ylabel(z_header)
+    ax[1].set_title('Histograms of layer depths')
+    ax[1].set_ylim([zmax,0])
+    ax[1].set_xlim([0,4])
+    ax[1].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
+    
+    # Label 1st and 2nd plots
+    for i in range(2):
+        ax[i].grid(linestyle='dotted')
+        ax[i].minorticks_on()
+        
+    # Finalize
+    plt.tight_layout()
+    return fig
+    
+if st.button('3nd click: plot convergence'):
+    fig=fig_realizations()
+    st.pyplot(fig)
+
+
+def fig_hist():
+    fig,ax = plt.subplots(2,nk, figsize=(9,6), dpi=100)
+    
+    # sub column number = nk, and raw number = 2 (top and bottom)
+    for i in range(nk):
+        # Histogram
+        ax[0,i].hist(st.session_state.MCx1[nb:,i], bins=10, density=True, alpha=0.6, color='C'+str(i), edgecolor="C0", label=str(i+1)+"th layer");
+        ax[1,i].hist(st.session_state.MCx2[nb:,i], bins=10, density=True, alpha=0.6, color='C'+str(i), edgecolor="C0", label=str(i+1)+"th layer");
+        
+        # Center line
+        ax[0,i].plot([x1_mean[i],x1_mean[i]],[0,4],'r--')
+        ax[1,i].plot([x2_mean[i],x2_mean[i]],[0,4],'r--')
+        
+        # Text mean and std
+        ax[0,i].set_title(str(i+1)+"th layer")
+        ax[0,i].text(x1_mean[i]*0.99,3.5,'mean = '+str(round(x1_mean[i],1)))
+        ax[0,i].text(x1_mean[i]*0.99,3.0,'std = '+str(round(x1_std[i],3)))
+        ax[1,i].text(x2_mean[i]*0.99,3.5,'mean = '+str(round(x2_mean[i],1)))
+        ax[1,i].text(x2_mean[i]*0.99,3.0,'std = '+str(round(x2_std[i],3)))
+        
+        # Label
+        ax[0,i].set_xlabel(x_header+'(Top)')
+        ax[1,i].set_xlabel(x_header+'(Bottom)')
+        ax[0,i].set_ylim([0,4])
+        ax[1,i].set_ylim([0,4])
+        
+    ax[0,0].set_ylabel('Probability Density')
+    ax[1,0].set_ylabel('Probability Density')
+        
+    plt.tight_layout()
+    return fig
+
+if st.button('3nd click: plot convergence'):
+    fig=fig_hist()
+    st.pyplot(fig)
