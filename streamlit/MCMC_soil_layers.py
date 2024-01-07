@@ -20,9 +20,10 @@ st.title("MCMC for stratigraphic soil layers")
 
 # =============================================================================
 # Import raw data
-df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_MCMC_soil_layers/UW_PCPT_Robertson2010.csv')
-st.header('Imported data: Unit Weight derived from in-situ CPT :balloon:')
+st.header(':balloon: Step 1: Import vertical soil data')
 
+df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_MCMC_soil_layers/UW_PCPT_Robertson2010.csv')
+st.write('Imported data: Unit Weight derived from in-situ CPT')
 cols = df_Raw.columns   # DataFrame show have two columns, i.e., Z and X
 z_header = cols[0]
 x_header = cols[1]
@@ -116,6 +117,7 @@ if st.button('1st click: plot initial model'):
 
 # =============================================================================
 # MCMC
+st.header(':balloon: Step 2: Execute MCMC simulation')
 
 ## Setup
 ns = int(1e4)   # No. of iteration
@@ -248,6 +250,8 @@ if st.button('2nd click: run MCMC iteration'):
     st.write('MCMC completed')
 
 ## Plot to check
+st.header(':balloon: Step 3: Check convenge')
+
 def fig_y_err():
     fig,ax = plt.subplots(2,1, figsize=(9,6), dpi=100)
     
@@ -279,7 +283,8 @@ if st.button('3nd click: plot convergence'):
     
 # =============================================================================
 # Post-processing
-    
+st.header(':balloon: Step 4: Check results')
+
 ## Average after burn-in point
 x1_mean = np.mean(st.session_state.MCx1[nb:], axis=0)
 x2_mean = np.mean(st.session_state.MCx2[nb:], axis=0)
