@@ -51,6 +51,7 @@ nk = int(st.number_input("No. of soil layers", min_value=2, value=5, step=1))
 x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer 
 x2_ini = np.ones(nk)*xavg*1.05       # X value at Bottom of each layer  
 zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
+std_diff_zi_ini = np.std(np.diff(zi_ini))   # To use in Bayesian prior
 
 ## Define FWD
 def FWD(zq,zi,x1,x2):
@@ -60,7 +61,7 @@ def FWD(zq,zi,x1,x2):
     z2 = []
     x_dummy = []
     z_dummy = []
-    for i in range(nk): # To check each layer
+    for i in range(len(x1): # To check each layer
         z1.append(round(zq[zi1[i]],3))
         z2.append(round(zq[zi2[i]],3))
         x_dummy.append(x1[i])
