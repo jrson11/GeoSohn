@@ -14,6 +14,10 @@ def tz_curve(depths, tension, soil_stiffness):
     z = np.array(depths)
     t = tension * np.exp(-soil_stiffness * z)
     return z, t
+    
+# 서브 스크립트에서 사이드바 링크 추가
+from sidebar_links import add_sidebar_links
+add_sidebar_links()
 
 # Streamlit app
 st.title("T-Z Curve Generator for Pile Analysis")
