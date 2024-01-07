@@ -28,6 +28,9 @@ zq = np.arange(dz,zmax,dz)    # interpolated depth
 xq = np.interp(zq, df_Raw[z_header], df_Raw[x_header])    # interpolated data  
 nq = len(zq)    # No. of interpolated points
 
+## Streamlit
+st.write("Average value of X:", xavg)
+st.write("Interval of depth Z:", dz)
 
 # =============================================================================
 # Make Initial stratigraphy model
