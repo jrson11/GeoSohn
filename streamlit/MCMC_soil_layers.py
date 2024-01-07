@@ -252,14 +252,14 @@ def fig_y_err():
     fig,ax = plt.subplots(2,1, figsize=(9,6), dpi=100)
     
     # 1st plot shows decreasing misfit error during MCMC iteration
-    ax[0].plot(MCyErr/MCyErr[0]*100)
-    ax[0].plot([nb,nb],[min(MCyErr/MCyErr[0]*100),100],'r--', label='Burn-in period')
+    ax[0].plot(st.session_state.MCyErr/st.session_state.MCyErr[0]*100)
+    ax[0].plot([nb,nb],[min(st.session_state.MCyErr/st.session_state.MCyErr[0]*100),100],'r--', label='Burn-in period')
     ax[0].set_ylabel('Misfit error (%)')
     ax[0].legend(loc=0, fancybox=True, shadow=True, fontsize=10, ncol=1)
     
     # 2nd plot shows convergence of variable at each layer
-    ax[1].plot(MCx1, '-')
-    ax[1].plot([nb,nb],[MCx1.min().min(),MCx1.max().max()],'r--', label='Burn-in period')
+    ax[1].plot(st.session_state.MCx1, '-')
+    ax[1].plot([nb,nb],[st.session_state.MCx1.min().min(),st.session_state.MCx1.max().max()],'r--', label='Burn-in period')
     ax[1].set_ylabel('Properties of each layer')
     
     # Label
