@@ -111,8 +111,8 @@ if st.button('1st click:Generate initial model plot'):
 # MCMC
 
 ## Setup
-ns = int(2e4)   # No. of iteration
-nb = int(1e4)  # burn-in point (draft)
+ns = int(1e4)   # No. of iteration
+nb = int(5e3)  # burn-in point (draft)
 cv = 0.001
 MCx1 = np.zeros([ns,nk])
 MCx2 = np.zeros([ns,nk])
