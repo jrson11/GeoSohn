@@ -10,6 +10,10 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches  
 import streamlit as st
 
+# 서브 스크립트에서 사이드바 링크 추가
+from sidebar_links import add_sidebar_links
+add_sidebar_links()
+
 # =============================================================================
 # Import raw data
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_MCMC_soil_layers/UW_PCPT_Robertson2010.csv')
