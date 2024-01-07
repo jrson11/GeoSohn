@@ -2,14 +2,16 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
+# 서브 스크립트에서 사이드바 링크 추가
+from sidebar_links import add_sidebar_links
+add_sidebar_links()
+
 def api_py_curve(depth, diameter, soil_stiffness, ultimate_stress):
     y = np.linspace(0, 0.1, 100)
     p = soil_stiffness * (depth ** 0.5) * diameter * np.tanh(ultimate_stress * y / (soil_stiffness * (depth ** 0.5) * diameter))
     return y, p
 
-# 서브 스크립트에서 사이드바 링크 추가
-from sidebar_links import add_sidebar_links
-add_sidebar_links()
+
 
 # Streamlit app
 st.title("P-Y Curve Generator for Offshore Pile Analysis")
