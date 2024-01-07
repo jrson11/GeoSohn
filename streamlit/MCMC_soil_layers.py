@@ -59,3 +59,37 @@ def FWD(zq,zi,x1,x2):
 
 xq_ini = FWD(zq,zi_ini,x1_ini,x2_ini)
 xq_obs = xq
+
+## Plot to check
+def fig_ini_UW():
+    fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=100)
+    #
+    ax[0].plot(df_Raw['UW_kNm2'],df_Raw['Depth_m'],'.', label='Raw data',alpha=0.2)  
+    ax[0].plot(xq,zq,'k--', label='Interpolated')
+    ax[0].set_title('Observed vertical profile')
+    
+    ax[1].plot(xq,zq,'k--', label='Interpolated')
+    ax[1].plot(xq_ini,zq,'r--', label='Initial guess')
+    ax[1].set_title('Initial stratigraphic model')
+    
+    # Label    
+    for i in range(2):
+        ax[i].set_xlim([xmin,xmax])
+        ax[i].set_ylim([zmax,0])
+        ax[i].set_xlabel('UW (kN/m2)')
+        ax[i].set_ylabel('Depth (m)')
+        ax[i].grid(linestyle='dotted')
+        ax[i].minorticks_on()
+        ax[i].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
+    
+    # Add patch
+    for j in range(nk):
+        width = xmax-xmin
+        height = zq[zi_ini[j+1]]-zq[zi_ini[j]]
+        ax[1].add_patch(patches.Rectangle((xmin,zq[zi_ini[j]]),width,height,color='C'+str(j),alpha=0.1))
+    
+    plt.tight_layout()
+    return fig
+
+fig=fig_ini_UW()
+st.pyplot(fig)
