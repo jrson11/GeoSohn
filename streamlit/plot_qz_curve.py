@@ -7,6 +7,10 @@ def elastic_settlement(load, area, modulus_of_elasticity, length):
     settlement = stress * length / modulus_of_elasticity
     return settlement
 
+# 서브 스크립트에서 사이드바 링크 추가
+from sidebar_links import add_sidebar_links
+add_sidebar_links()
+
 # Streamlit app
 st.title("Load-Settlement Curve Generator for Axial Pile Analysis")
 
