@@ -33,7 +33,8 @@ nq = len(zq)    # No. of interpolated points
 # Make Initial stratigraphy model
 
 ## Setup
-nk = 5  # No. of layers  
+#nk = 5  # No. of layers  
+nk = int(st.number_input("No. of soil layers", min_value=2, value=10, step=1))
 x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer 
 x2_ini = np.ones(nk)*xavg*1.05       # X value at Bottom of each layer  
 zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
