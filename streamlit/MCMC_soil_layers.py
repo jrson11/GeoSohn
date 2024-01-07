@@ -104,7 +104,7 @@ def fig_ini_UW():
     plt.tight_layout()
     return fig
 
-if st.button('1st click:Generate initial model plot'):
+if st.button('1st click: plot initial model'):
     fig=fig_ini_UW()
     st.pyplot(fig)
 
@@ -213,7 +213,7 @@ def run_MCMC():
             nreject = nreject + 1
             print('Iteration Number = '+str(j)+' -Reject: bay_alpha = '+str(round(bay_alpha,2)))
 
-if st.button('2nd click:Execute MCMC iteration'):
+if st.button('2nd click: run MCMC iteration'):
     run_MCMC()
 
 ## Plot to check
@@ -235,6 +235,6 @@ def fig_y_err():
         ax[i].minorticks_on()
     plt.tight_layout()
 
-if st.button('2nd click:Generate iteration plot'):
+if st.button('3nd click: plot convergence'):
     fig=fig_y_err()
     st.pyplot(fig)
