@@ -143,7 +143,7 @@ def lglkl(Y_obs,Y_mdl,sig):
     return logLK
 
 ## Iteration
-def run_MCMC():
+def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
     naccept = 0
     nreject = 0
     for i in range(ns-1):
@@ -228,7 +228,7 @@ def run_MCMC():
     return MCx1,MCx2,MCzi,MCzq,MCyErr
 
 if st.button('2nd click: run MCMC iteration'):
-    MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC()
+    MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr)
     st.write('MCMC completed')
 
 ## Plot to check
