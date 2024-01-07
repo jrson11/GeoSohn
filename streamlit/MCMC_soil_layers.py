@@ -1,7 +1,7 @@
 # =============================================================================
 # Name: MCMC_soil_layers.py
 # Authour: Jung.Sohn
-# Date: 05Jan24
+# Date: 07Jan24
 # All rights reserved
 # =============================================================================
 import numpy as np  
@@ -9,6 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt  
 import matplotlib.patches as patches  
 import streamlit as st
+from scipy.stats import norm
 
 # 서브 스크립트에서 사이드바 링크 추가
 from sidebar_links import add_sidebar_links
