@@ -348,7 +348,7 @@ def fig_realizations():
     plt.tight_layout()
     return fig
     
-if st.button('3nd click: plot convergence'):
+if st.button('4th click: plot realizations'):
     fig=fig_realizations()
     st.pyplot(fig)
 
@@ -385,6 +385,6 @@ def fig_hist():
     plt.tight_layout()
     return fig
 
-if st.button('3nd click: plot convergence'):
+if st.button('5th click: plot histogram'):
     fig=fig_hist()
     st.pyplot(fig)
