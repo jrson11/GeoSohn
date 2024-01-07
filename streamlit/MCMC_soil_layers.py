@@ -105,3 +105,30 @@ def fig_ini_UW():
 if st.button('Generate initial model plot'):
     fig=fig_ini_UW()
     st.pyplot(fig)
+
+
+# =============================================================================
+# MCMC
+
+## Setup
+ns = int(2e4)   # No. of iteration
+nb = int(1e4)  # burn-in point (draft)
+cv = 0.001
+MCx1 = np.zeros([ns,nk])
+MCx2 = np.zeros([ns,nk])
+MCzi = np.zeros([ns,nk+1]).astype(int)
+MCzq = np.zeros([ns,nk+1])
+MCyErr = np.zeros(ns)
+
+## Initial samples
+MCx1[0] = x1_ini
+MCx2[0] = x2_ini
+MCzi[0] = zi_ini
+MCzq[0] = zq[zi_ini]
+MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
+
+## Function
+def lglkl(Y_obs,Y_mdl,sig):
+    n = len(Y_obs)
+    logLK = -n/2*np.log(2*np.pi*sig**2) + -1/(2*sig**2)*sum((Y_obs-Y_mdl)**2)
+    return logLK
