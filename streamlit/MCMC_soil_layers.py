@@ -137,80 +137,84 @@ def lglkl(Y_obs,Y_mdl,sig):
 
 
 ## Iteration
-naccept = 0
-nreject = 0
-for i in range(ns-1):
-    j = i+1 # FYI, counting should start from 2nd idex (1)
+def run_MCMC():
+    naccept = 0
+    nreject = 0
+    for i in range(ns-1):
+        j = i+1 # FYI, counting should start from 2nd idex (1)
     
-    ## Current model
-    x1_cur = MCx1[i]
-    x2_cur = MCx2[i]
-    zi_cur = list(MCzi[i])
-    #
-    xq_cur = FWD(zq,zi_cur,x1_cur,x2_cur)
-    s_cur = np.std(xq_cur - xq_obs)
+        ## Current model
+        x1_cur = MCx1[i]
+        x2_cur = MCx2[i]
+        zi_cur = list(MCzi[i])
+        #
+        xq_cur = FWD(zq,zi_cur,x1_cur,x2_cur)
+        s_cur = np.std(xq_cur - xq_obs)
     
-    ## Propose a candidate model
-    # Take old values first
-    x1_prp = x1_cur
-    x2_prp = x2_cur
-    zi_prp = zi_cur
+        ## Propose a candidate model
+        # Take old values first
+        x1_prp = x1_cur
+        x2_prp = x2_cur
+        zi_prp = zi_cur
 
-    u = np.random.rand()
-    if u < 0.4:     # change one layer X properties
-        idx = np.random.randint(0,nk) 
-        x1_old = x1_prp[idx]
-        x1_new = np.random.normal(x1_old,cv*x1_old)
-        x2_old = x2_prp[idx]
-        x2_new = np.random.normal(x2_old,cv*x2_old)        
-        x1_prp[idx] = x1_new
-        x2_prp[idx] = x2_new
+        u = np.random.rand()
+        if u < 0.4:     # change one layer X properties
+            idx = np.random.randint(0,nk) 
+            x1_old = x1_prp[idx]
+            x1_new = np.random.normal(x1_old,cv*x1_old)
+            x2_old = x2_prp[idx]
+            x2_new = np.random.normal(x2_old,cv*x2_old)        
+            x1_prp[idx] = x1_new
+            x2_prp[idx] = x2_new
         
-    elif u < 0.8:   # change one layer Z properties   
-        zi_prp = [int(np.random.normal(loc=elem, scale=5)) for elem in zi_cur]
-        zi_prp[0] = zi_cur[0]
-        zi_prp[-1] = zi_cur[-1]
-        zi_prp = np.sort(zi_prp)
+        elif u < 0.8:   # change one layer Z properties   
+            zi_prp = [int(np.random.normal(loc=elem, scale=5)) for elem in zi_cur]
+            zi_prp[0] = zi_cur[0]
+            zi_prp[-1] = zi_cur[-1]
+            zi_prp = np.sort(zi_prp)
             
-    else:
-        x1_prp = np.random.normal(x1_cur,xavg*cv)
-        x2_prp = np.random.normal(x2_cur,xavg*cv)
+        else:    
+            x1_prp = np.random.normal(x1_cur,xavg*cv)
+            x2_prp = np.random.normal(x2_cur,xavg*cv)
         
-    xq_prp = FWD(zq,zi_prp,x1_prp,x2_prp)
-    s_prp = np.std(xq_prp - xq_obs)
+        xq_prp = FWD(zq,zi_prp,x1_prp,x2_prp)
+        s_prp = np.std(xq_prp - xq_obs)
     
-    ## Bayesian
-    ## -- Likelihood
-    log_lik_prp = lglkl(xq_prp,xq_obs,s_prp)
-    log_lik_cur = lglkl(xq_cur,xq_obs,s_cur)
-    logr_lik = log_lik_prp - log_lik_cur
+        ## Bayesian
+        ## -- Likelihood
+        log_lik_prp = lglkl(xq_prp,xq_obs,s_prp)
+        log_lik_cur = lglkl(xq_cur,xq_obs,s_cur)
+        logr_lik = log_lik_prp - log_lik_cur
     
-    ## -- Prior
-    logr_pri = 0
+        ## -- Prior
+        logr_pri = 0
     
-    ## -- Posterior
-    logr_final = logr_lik + logr_pri
-    bay_alpha = min(1,np.exp(logr_final))    
-    #bay_alpha = 0.5
+        ## -- Posterior
+        logr_final = logr_lik + logr_pri
+        bay_alpha = min(1,np.exp(logr_final))    
+        #bay_alpha = 0.5
     
-    ## MH sampling
-    u = np.random.rand()
-    if u < bay_alpha: # accept
-        MCx1[j] = x1_prp
-        MCx2[j] = x2_prp
-        MCzi[j] = zi_prp
-        MCzq[j] = zq[zi_prp]
-        MCyErr[j] = np.linalg.norm(xq_prp - xq_obs)
-        naccept = naccept + 1
-        print('Iteration Number = '+str(j)+' -Accept: bay_alpha = '+str(round(bay_alpha,2)))
-    else:   # reject
-        MCx1[j] = x1_cur
-        MCx2[j] = x2_cur
-        MCzi[j] = zi_cur
-        MCzq[j] = zq[zi_cur]
-        MCyErr[j] = np.linalg.norm(xq_cur - xq_obs)
-        nreject = nreject + 1
-        print('Iteration Number = '+str(j)+' -Reject: bay_alpha = '+str(round(bay_alpha,2)))
+        ## MH sampling
+        u = np.random.rand()
+        if u < bay_alpha: # accept
+            MCx1[j] = x1_prp
+            MCx2[j] = x2_prp
+            MCzi[j] = zi_prp
+            MCzq[j] = zq[zi_prp]
+            MCyErr[j] = np.linalg.norm(xq_prp - xq_obs)
+            naccept = naccept + 1
+            print('Iteration Number = '+str(j)+' -Accept: bay_alpha = '+str(round(bay_alpha,2)))
+        else:   # reject
+            MCx1[j] = x1_cur
+            MCx2[j] = x2_cur
+            MCzi[j] = zi_cur
+            MCzq[j] = zq[zi_cur]
+            MCyErr[j] = np.linalg.norm(xq_cur - xq_obs)
+            nreject = nreject + 1
+            print('Iteration Number = '+str(j)+' -Reject: bay_alpha = '+str(round(bay_alpha,2)))
+
+if st.button('2nd click:Execute MCMC iteration'):
+    run_MCMC()
 
 ## Plot to check
 def fig_y_err():
