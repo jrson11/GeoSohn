@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
+from sidebar_links import add_sidebar_links
 
 def api_py_curve(depth, diameter, soil_stiffness, ultimate_stress):
     y = np.linspace(0, 0.1, 100)
@@ -9,6 +10,9 @@ def api_py_curve(depth, diameter, soil_stiffness, ultimate_stress):
 
 # Streamlit app
 st.title("P-Y Curve Generator for Offshore Pile Analysis")
+
+# 서브 스크립트에서 사이드바 링크 추가
+add_sidebar_links()
 
 # User inputs
 depth = st.number_input("Embedment depth of the pile (m)", min_value=0.0, value=10.0, step=0.1)
