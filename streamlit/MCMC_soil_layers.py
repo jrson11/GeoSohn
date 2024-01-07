@@ -121,20 +121,35 @@ if st.button('1st click: plot initial model'):
 ns = int(1e4)   # No. of iteration
 nb = int(5e3)  # burn-in point (draft)
 cv = 0.001
-MCx1 = np.zeros([ns,nk])
-MCx2 = np.zeros([ns,nk])
-MCzi = np.zeros([ns,nk+1]).astype(int)
-MCzq = np.zeros([ns,nk+1])
-MCyErr = np.zeros(ns)
+
+# 세션 상태 초기화
+if 'MCx1' not in st.session_state:
+    st.session_state.MCx1 = np.zeros([ns,nk])
+    st.session_state.MCx2 = np.zeros([ns,nk])
+    st.session_state.MCzi = np.zeros([ns,nk+1]).astype(int)
+    st.session_state.MCzq = np.zeros([ns,nk+1])
+    st.session_state.MCyErr = np.zeros(ns)
+
+    st.session_state.MCx1[0] = x1_ini
+    st.session_state.MCx2[0] = x2_ini
+    st.session_state.MCzi[0] = zi_ini
+    st.session_state.MCzq[0] = zq[zi_ini]
+    st.session_state.MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
+
+#MCx1 = np.zeros([ns,nk])
+#MCx2 = np.zeros([ns,nk])
+#MCzi = np.zeros([ns,nk+1]).astype(int)
+#MCzq = np.zeros([ns,nk+1])
+#MCyErr = np.zeros(ns)
 
 st.write("No. of MCMC iteration:", ns)
 
 ## Initial samples
-MCx1[0] = x1_ini
-MCx2[0] = x2_ini
-MCzi[0] = zi_ini
-MCzq[0] = zq[zi_ini]
-MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
+#MCx1[0] = x1_ini
+#MCx2[0] = x2_ini
+#MCzi[0] = zi_ini
+#MCzq[0] = zq[zi_ini]
+#MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
 
 ## Function
 def lglkl(Y_obs,Y_mdl,sig):
@@ -228,7 +243,8 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
     return MCx1,MCx2,MCzi,MCzq,MCyErr
 
 if st.button('2nd click: run MCMC iteration'):
-    MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr)
+    #MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr)
+    st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr = run_MCMC(st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr)
     st.write('MCMC completed')
 
 ## Plot to check
