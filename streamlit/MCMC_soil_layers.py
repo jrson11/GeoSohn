@@ -14,6 +14,9 @@ import streamlit as st
 from sidebar_links import add_sidebar_links
 add_sidebar_links()
 
+# Title
+st.title("MCMC simulation for stratigraphic model of soil layers")
+
 # =============================================================================
 # Import raw data
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_MCMC_soil_layers/UW_PCPT_Robertson2010.csv')
