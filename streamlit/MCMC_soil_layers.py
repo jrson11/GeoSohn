@@ -20,6 +20,8 @@ st.title("MCMC simulation for stratigraphic model of soil layers")
 # =============================================================================
 # Import raw data
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_MCMC_soil_layers/UW_PCPT_Robertson2010.csv')
+st.write("Imported data: Unit Weight derived from in-situ CPT")
+
 cols = df_Raw.columns   # DataFrame show have two columns, i.e., Z and X
 z_header = cols[0]
 x_header = cols[1]
