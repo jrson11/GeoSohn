@@ -91,5 +91,6 @@ def fig_ini_UW():
     plt.tight_layout()
     return fig
 
-fig=fig_ini_UW()
-st.pyplot(fig)
+if st.button('Generate initial model plot'):
+    fig=fig_ini_UW()
+    st.pyplot(fig)
