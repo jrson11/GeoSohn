@@ -142,7 +142,6 @@ def lglkl(Y_obs,Y_mdl,sig):
     logLK = -n/2*np.log(2*np.pi*sig**2) + -1/(2*sig**2)*sum((Y_obs-Y_mdl)**2)
     return logLK
 
-
 ## Iteration
 def run_MCMC():
     naccept = 0
@@ -194,7 +193,12 @@ def run_MCMC():
         logr_lik = log_lik_prp - log_lik_cur
     
         ## -- Prior
-        logr_pri = 0
+        std_diff_zi_prp = np.std(np.diff(zi_prp))
+        std_diff_zi_cur = np.std(np.diff(zi_cur))
+        log_pri_prp = np.log(norm.pdf(std_diff_zi_prp, std_diff_zi_ini, 1))
+        log_pri_cur = np.log(norm.pdf(std_diff_zi_cur, std_diff_zi_ini, 1))
+        logr_pri = log_pri_prp - log_pri_cur
+        #logr_pri = 0
     
         ## -- Posterior
         logr_final = logr_lik + logr_pri
@@ -210,7 +214,7 @@ def run_MCMC():
             MCzq[j] = zq[zi_prp]
             MCyErr[j] = np.linalg.norm(xq_prp - xq_obs)
             naccept = naccept + 1
-            print('Iteration Number = '+str(j)+' -Accept: bay_alpha = '+str(round(bay_alpha,2)))
+            #print('Iteration Number = '+str(j)+' -Accept: bay_alpha = '+str(round(bay_alpha,2)))
         else:   # reject
             MCx1[j] = x1_cur
             MCx2[j] = x2_cur
@@ -218,31 +222,43 @@ def run_MCMC():
             MCzq[j] = zq[zi_cur]
             MCyErr[j] = np.linalg.norm(xq_cur - xq_obs)
             nreject = nreject + 1
-            print('Iteration Number = '+str(j)+' -Reject: bay_alpha = '+str(round(bay_alpha,2)))
-        st.write('Iteration Number = '+str(j))
+            #print('Iteration Number = '+str(j)+' -Reject: bay_alpha = '+str(round(bay_alpha,2)))
+        print('Iteration Number = '+str(j)+' / '+str(ns))
 
 if st.button('2nd click: run MCMC iteration'):
+    st.write('Starting MCMC')
     run_MCMC()
+    st.write('MCMC completed')
 
 ## Plot to check
 def fig_y_err():
     fig,ax = plt.subplots(2,1, figsize=(9,6), dpi=100)
-    #
+    
+    # 1st plot shows decreasing misfit error during MCMC iteration
     ax[0].plot(MCyErr/MCyErr[0]*100)
     ax[0].plot([nb,nb],[min(MCyErr/MCyErr[0]*100),100],'r--', label='Burn-in period')
     ax[0].set_ylabel('Misfit error (%)')
     ax[0].legend(loc=0, fancybox=True, shadow=True, fontsize=10, ncol=1)
     
+    # 2nd plot shows convergence of variable at each layer
     ax[1].plot(MCx1, '-')
     ax[1].plot([nb,nb],[MCx1.min().min(),MCx1.max().max()],'r--', label='Burn-in period')
     ax[1].set_ylabel('Properties of each layer')
     
+    # Label
     for i in range(2):
         ax[i].set_xlabel('Iterations')
         ax[i].grid(linestyle='dotted')
         ax[i].minorticks_on()
+        
+    # Finalize
     plt.tight_layout()
+    return fig
 
 if st.button('3nd click: plot convergence'):
     fig=fig_y_err()
     st.pyplot(fig)
+
+    
+# =============================================================================
+# Post-processing
