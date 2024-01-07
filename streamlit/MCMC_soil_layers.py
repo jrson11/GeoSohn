@@ -14,6 +14,26 @@ def load_data(url):
         st.error(f"데이터 로딩 중 오류 발생: {e}")
         return None
 
+## Define FWD
+def FWD(zq,zi,x1,x2):
+    zi1 = zi[0:-1]    # depth index of Top layer
+    zi2 = zi[1:]      # depth index of Bottom layer    
+    z1 = []
+    z2 = []
+    x_dummy = []
+    z_dummy = []
+    nk = len(x1)
+    for i in range(nk): # To check each layer
+        z1.append(round(zq[zi1[i]],3))
+        z2.append(round(zq[zi2[i]],3))
+        x_dummy.append(x1[i])
+        x_dummy.append(x2[i])
+        z_dummy.append(round(zq[zi1[i]],3))
+        z_dummy.append(round(zq[zi2[i]-1],3))
+    z_dummy[-1] = zq[-1]
+    yq = np.interp(zq, z_dummy, x_dummy)
+    return yq
+
 # 초기 지층 모델 생성 함수
 def create_initial_stratigraphy_model(df_Raw):
     cols = df_Raw.columns
@@ -34,16 +54,6 @@ def create_initial_stratigraphy_model(df_Raw):
     x1_ini = np.ones(nk)*xavg*0.95
     x2_ini = np.ones(nk)*xavg*1.05
     zi_ini = list(np.linspace(0, nq-1, nk+1).astype(int))
-
-    # FWD function
-    def FWD(zq, zi, x1, x2):
-        zi1 = zi[0:-1]
-        zi2 = zi[1:]
-        z_dummy = [round(zq[i], 3) for i in zi]
-        z_dummy[-1] = zq[-1]
-        x_dummy = np.ravel([[x1[i], x2[i]] for i in range(nk)])
-        yq = np.interp(zq, z_dummy, x_dummy)
-        return yq
 
     xq_ini = FWD(zq, zi_ini, x1_ini, x2_ini)
 
