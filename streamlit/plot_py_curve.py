@@ -7,12 +7,12 @@ def api_py_curve(depth, diameter, soil_stiffness, ultimate_stress):
     p = soil_stiffness * (depth ** 0.5) * diameter * np.tanh(ultimate_stress * y / (soil_stiffness * (depth ** 0.5) * diameter))
     return y, p
 
-# Streamlit app
-st.title("P-Y Curve Generator for Offshore Pile Analysis")
-
 # 서브 스크립트에서 사이드바 링크 추가
 from sidebar_links import add_sidebar_links
 add_sidebar_links()
+
+# Streamlit app
+st.title("P-Y Curve Generator for Offshore Pile Analysis")
 
 # User inputs
 depth = st.number_input("Embedment depth of the pile (m)", min_value=0.0, value=10.0, step=0.1)
