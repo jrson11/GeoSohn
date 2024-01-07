@@ -88,5 +88,5 @@ def fig_ini_UW():
     
     plt.tight_layout()
     
-fig_ini_UW()
+fig = fig_ini_UW()
 st.pyplot(fig)
