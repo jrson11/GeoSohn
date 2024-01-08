@@ -250,7 +250,7 @@ if st.button('2nd click: run MCMC iteration'):
     st.write('MCMC completed')
 
 ## Plot to check
-st.subheader(':balloon: Step 3: Check convergence')
+st.subheader(':chart_with_upwards_trend: Step 3: Check convergence')
 
 def fig_y_err():
     fig,ax = plt.subplots(2,1, figsize=(9,6), dpi=100)
