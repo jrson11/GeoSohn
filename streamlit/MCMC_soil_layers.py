@@ -16,9 +16,9 @@ from sidebar_links import add_sidebar_links
 add_sidebar_links()
 
 # Title
-st.title("Stratigraphic Soil Layer Model")
-st.header('Purpose: Uncertainty quantification')
-st.header('Method: MCMC calibration')
+st.title("Stratigraphic Soil Layer Modeling")
+st.write('Purpose: Uncertainty quantification')
+st.write('Method: MCMC calibration')
 
 # =============================================================================
 # Import raw data
