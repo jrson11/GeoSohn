@@ -54,7 +54,8 @@ st.write("Interval of depth Z:", dz)
 # Make Initial stratigraphy model
 
 ## Setup
-nk = 6  # No. of layers  
+#nk = 6  # No. of layers  
+nk = int(st.number_input("No. of soil layers", min_value=2, value=5, step=1))
 x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer 
 x2_ini = np.ones(nk)*xavg*1.05       # X value at Bottom of each layer  
 zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
@@ -126,8 +127,8 @@ if st.button('1st click: plot initial model'):
 st.subheader(':desktop_computer: Step 2: Execute MCMC simulation')
 
 ## Setup
-ns = int(1e4)   # No. of iteration
-nb = int(0.5e4)  # burn-in point (draft)
+ns = int(0.5e4)   # No. of iteration
+nb = int(0.25e4)  # burn-in point (draft)
 cv = 0.001
 st.write("No. of MCMC iteration:", ns)
 
