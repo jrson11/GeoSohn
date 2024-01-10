@@ -15,7 +15,7 @@ import streamlit as st
 
 
 # Title
-st.title("Stratigraphic Soil Layer Modeling")
+st.title("Probabilistic Stock Market Analysis")
 st.write('- Purpose: Uncertainty quantification')
 st.write('- Method: MCMC calibration')
 
