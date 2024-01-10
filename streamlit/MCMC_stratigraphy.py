@@ -46,8 +46,8 @@ xq = np.interp(zq, df_Raw[z_header], df_Raw[x_header])    # interpolated data
 nq = len(zq)    # No. of interpolated points
 
 ## Streamlit
-st.write("Average value of X"+x_header+":", xavg)
-st.write("Interval of depth Z:", dz)
+st.write("Average value of X("+x_header+"):", xavg)
+st.write("Interval of depth Z("+z_header+"):", dz)
 
 
 # =============================================================================
