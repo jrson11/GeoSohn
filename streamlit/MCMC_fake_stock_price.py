@@ -59,6 +59,7 @@ x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer
 x2_ini = np.ones(nk)*xavg*1.05       # X value at Bottom of each layer  
 zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
 std_diff_zi_ini = np.std(np.diff(zi_ini))   # To use in Bayesian prior
+zq_ini = zq[zi_ini]
 
 ## Define FWD
 def FWD(zq,zi,x1,x2):
