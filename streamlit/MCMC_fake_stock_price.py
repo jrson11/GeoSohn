@@ -403,8 +403,8 @@ def fig_hist():
     # sub column number = nk, and raw number = 2 (top and bottom)
     for i in range(nk):
         # Histogram
-        ax[0,i].hist(MCx1[nb:,i], bins=10, density=True, alpha=0.6, color='C'+str(i), edgecolor="C0", label=str(i+1)+"th layer");
-        ax[1,i].hist(MCx2[nb:,i], bins=10, density=True, alpha=0.6, color='C'+str(i), edgecolor="C0", label=str(i+1)+"th layer");
+        ax[0,i].hist(MCx1[nb:,i], bins=10, density=True, alpha=0.6, color='C'+str(i), edgecolor="C0", label=str(i+1)+"th period");
+        ax[1,i].hist(MCx2[nb:,i], bins=10, density=True, alpha=0.6, color='C'+str(i), edgecolor="C0", label=str(i+1)+"th period");
         
         # Center line
         ax[0,i].plot([x1_mean[i],x1_mean[i]],[0,4],'r--')
