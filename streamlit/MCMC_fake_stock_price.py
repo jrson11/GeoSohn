@@ -13,6 +13,9 @@ import matplotlib.patches as patches
 from scipy.stats import norm
 import streamlit as st
 
+# 서브 스크립트에서 사이드바 링크 추가
+from sidebar_links import add_sidebar_links
+add_sidebar_links()
 
 # Title
 st.title("Probabilistic Stock Market Analysis")
