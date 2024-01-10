@@ -1,5 +1,5 @@
 # =============================================================================
-# Name: MCMC_fake_stock_price.py
+# Name: MCMC_stratigraphy.py
 # Authour: Jung.Sohn
 # Date: 10Jan24
 # All rights reserved
@@ -13,20 +13,18 @@ import matplotlib.patches as patches
 from scipy.stats import norm
 import streamlit as st
 
-# 서브 스크립트에서 사이드바 링크 추가
-from sidebar_links import add_sidebar_links
-add_sidebar_links()
 
 # Title
-st.title("Stock Price Anlaysis")
+st.title("Stratigraphic Soil Layer Modeling")
 st.write('- Purpose: Uncertainty quantification')
 st.write('- Method: MCMC calibration')
 
 
 # =============================================================================
 # Import raw data
-st.subheader(':floppy_disk: Step 1: Import market data')
+st.subheader(':floppy_disk: Step 1: Import vertical soil data')
 
+#df_Raw = pd.read_csv('./inputs/UW_PCPT_Robertson2010.csv')  
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_MCMC_soil_layers/UW_PCPT_Robertson2010.csv')
 st.write('Imported data: Unit Weight derived from in-situ CPT')
 cols = df_Raw.columns   # DataFrame show have two columns, i.e., Z and X
@@ -45,8 +43,8 @@ xq = np.interp(zq, df_Raw[z_header], df_Raw[x_header])    # interpolated data
 nq = len(zq)    # No. of interpolated points
 
 ## Streamlit
-#st.write("- Average value of X:", xavg)
-#st.write("- Interval of depth Z:", dz)
+st.write("- Average value of X:", xavg)
+st.write("- Interval of depth Z:", dz)
 
 
 # =============================================================================
@@ -58,8 +56,8 @@ nk = int(st.number_input("No. of soil layers", min_value=2, value=5, step=1))
 x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer 
 x2_ini = np.ones(nk)*xavg*1.05       # X value at Bottom of each layer  
 zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
-std_diff_zi_ini = np.std(np.diff(zi_ini))   # To use in Bayesian prior
 zq_ini = zq[zi_ini]
+std_diff_zi_ini = np.std(np.diff(zi_ini))   # To use in Bayesian prior
 
 ## Define FWD
 def FWD(zq,zi,x1,x2):
@@ -85,28 +83,28 @@ xq_obs = xq
 
 ## Plot to check
 def fig_ini_UW():
-    fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=100)
+    fig,ax = plt.subplots(2,1, figsize=(9,6), dpi=100)
     
     # 1st plot shows raw data and interpolation result
     ax[0].plot(df_Raw[z_header],df_Raw[x_header],'.', label='Raw data',alpha=0.2)  
     ax[0].plot(zq,xq,'k--', label='Interpolated')
-    ax[0].set_title('Observed vertical profile')
+    ax[0].set_title('Observed time series data')
     
     # 2nd plot shows the first soil layer model as initial guess
     ax[1].plot(zq,xq,'k--', label='Interpolated')
-    ax[1].plot(zq_ini,xq,'r--', label='Initial guess')
-    ax[1].set_title('Initial stratigraphic model')
+    ax[1].plot(zq,xq_ini,'r--', label='Initial guess')
+    ax[1].set_title('Initial analysis model')
     
     # Add patch to the 2nd plot
     for j in range(nk):
-        width = xmax-xmin
-        height = zq[zi_ini[j+1]]-zq[zi_ini[j]]
-        #ax[1].add_patch(patches.Rectangle((xmin,zq[zi_ini[j]]),width,height,color='C'+str(j),alpha=0.1))
+        height = xmax-xmin
+        width = zq[zi_ini[j+1]]-zq[zi_ini[j]]
+        ax[1].add_patch(patches.Rectangle((zq_ini[j],xmin),width,height,color='C'+str(j),alpha=0.1))
         
     # Label    
     for i in range(2):
         ax[i].set_ylim([xmin,xmax])
-        ax[i].set_xlim([zmax,0])
+        ax[i].set_xlim([0,zmax])
         ax[i].set_ylabel('Price')
         ax[i].set_xlabel('Time')
         ax[i].grid(linestyle='dotted')
@@ -116,7 +114,7 @@ def fig_ini_UW():
     # Finalize
     plt.tight_layout()
     return fig
-    
+
 if st.button('1st click: plot initial model'):
     fig=fig_ini_UW()
     st.pyplot(fig)
@@ -340,11 +338,11 @@ zq_std = np.std(MCzq[nb:], axis=0)
 
 
 def fig_realizations():
-    fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=100)
+    fig,ax = plt.subplots(2,1, figsize=(9,6), dpi=100)
     
     # 1st plot shows vertical realizations
-    ax[0].plot(df_Raw[x_header],df_Raw[z_header],'.', label='Raw data',alpha=0.2)  
-    ax[0].plot(xq_ini,zq,'r--', label='Initial guess')
+    ax[0].plot(df_Raw[z_header],df_Raw[x_header],'.', label='Raw data',alpha=0.2)  
+    ax[0].plot(zq,xq_ini,'r--', label='Initial guess')
     ax[0].set_title('Estimated stratigraphic model')
     
     # Plot realizations in the 1st plot
@@ -353,35 +351,35 @@ def fig_realizations():
         x2_temp = MCx2[nb,:]
         zi_temp = MCzi[nb,:]
         xq_temp = FWD(zq,zi_temp,x1_temp,x2_temp)
-        ax[0].plot(xq_temp,zq,color='y',alpha=0.1,linewidth=5)
-    ax[0].plot(xq_temp,zq,color='y',label='Realizations',alpha=0.1)
-    ax[0].plot(xq_mean,zq,'k-', label='Final estimation')
+        ax[0].plot(zq,xq_temp,color='y',alpha=0.1,linewidth=5)
+    ax[0].plot(zq,xq_temp,color='y',label='Realizations',alpha=0.1)
+    ax[0].plot(zq,xq_mean,'k-', label='Final estimation')
     ax[0].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
     
     # Label of 1st plot
-    ax[0].set_xlabel(x_header)
-    ax[0].set_ylabel(z_header)
-    ax[0].set_xlim([xmin,xmax])
-    ax[0].set_ylim([zmax,0])    
-    
-    # Add patch in the 1st plot
+    ax[0].set_xlabel('Time')
+    ax[0].set_ylabel('Price')
+    ax[0].set_ylim([xmin,xmax])
+    ax[0].set_xlim([0,zmax])    
+           
+    # Add patch to the 1nd plot
     for j in range(nk):
-        width = xmax-xmin
-        height = zq[zi_mean[j+1]]-zq[zi_mean[j]]
-        ax[0].add_patch(patches.Rectangle((xmin,zq[zi_mean[j]]),width,height,color='C'+str(j),alpha=0.1))
+        height = xmax-xmin
+        width = zq[zi_mean[j+1]]-zq[zi_mean[j]]
+        ax[0].add_patch(patches.Rectangle((zq_mean[j],xmin),width,height,color='C'+str(j),alpha=0.1))        
     
     # 2nd plot shows histogram in vertical direction
     for j in range(nk-1):
-        ax[1].hist(MCzq[nb:,j+1], bins=5, density=True, orientation='horizontal',alpha=0.6, color='C'+str(j+1), edgecolor='k', label="layer "+str(j+2));
-        ax[1].text(1,zq_mean[j+1],'mean = '+str(round(zq_mean[j+1],2)))
-        ax[1].text(2.2,zq_mean[j+1],'std = '+str(round(zq_std[j+1],2)))
+        ax[1].hist(MCzq[nb:,j+1], bins=5, density=True, orientation='vertical',alpha=0.6, color='C'+str(j+1), edgecolor='k', label="layer "+str(j+2));
+        ax[1].text(zq_mean[j+1],3,'mean = '+str(round(zq_mean[j+1],2)))
+        ax[1].text(zq_mean[j+1],2.5,'std = '+str(round(zq_std[j+1],2)))
     
     # Label of 2nd plot
-    ax[1].set_xlabel('Probability Density')
-    ax[1].set_ylabel(z_header)
+    ax[1].set_ylabel('Probability Density')
+    ax[1].set_xlabel('Time')
     ax[1].set_title('Histograms of layer depths')
-    ax[1].set_ylim([zmax,0])
-    ax[1].set_xlim([0,4])
+    ax[1].set_xlim([0,zmax])
+    ax[1].set_ylim([0,4])
     ax[1].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
     
     # Label 1st and 2nd plots
