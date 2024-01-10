@@ -55,7 +55,7 @@ st.write("- Interval of depth Z:", dz)
 
 ## Setup
 #nk = 6  # No. of layers  
-nk = int(st.number_input("No. of soil layers", min_value=2, value=5, step=1))
+nk = int(st.number_input("No. of time periods", min_value=2, value=5, step=1))
 x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer 
 x2_ini = np.ones(nk)*xavg*1.05       # X value at Bottom of each layer  
 zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
