@@ -19,8 +19,8 @@ add_sidebar_links()
 
 # Title
 st.title("Stratigraphic Soil Layer Modeling")
-st.write('Purpose: Uncertainty quantification')
-st.write('Method: MCMC calibration')
+st.write('- Purpose: Uncertainty quantification')
+st.write('- Method: MCMC calibration based on Bayesian method')
 
 
 # =============================================================================
@@ -46,8 +46,8 @@ xq = np.interp(zq, df_Raw[z_header], df_Raw[x_header])    # interpolated data
 nq = len(zq)    # No. of interpolated points
 
 ## Streamlit
-st.write("Average value of X("+x_header+"):", xavg)
-st.write("Interval of depth Z("+z_header+"):", dz)
+st.write("- Average value of X("+x_header+"):", xavg)
+st.write("- Interval of depth Z("+z_header+"):", dz)
 
 
 # =============================================================================
@@ -130,7 +130,7 @@ st.subheader(':desktop_computer: Step 2: Execute MCMC simulation')
 ns = int(0.5e4)   # No. of iteration
 nb = int(0.25e4)  # burn-in point (draft)
 cv = 0.001
-st.write("No. of MCMC iteration:", ns)
+st.write("- No. of MCMC iteration:", ns)
 
 ## Memory allocation
 MCx1 = np.zeros([ns,nk])
