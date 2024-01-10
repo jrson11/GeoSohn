@@ -393,11 +393,11 @@ def fig_realizations():
     plt.tight_layout()
     return fig
 
+st.write("- Visualization")
 
 if st.button('4th click: plot realizations'):
     fig=fig_realizations()
     st.pyplot(fig)
-
 
 def fig_hist():
     fig,ax = plt.subplots(2,nk, figsize=(9,6), dpi=100)
@@ -430,6 +430,8 @@ def fig_hist():
         
     plt.tight_layout()
     return fig
+
+st.write("- Statistical analysis")
 
 if st.button('5th click: plot histogram'):
     fig=fig_hist()
