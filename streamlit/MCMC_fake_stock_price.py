@@ -101,14 +101,14 @@ def fig_ini_UW():
     for j in range(nk):
         width = xmax-xmin
         height = zq[zi_ini[j+1]]-zq[zi_ini[j]]
-        ax[1].add_patch(patches.Rectangle((xmin,zq[zi_ini[j]]),width,height,color='C'+str(j),alpha=0.1))
+        #ax[1].add_patch(patches.Rectangle((xmin,zq[zi_ini[j]]),width,height,color='C'+str(j),alpha=0.1))
         
     # Label    
     for i in range(2):
         ax[i].set_ylim([xmin,xmax])
         ax[i].set_xlim([zmax,0])
-        ax[i].set_ylabel(x_header)
-        ax[i].set_xlabel(z_header)
+        ax[i].set_ylabel('Price')
+        ax[i].set_xlabel('Time')
         ax[i].grid(linestyle='dotted')
         ax[i].minorticks_on()
         ax[i].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
