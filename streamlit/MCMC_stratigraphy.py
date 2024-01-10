@@ -256,6 +256,9 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
 
 MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr)
 
+if st.button('2st click: result of MCMC'):
+    st.dataframe(MCx1)
+    
 ## Plot to check
 st.subheader(':chart_with_upwards_trend: Step 3: Check convergence')
 
