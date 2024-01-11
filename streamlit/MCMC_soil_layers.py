@@ -140,20 +140,7 @@ if 'MCx1' not in st.session_state:
     st.session_state.MCzq[0] = zq[zi_ini]
     st.session_state.MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
 
-#MCx1 = np.zeros([ns,nk])
-#MCx2 = np.zeros([ns,nk])
-#MCzi = np.zeros([ns,nk+1]).astype(int)
-#MCzq = np.zeros([ns,nk+1])
-#MCyErr = np.zeros(ns)
-
 st.write("No. of MCMC iteration:", ns)
-
-## Initial samples
-#MCx1[0] = x1_ini
-#MCx2[0] = x2_ini
-#MCzi[0] = zi_ini
-#MCzq[0] = zq[zi_ini]
-#MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
 
 ## Function
 def lglkl(Y_obs,Y_mdl,sig):
@@ -166,7 +153,7 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
     naccept = 0
     nreject = 0
     for i in range(ns-1):
-        j = i+1 # FYI, counting should start from 2nd idex (1)
+        j = i+1 # FYI, counting should start from 2nd index (1)
     
         ## Current model
         x1_cur = MCx1[i]
