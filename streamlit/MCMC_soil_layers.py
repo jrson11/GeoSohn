@@ -294,7 +294,7 @@ if st.button('3nd click: plot convergence'):
     
 # =============================================================================
 # Post-processing
-st.subheader(':bar_chart: Step 4: Check results')
+st.subheader(':bar_chart: Step 4: Plot the results')
 
 ## Average after burn-in point
 x1_mean = np.mean(st.session_state.MCx1[nb:], axis=0)
