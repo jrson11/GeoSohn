@@ -11,9 +11,14 @@ import matplotlib.patches as patches
 import streamlit as st
 from scipy.stats import norm
 
-# 문제점:
+# 문제점: --> 해결완료 10Jan24
 # nk 값이 바뀔 때 플로팅에서 업데이트가 안됨.
 # 코드 자체의 문제가 아니라 Streamlit 에 적용시킬때의 문제
+
+# 서브 스크립트에서 사이드바 링크 추가
+from sidebar_links import add_sidebar_links
+add_sidebar_links()
+
 
 # Title
 st.title("Stratigraphic Soil Layer Modeling")
