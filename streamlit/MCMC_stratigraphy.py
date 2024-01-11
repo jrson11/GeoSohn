@@ -22,9 +22,10 @@ from sidebar_links import add_sidebar_links
 add_sidebar_links()
 
 # Title
-st.title("Stratigraphic Soil Layer Modeling")
+st.title("Stratigraphic Soil Layer Modeling (Not Ready)")
 st.write('- Purpose: Uncertainty quantification')
 st.write('- Method: MCMC calibration based on Bayesian method')
+st.write('- Because this runs MCMC everytime when I click any buttons below')
 
 
 # =============================================================================
@@ -131,10 +132,8 @@ if st.button('1st click: plot initial model'):
 st.subheader(':desktop_computer: Step 2: Execute MCMC simulation')
 
 ## Setup
-#ns = int(0.5e4)   # No. of iteration
-#nb = int(0.25e4)  # burn-in point (draft)
-ns = int(st.number_input("No. of iterations", min_value=1000, value=5000, step=1000))
-nb = int(ns/2)  # burn-in point (draft)
+ns = int(0.5e4)   # No. of iteration
+nb = int(0.25e4)  # burn-in point (draft)
 cv = 0.001
 st.write("- No. of MCMC iteration:", ns)
 
