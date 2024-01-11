@@ -143,7 +143,6 @@ def memory_MCMC(ns,nk,x1_ini,x2_ini,zi_ini,zq_ini):
 
     return st.session_state.MCx1,st.session_state.MCx2,st.session_state.MCzi,st.session_state.MCzq,st.session_state.MCyErr
 
-'''
 if 'MCx1' not in st.session_state:
     st.session_state.MCx1 = np.zeros([ns,nk])
     st.session_state.MCx2 = np.zeros([ns,nk])
@@ -156,7 +155,6 @@ if 'MCx1' not in st.session_state:
     st.session_state.MCzi[0] = zi_ini
     st.session_state.MCzq[0] = zq[zi_ini]
     st.session_state.MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
-'''
 st.write("No. of MCMC iteration:", ns)
 
 ## Function
