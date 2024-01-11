@@ -363,12 +363,13 @@ def fig_realizations():
     # Finalize
     plt.tight_layout()
     return fig
-    
+
+st.write("- Visualization")
+
 if st.button('4th click: plot realizations'):
     fig=fig_realizations()
     st.pyplot(fig)
 
-st.write("- Visualization")
 
 def fig_hist():
     fig,ax = plt.subplots(2,nk, figsize=(9,6), dpi=100)
