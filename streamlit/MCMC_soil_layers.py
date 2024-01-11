@@ -252,7 +252,7 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
 
 if st.button('2nd click: run MCMC iteration'):
     #MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr)
-    st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr = memory_MCMC(ns,nk,x1_ini,x2_ini,zi_ini,zq_ini):
+    st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr = memory_MCMC(ns,nk,x1_ini,x2_ini,zi_ini,zq_ini)
     st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr = run_MCMC(st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr)
     st.write('MCMC completed')
 
