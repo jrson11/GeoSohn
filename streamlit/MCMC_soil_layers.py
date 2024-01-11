@@ -54,6 +54,7 @@ nk = int(st.number_input("No. of soil layers", min_value=2, value=5, step=1))
 x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer 
 x2_ini = np.ones(nk)*xavg*1.05       # X value at Bottom of each layer  
 zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
+zq_ini = zq[zi_ini]
 std_diff_zi_ini = np.std(np.diff(zi_ini))   # To use in Bayesian prior
 
 ## Define FWD
@@ -127,6 +128,22 @@ nb = int(0.25e4)  # burn-in point (draft)
 cv = 0.001
 
 # 세션 상태 초기화
+def memory_MCMC(ns,nk,x1_ini,x2_ini,zi_ini,zq_ini):
+    st.session_state.MCx1 = np.zeros([ns,nk])
+    st.session_state.MCx2 = np.zeros([ns,nk])
+    st.session_state.MCzi = np.zeros([ns,nk+1]).astype(int)
+    st.session_state.MCzq = np.zeros([ns,nk+1])
+    st.session_state.MCyErr = np.zeros(ns)
+
+    st.session_state.MCx1[0] = x1_ini
+    st.session_state.MCx2[0] = x2_ini
+    st.session_state.MCzi[0] = zi_ini
+    st.session_state.MCzq[0] = zq_ini
+    st.session_state.MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
+
+    return st.session_state.MCx1,st.session_state.MCx2,st.session_state.MCzi,st.session_state.MCzq,st.session_state.MCyErr
+
+'''
 if 'MCx1' not in st.session_state:
     st.session_state.MCx1 = np.zeros([ns,nk])
     st.session_state.MCx2 = np.zeros([ns,nk])
@@ -139,7 +156,7 @@ if 'MCx1' not in st.session_state:
     st.session_state.MCzi[0] = zi_ini
     st.session_state.MCzq[0] = zq[zi_ini]
     st.session_state.MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
-
+'''
 st.write("No. of MCMC iteration:", ns)
 
 ## Function
@@ -235,6 +252,7 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
 
 if st.button('2nd click: run MCMC iteration'):
     #MCx1,MCx2,MCzi,MCzq,MCyErr = run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr)
+    st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr = memory_MCMC(ns,nk,x1_ini,x2_ini,zi_ini,zq_ini):
     st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr = run_MCMC(st.session_state.MCx1, st.session_state.MCx2, st.session_state.MCzi, st.session_state.MCzq, st.session_state.MCyErr)
     st.write('MCMC completed')
 
