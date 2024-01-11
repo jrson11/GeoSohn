@@ -222,8 +222,8 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
         ## -- Prior
         std_diff_zi_prp = np.std(np.diff(zi_prp))
         std_diff_zi_cur = np.std(np.diff(zi_cur))
-        log_pri_prp = np.log(norm.pdf(std_diff_zi_prp, std_diff_zi_ini, 1))
-        log_pri_cur = np.log(norm.pdf(std_diff_zi_cur, std_diff_zi_ini, 1))
+        log_pri_prp = np.log(norm.pdf(std_diff_zi_prp, std_diff_zi_ini, 5))
+        log_pri_cur = np.log(norm.pdf(std_diff_zi_cur, std_diff_zi_ini, 5))
         logr_pri = log_pri_prp - log_pri_cur
         #logr_pri = 0       
         
