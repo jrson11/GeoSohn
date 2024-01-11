@@ -22,8 +22,8 @@ add_sidebar_links()
 
 # Title
 st.title("Stratigraphic Soil Layer Modeling")
-st.write('Purpose: Uncertainty quantification')
-st.write('Method: MCMC calibration')
+st.write('- Purpose: Uncertainty quantification')
+st.write('- Method: MCMC calibration')
 
 # =============================================================================
 # Import raw data
@@ -47,8 +47,8 @@ xq = np.interp(zq, df_Raw[z_header], df_Raw[x_header])    # interpolated data
 nq = len(zq)    # No. of interpolated points
 
 ## Streamlit
-st.write("Average value of X:", xavg)
-st.write("Interval of depth Z:", dz)
+st.write("- Average value of X:", xavg)
+st.write("- Interval of depth Z:", dz)
 
 # =============================================================================
 # Make Initial stratigraphy model
@@ -367,6 +367,7 @@ if st.button('4th click: plot realizations'):
     fig=fig_realizations()
     st.pyplot(fig)
 
+st.write("- Visualization")
 
 def fig_hist():
     fig,ax = plt.subplots(2,nk, figsize=(9,6), dpi=100)
@@ -399,6 +400,8 @@ def fig_hist():
         
     plt.tight_layout()
     return fig
+
+st.write("- Statistical analysis")
 
 if st.button('5th click: plot histogram'):
     fig=fig_hist()
