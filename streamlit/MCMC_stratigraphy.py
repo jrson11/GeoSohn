@@ -13,6 +13,10 @@ import matplotlib.patches as patches
 from scipy.stats import norm
 import streamlit as st
 
+# 문제점(10Jan24)
+# 코드가 쉽긴 하지만 streamlit 버튼을 클릭할때마다 MCMC가 돌아서 느림
+# MCMC_soil_layers.py 코드에서 그 문제점을 해결했음
+
 # 서브 스크립트에서 사이드바 링크 추가
 from sidebar_links import add_sidebar_links
 add_sidebar_links()
