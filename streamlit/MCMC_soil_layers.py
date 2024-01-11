@@ -161,7 +161,7 @@ if 'MCx1' not in st.session_state:
     st.session_state.MCzi[0] = zi_ini
     st.session_state.MCzq[0] = zq[zi_ini]
     st.session_state.MCyErr[0] = np.linalg.norm(xq_ini - xq_obs)
-st.write("No. of MCMC iteration:", ns)
+#st.write("No. of MCMC iteration:", ns)
 
 ## Function
 def lglkl(Y_obs,Y_mdl,sig):
