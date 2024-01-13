@@ -5,3 +5,5 @@ openpyxl
 matplotlib
 altair
 scipy
+geopandas
+folium
