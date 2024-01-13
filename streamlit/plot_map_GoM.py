@@ -33,11 +33,8 @@ def main():
 
 
     # Button to show the Wikipedia link
-    if st.button('Keathley Canyon'):
-        st.markdown('<a href="https://en.wikipedia.org/wiki/Kaskida_Oil_Field" target="_blank">Learn more about Keathley Canyon</a>', unsafe_allow_html=True)
-
-    if st.button('Mississippi Canyon'):
-        st.markdown('<a href="https://en.wikipedia.org/wiki/Mississippi_Canyon" target="_blank">Learn more about Mississippi Canyon</a>', unsafe_allow_html=True)
+    st.markdown('<a href="https://en.wikipedia.org/wiki/Kaskida_Oil_Field" target="_blank">Wiki: Kaskida Oil Field</a>', unsafe_allow_html=True)
+    st.markdown('<a href="https://en.wikipedia.org/wiki/Mississippi_Canyon" target="_blank">Wiki: Mississippi Canyon</a>', unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
