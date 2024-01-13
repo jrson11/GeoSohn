@@ -4,12 +4,17 @@ import folium
 from folium.plugins import MarkerCluster
 from streamlit_folium import folium_static
 import pandas as pd
+import requests
+from io import StringIO
 
-# 데이터 불러오기
+# GitHub에서 데이터 불러오기
 @st.cache
 def load_data():
-    df = pd.read_csv('/path/to/your/file.csv', header=3)  # 파일 경로 수정 필요
-    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df['Easting'], df['Northing']))
+    url = 'https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_CPTs_Fugro_TNW/TNW_20200508_FNLM_AGS4.0_V02_F-LOCA.csv'
+    download = requests.get(url).text
+    csv_raw = StringIO(download)
+    df = pd.read_csv(csv_raw, header=3)
+    gdf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.iloc[:, 4], df.iloc[:, 5]))
     return gdf
 
 gdf = load_data()
@@ -23,7 +28,7 @@ m = folium.Map(location=[52.3676, 4.9041], zoom_start=7)  # 네덜란드의 암�
 # 마커 클러스터 추가
 marker_cluster = MarkerCluster().add_to(m)
 for idx, row in gdf.iterrows():
-    folium.Marker([row['geometry'].y, row['geometry'].x], popup=row['SomeDataColumn']).add_to(marker_cluster)
+    folium.Marker([row['geometry'].y, row['geometry'].x], popup=str(row['geometry'])).add_to(marker_cluster)
 
 # Streamlit에 지도 표시
 folium_static(m)
