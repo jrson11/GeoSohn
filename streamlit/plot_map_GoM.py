@@ -32,8 +32,13 @@ def main():
     folium_static(map_object)
 
 
-    # Add a button/link to Wikipedia
-    st.markdown('<a href="https://en.wikipedia.org/wiki/Kaskida_Oil_Field" target="_blank">More Information about Keathley Canyon Block 293 (Kaskida Oil Field) on Wikipedia</a>', unsafe_allow_html=True)
+    # Button to show the Wikipedia link
+    if st.button('Keathley Canyon'):
+        st.markdown('<a href="https://en.wikipedia.org/wiki/Kaskida_Oil_Field" target="_blank">Learn more about Keathley Canyon</a>', unsafe_allow_html=True)
+
+    if st.button('Mississippi Canyon'):
+        st.markdown('<a href="https://en.wikipedia.org/wiki/Mississippi_Canyon" target="_blank">Learn more about Mississippi Canyon</a>', unsafe_allow_html=True)
+
 
 if __name__ == "__main__":
     main()
