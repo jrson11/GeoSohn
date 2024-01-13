@@ -1,6 +1,6 @@
 # =============================================================================
 # Name: MCMC_soil_layers.py
-# Authour: Jung.Sohn
+# Authour: Jungrak.S
 # Date: 07Jan24
 # All rights reserved
 # =============================================================================
@@ -19,14 +19,13 @@ from scipy.stats import norm
 from sidebar_links import add_sidebar_links
 add_sidebar_links()
 
-
-# Title
+# 제목
 st.title("Stratigraphic Soil Layer Modeling")
 st.write('- Purpose: Uncertainty quantification')
 st.write('- Method: MCMC calibration')
 
 # =============================================================================
-# Import raw data
+# 원시 데이터 가져오기
 st.subheader(':floppy_disk: Step 1: Import vertical soil data')
 
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_MCMC_soil_layers/UW_PCPT_Robertson2010.csv')
@@ -40,7 +39,7 @@ xavg = round(np.mean(df_Raw[x_header]))
 xmin = round(min(df_Raw[x_header])*0.9)  
 xmax = round(max(df_Raw[x_header])*1.1)  
 
-## Interporation
+## 인터폴레이션
 dz = 0.2  # interval of depth  
 zq = np.arange(dz,zmax,dz)    # interpolated depth 
 xq = np.interp(zq, df_Raw[z_header], df_Raw[x_header])    # interpolated data  
@@ -51,9 +50,9 @@ st.write("- Average value of X:", xavg)
 st.write("- Interval of depth Z:", dz)
 
 # =============================================================================
-# Make Initial stratigraphy model
+# 초기 지층 모델 만들기
 
-## Setup
+## 설정
 #nk = 5  # No. of layers  
 nk = int(st.number_input("No. of soil layers", min_value=2, value=5, step=1))
 x1_ini = np.ones(nk)*xavg*0.95       # X value at Top of each layer 
@@ -62,7 +61,7 @@ zi_ini = list(np.linspace(0,nq-1,nk+1).astype(int))     # depth index
 zq_ini = zq[zi_ini]
 std_diff_zi_ini = np.std(np.diff(zi_ini))   # To use in Bayesian prior
 
-## Define FWD
+## FWD 모델 정의의
 def FWD(zq,zi,x1,x2):
     zi1 = zi[0:-1]    # depth index of Top layer
     zi2 = zi[1:]      # depth index of Bottom layer    
@@ -88,23 +87,23 @@ xq_obs = xq
 def fig_ini_UW():
     fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=100)
     
-    # 1st plot shows raw data and interpolation result
+    # 첫 번째 플롯은 원시 데이터와 보간 결과를 보여줌
     ax[0].plot(df_Raw[x_header],df_Raw[z_header],'.', label='Raw data',alpha=0.2)  
     ax[0].plot(xq,zq,'k--', label='Interpolated')
     ax[0].set_title('Observed vertical profile')
     
-    # 2nd plot shows the first soil layer model as initial guess
+    # 두 번째 플롯은 초기 추측으로서 첫 번째 토양층 모델을 보여줌
     ax[1].plot(xq,zq,'k--', label='Interpolated')
     ax[1].plot(xq_ini,zq,'r--', label='Initial guess')
     ax[1].set_title('Initial stratigraphic model')
     
-    # Add patch to the 2nd plot
+    # 두 번째 플롯에 패치 추가
     for j in range(nk):
         width = xmax-xmin
         height = zq[zi_ini[j+1]]-zq[zi_ini[j]]
         ax[1].add_patch(patches.Rectangle((xmin,zq[zi_ini[j]]),width,height,color='C'+str(j),alpha=0.1))
         
-    # Label    
+    # 라벨
     for i in range(2):
         ax[i].set_xlim([xmin,xmax])
         ax[i].set_ylim([zmax,0])
@@ -114,7 +113,7 @@ def fig_ini_UW():
         ax[i].minorticks_on()
         ax[i].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
     
-    # Finalize
+    # 완성
     plt.tight_layout()
     return fig
 
