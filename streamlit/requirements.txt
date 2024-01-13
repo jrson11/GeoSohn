@@ -7,3 +7,4 @@ altair
 scipy
 geopandas
 folium
+streamlit_folium
