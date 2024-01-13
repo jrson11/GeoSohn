@@ -7,6 +7,9 @@ def create_map():
     # Latitude and longitude coordinates for the center of the Gulf of Mexico
     gulf_of_mexico_coords = [25.8419, -90.4184]
 
+    # Create a Folium map centered on the Gulf of Mexico
+    folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=6)
+    
     '''
     # Coordinates for Keathley Canyon Block 293 (example coordinates, replace with actual ones)
     keathley_coords = [26.935, -91.401]  # Replace with actual coordinates
@@ -15,8 +18,7 @@ def create_map():
     # Coordinates for Green Canyon Block 825
     green_canyon_coords = [27.5, -90.5]  # Replace with actual coordinates
 
-    # Create a Folium map centered on the Gulf of Mexico
-    folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=6)
+
 
     # Add a marker for Keathley Canyon Block 293
     folium.Marker(keathley_coords, popup='Keathley Canyon Block 293').add_to(folium_map)
