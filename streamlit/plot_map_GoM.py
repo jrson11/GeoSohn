@@ -31,5 +31,9 @@ def main():
     # Display the map in the Streamlit app
     folium_static(map_object)
 
+
+    # Add a button/link to Wikipedia
+    st.markdown('<a href="https://en.wikipedia.org/wiki/Kaskida_Oil_Field" target="_blank">More Information about Keathley Canyon Block 293 (Kaskida Oil Field) on Wikipedia</a>', unsafe_allow_html=True)
+
 if __name__ == "__main__":
     main()
