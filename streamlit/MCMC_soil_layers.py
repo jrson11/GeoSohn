@@ -126,7 +126,7 @@ if st.button('1st click: plot initial model'):
 # MCMC
 st.subheader(':desktop_computer: Step 2: Execute MCMC simulation')
 
-## Setup
+## 설정정
 #ns = int(0.5e4)   # No. of iteration
 ns = int(st.number_input("No. of iterations", min_value=1000, value=5000, step=1000))
 nb = int(ns/2)  # burn-in point (draft)
@@ -168,14 +168,14 @@ def lglkl(Y_obs,Y_mdl,sig):
     logLK = -n/2*np.log(2*np.pi*sig**2) + -1/(2*sig**2)*sum((Y_obs-Y_mdl)**2)
     return logLK
 
-## Iteration
+## 이터레이션션
 def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
     naccept = 0
     nreject = 0
     for i in range(ns-1):
         j = i+1 # FYI, counting should start from 2nd index (1)
     
-        ## Current model
+        ## 현재 모델
         x1_cur = MCx1[i]
         x2_cur = MCx2[i]
         zi_cur = list(MCzi[i])
@@ -183,7 +183,7 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
         xq_cur = FWD(zq,zi_cur,x1_cur,x2_cur)
         s_cur = np.std(xq_cur - xq_obs)
     
-        ## Propose a candidate model
+        ## 켄디데이트 모델델 제안
         # Take old values first
         x1_prp = x1_cur
         x2_prp = x2_cur
@@ -212,13 +212,13 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
         xq_prp = FWD(zq,zi_prp,x1_prp,x2_prp)
         s_prp = np.std(xq_prp - xq_obs)
     
-        ## Bayesian
-        ## -- Likelihood
+        ## 베이지안
+        ## -- 라이클리후드
         log_lik_prp = lglkl(xq_prp,xq_obs,s_prp)
         log_lik_cur = lglkl(xq_cur,xq_obs,s_cur)
         logr_lik = log_lik_prp - log_lik_cur
     
-        ## -- Prior
+        ## -- 프라이어
         std_diff_zi_prp = np.std(np.diff(zi_prp))
         std_diff_zi_cur = np.std(np.diff(zi_cur))
         log_pri_prp = np.log(norm.pdf(std_diff_zi_prp, std_diff_zi_ini, 5))
@@ -226,12 +226,12 @@ def run_MCMC(MCx1,MCx2,MCzi,MCzq,MCyErr):
         logr_pri = log_pri_prp - log_pri_cur
         #logr_pri = 0
     
-        ## -- Posterior
+        ## -- 포스테리어
         logr_final = logr_lik + logr_pri
         bay_alpha = min(1,np.exp(logr_final))    
         #bay_alpha = 0.5
     
-        ## MH sampling
+        ## MH 샘플링
         u = np.random.rand()
         if u < bay_alpha: # accept
             MCx1[j] = x1_prp
@@ -265,24 +265,24 @@ st.subheader(':chart_with_upwards_trend: Step 3: Check convergence')
 def fig_y_err():
     fig,ax = plt.subplots(2,1, figsize=(9,6), dpi=100)
     
-    # 1st plot shows decreasing misfit error during MCMC iteration
+    # 첫번째 플롯은 MCMC 도중에 점차 작아지는 에러값을 나타냄
     ax[0].plot(st.session_state.MCyErr/st.session_state.MCyErr[0]*100)
     ax[0].plot([nb,nb],[min(st.session_state.MCyErr/st.session_state.MCyErr[0]*100),100],'r--', label='Burn-in period')
     ax[0].set_ylabel('Misfit error (%)')
     ax[0].legend(loc=0, fancybox=True, shadow=True, fontsize=10, ncol=1)
     
-    # 2nd plot shows convergence of variable at each layer
+    # 두번째 플롯은 각 레이어들의 값이 수렴함을 보여줌
     ax[1].plot(st.session_state.MCx1, '-')
     ax[1].plot([nb,nb],[st.session_state.MCx1.min().min(),st.session_state.MCx1.max().max()],'r--', label='Burn-in period')
     ax[1].set_ylabel('Properties of each layer')
     
-    # Label
+    # 라벨
     for i in range(2):
         ax[i].set_xlabel('Iterations')
         ax[i].grid(linestyle='dotted')
         ax[i].minorticks_on()
         
-    # Finalize
+    # 완성
     plt.tight_layout()
     return fig
 
@@ -292,17 +292,17 @@ if st.button('3nd click: plot convergence'):
 
     
 # =============================================================================
-# Post-processing
+# Post 프로세싱
 st.subheader(':bar_chart: Step 4: Plot the results')
 
-## Average after burn-in point
+## 번인포인트 이후값의 평균값
 x1_mean = np.mean(st.session_state.MCx1[nb:], axis=0)
 x2_mean = np.mean(st.session_state.MCx2[nb:], axis=0)
 zi_mean = np.mean(st.session_state.MCzi[nb:], axis=0).astype(int)
 zq_mean = np.mean(st.session_state.MCzq[nb:], axis=0)
 xq_mean = FWD(zq,zi_mean,x1_mean,x2_mean)
 
-## Std after burn-in point
+## 번인포인트 이후값의 표준편차
 x1_std = np.std(st.session_state.MCx1[nb:], axis=0)
 x2_std = np.std(st.session_state.MCx2[nb:], axis=0)
 zi_std = np.std(st.session_state.MCzi[nb:], axis=0)
@@ -312,12 +312,12 @@ zq_std = np.std(st.session_state.MCzq[nb:], axis=0)
 def fig_realizations():
     fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=100)
     
-    # 1st plot shows vertical realizations
+    # 첫 플로팅에 기존 값 그림림
     ax[0].plot(df_Raw[x_header],df_Raw[z_header],'.', label='Raw data',alpha=0.2)  
     ax[0].plot(xq_ini,zq,'r--', label='Initial guess')
     ax[0].set_title('Estimated stratigraphic model')
     
-    # Plot realizations in the 1st plot
+    # 첫 플로팅에 리얼라이제이션 그림
     for i in np.arange(nb,ns,50):
         x1_temp = st.session_state.MCx1[nb,:]
         x2_temp = st.session_state.MCx2[nb,:]
@@ -328,19 +328,19 @@ def fig_realizations():
     ax[0].plot(xq_mean,zq,'k-', label='Final estimation')
     ax[0].legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
     
-    # Label of 1st plot
+    # 첫 플로팅의 라벨
     ax[0].set_xlabel(x_header)
     ax[0].set_ylabel(z_header)
     ax[0].set_xlim([xmin,xmax])
     ax[0].set_ylim([zmax,0])    
     
-    # Add patch in the 1st plot
+    # 첫 플로팅에 블록패치 형성
     for j in range(nk):
         width = xmax-xmin
         height = zq[zi_mean[j+1]]-zq[zi_mean[j]]
         ax[0].add_patch(patches.Rectangle((xmin,zq[zi_mean[j]]),width,height,color='C'+str(j),alpha=0.1))
     
-    # 2nd plot shows histogram in vertical direction
+    # 두번째 플롯은 깊이값의 히스토그램
     for j in range(nk-1):
         ax[1].hist(st.session_state.MCzq[nb:,j+1], bins=5, density=True, orientation='horizontal',alpha=0.6, color='C'+str(j+1), edgecolor='k', label="layer "+str(j+2));
         ax[1].text(1,zq_mean[j+1],'mean = '+str(round(zq_mean[j+1],2)))
