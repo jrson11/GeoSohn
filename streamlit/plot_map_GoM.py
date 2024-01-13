@@ -1,5 +1,6 @@
 import streamlit as st
 import folium
+from folium.plugins import TileLayer
 from streamlit_folium import folium_static
 
 # Function to create the Folium map
