@@ -2,7 +2,7 @@ import streamlit as st
 import folium
 from streamlit_folium import folium_static
 
-# Function to create the Folium map with bathymetric data
+# Function to create the Folium map with a bathymetric layer
 def create_map():
     # Latitude and longitude coordinates for the center of the Gulf of Mexico
     gulf_of_mexico_coords = [25.8419, -90.4184]
@@ -10,16 +10,16 @@ def create_map():
     # Create a Folium map
     folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=5)
 
-    # Add ESRI Ocean Basemap for bathymetric data
-    esri_ocean = folium.TileLayer(
-        tiles='https://server.arcgisonline.com/ArcGIS/rest/services/Ocean_Basemap/MapServer/tile/{z}/{y}/{x}',
-        attr='Esri',
-        name='ESRI Ocean Basemap',
+    # Add Stamen Terrain, which includes some bathymetric features
+    stamen = folium.TileLayer(
+        tiles='Stamen Terrain',
+        attr='Stamen Terrain',
+        name='Stamen Terrain',
         overlay=False,
         control=True
     )
 
-    esri_ocean.add_to(folium_map)
+    stamen.add_to(folium_map)
 
     # Add other markers and features here
 
@@ -27,7 +27,7 @@ def create_map():
 
 # Streamlit app
 def main():
-    st.title("Map of the Gulf of Mexico with Bathymetry")
+    st.title("Map of the Gulf of Mexico with Some Bathymetry")
 
     # Create the map
     map_object = create_map()
