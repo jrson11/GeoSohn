@@ -1,6 +1,5 @@
 import streamlit as st
 import folium
-from folium.plugins import TileLayer
 from streamlit_folium import folium_static
 
 # Function to create the Folium map
@@ -8,6 +7,7 @@ def create_map():
     # Latitude and longitude coordinates for the center of the Gulf of Mexico
     gulf_of_mexico_coords = [25.8419, -90.4184]
 
+    '''
     # Coordinates for Keathley Canyon Block 293 (example coordinates, replace with actual ones)
     keathley_coords = [26.935, -91.401]  # Replace with actual coordinates
     # Coordinates for Mississippi Canyon MC 520
@@ -24,7 +24,7 @@ def create_map():
     folium.Marker(mississippi_canyon_coords, popup='Mississippi Canyon MC 520').add_to(folium_map)
     # Add a marker for Green Canyon Block 825
     folium.Marker(green_canyon_coords, popup='Green Canyon Block 825').add_to(folium_map)
-
+    '''
 
     return folium_map
 
