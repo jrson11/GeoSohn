@@ -9,7 +9,7 @@ The concept of p-y curves for analyzing the lateral response of piles dates back
 1950s-1960s:
 .............
 
-- **Early developments**: 'Winkler (1867) <https://>'_and Fleming (1940) introduced the concept of subgrade reaction, which forms the basis for p-y curves. They proposed that the lateral resistance of a soil-pile system can be represented by the following equation:
+- **Early developments**: 'Winkler (1867) <https://>'_ and Fleming (1940) introduced the concept of subgrade reaction, which forms the basis for p-y curves. They proposed that the lateral resistance of a soil-pile system can be represented by the following equation:
 
   F=k⋅δ,
   where 
