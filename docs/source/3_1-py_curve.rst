@@ -69,7 +69,6 @@ Matlock's Equation (1970):
 Matlock developed empirical equations for different soil types, taking into account soil properties such as cohesion (c) and friction angle (φ). This is a more refined representation of p-y curves.
 
 .. math::
-
    p = k \cdot y
 
 Where:
@@ -78,7 +77,6 @@ Where:
 
 
 .. math::
-
    p = k \cdot y
 
 Where:
