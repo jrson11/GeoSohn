@@ -90,6 +90,9 @@ Jeanjean's Paper (2022):
 
 
 
+Useful Links:
+..........................
 
+- Innovative Geotechnics: https://www.pilegroups.com/p-y-curves 
 
 
