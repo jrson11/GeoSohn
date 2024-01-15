@@ -67,7 +67,7 @@ Empirical equation
 Matlock's Equation (1970):
 ..........................
 
-- **Origin*: The Matlock p-y curves were developed by Dr. H. Matlock in the early 1970s, specifically tailored for clays.
+- **Origin**: The Matlock p-y curves were developed by Dr. H. Matlock in the early 1970s, specifically tailored for clays.
 
 - **Research Basis**: Matlock's research involved extensive field testing and observations, particularly in the Gulf of Mexico, where soft marine clays are prevalent.
 
