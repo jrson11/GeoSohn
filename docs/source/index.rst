@@ -3,6 +3,8 @@ Welcome to GeoSohn
 
 *GeoSohn* is an organized handbook of offshore geotechnical engineering with Python examples.
 
+.. image:: ../images/Canvas_of_Offshore_Geotech(Sep2023).png
+   :width: 800
 
 Contents
 --------
@@ -18,5 +20,3 @@ Contents
    6. Numerical Modeling <6-Numerical_Modeling.rst>
    7. Offshore History <7-Offshore_History.rst>
    
-.. image:: ../images/Canvas_of_Offshore_Geotech(Sep2023).png
-   :width: 800
