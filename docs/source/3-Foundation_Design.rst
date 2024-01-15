@@ -43,7 +43,7 @@ Suction Pile
 Challenging Topics
 -------------------
 
-'p-y curve <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-py_curve.rst>'
+'p-y curve' <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-py_curve.rst>
 
 
 
