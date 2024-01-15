@@ -42,10 +42,10 @@ Suction Pile
 
 Challenging Topics
 -------------------
-- `p-y curve <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-py_curve.rst>`_
 
-- p-y curve: <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-py_curve.rst>
-- q-z curve: 
-- t-z curve: 
+- `p-y curve <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-py_curve.rst>`_
+- `q-z curve <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-py_curve.rst>`_
+- `t-z curve <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-py_curve.rst>`_
+
 
 
