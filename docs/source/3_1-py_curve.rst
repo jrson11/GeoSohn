@@ -77,9 +77,12 @@ Where:
 
   - :math:`k` is the subgrade modulus, representing the soil's stiffness (kN/m³ or lb/ft³).
 
-  \[
-  k = c \cdot \left(\frac{R}{N_q}\right) + \sigma_v \cdot \tan(\phi) \cdot \left(\frac{R}{N_\gamma}\right)
-  \]
+.. math::
+
+   p = k \cdot y
+
+   k = c \cdot \left(\frac{R}{N_q}\right) + \sigma_v \cdot \tan(\phi) \cdot \left(\frac{R}{N_\gamma}\right)
+
 
 Where:
 
