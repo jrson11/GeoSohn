@@ -63,9 +63,36 @@ In conclusion, the development of p-y curves for offshore clay and sand soils ha
 Empirical equation
 --------------------
 
-- Matlock's Equation (1970):
+Matlock's Equation (1970):
+..........................
 
 Matlock developed empirical equations for different soil types, taking into account soil properties such as cohesion (c) and friction angle (φ). This is a more refined representation of p-y curves.
 
+.. math::
 
+   p = k \cdot y
+
+Where:
+- :math:`p` is the lateral soil resistance (force per unit length, kN/m or lb/ft).
+- :math:`k` is the subgrade modulus, representing the soil's stiffness (kN/m³ or lb/ft³).
+
+
+.. math::
+
+   p = k \cdot y
+
+Where:
+- :math:`p` is the lateral soil resistance (force per unit length, kN/m or lb/ft).
+- :math:`k` is the subgrade modulus, calculated as:
+
+\[
+k = c \cdot \left(\frac{R}{N_q}\right) + \sigma_v \cdot \tan(\phi) \cdot \left(\frac{R}{N_\gamma}\right)
+\]
+
+Where:
+- :math:`c` is the cohesion of the soil (kN/m² or lb/ft²).
+- :math:`\sigma_v` is the vertical effective stress (kN/m² or lb/ft²).
+- :math:`\phi` is the friction angle of the soil (degrees).
+- :math:`R` is the pile radius or equivalent diameter (m or ft).
+- :math:`N_q` and :math:`N_\gamma` are bearing capacity factors.
 
