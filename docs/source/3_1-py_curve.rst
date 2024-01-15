@@ -61,7 +61,7 @@ Key challenges and future directions:
 - **Data acquisition and sharing**: Wider availability of well-documented field data and standardized testing procedures for calibration and validation of p-y curves is essential for advancing the field of geotechnical engineering.
 
 
-Special Topics
+Important equations
 --------------------
 
 Matlock's Equation (1970):
