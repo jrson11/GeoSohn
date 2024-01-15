@@ -1,10 +1,13 @@
 p-y curve
 ==========
 
+- **Definition**: p-y curves are empirical relationships used in the analysis of the lateral response of deep foundations, such as piles, under lateral loads. These curves represent the relationship between the lateral soil pressure (p) acting on a pile and the pile's lateral displacement (y) at various depths.
+
+- **Application**: They are used in a method known as the p-y method, widely accepted for designing and analyzing the lateral load capacity and deflection of piles in different soil conditions.
+
+
 History
 --------
-
-The concept of p-y curves for analyzing the lateral response of piles dates back to the early 20th century, but their widespread application in offshore geotechnical engineering for clay and sand soils began in the latter half of the 20th century. Here's a breakdown of the key milestones:
 
 1950s-1960s:
 .............
@@ -66,33 +69,14 @@ Empirical equation
 Matlock's Equation (1970):
 ..........................
 
-Matlock developed empirical equations for different soil types, taking into account soil properties such as cohesion (c) and friction angle (φ). This is a more refined representation of p-y curves.
+- **Origin*: The Matlock p-y curves were developed by Dr. H. Matlock in the early 1970s, specifically tailored for clays.
 
-.. math::
-   p = k \cdot y
+- **Research Basis**: Matlock's research involved extensive field testing and observations, particularly in the Gulf of Mexico, where soft marine clays are prevalent.
 
-Where:
+- **Key Features**: These curves take into account the non-linear, inelastic behavior of soft clays under lateral loading, such as the stiffness of the soil decreasing with increased displacement of the pile.
 
-  - :math:`p` is the lateral soil resistance (force per unit length, kN/m or lb/ft).
+- **Design and Analysis**: Matlock's p-y curves have been a fundamental tool in designing offshore structures like oil platforms, where piles are subjected to significant lateral forces due to waves, wind, and currents.
 
-  - :math:`k` is the subgrade modulus, representing the soil's stiffness (kN/m³ or lb/ft³).
+- **Industry Standard**: They have been incorporated into various engineering standards and guidelines, including those by the American Petroleum Institute (API).
 
-.. math::
-
-   p = k \cdot y
-
-   k = c \cdot \left(\frac{R}{N_q}\right) + \sigma_v \cdot \tan(\phi) \cdot \left(\frac{R}{N_\gamma}\right)
-
-
-Where:
-
-- :math:`c` is the cohesion of the soil (kN/m² or lb/ft²).
-
-- :math:`\sigma_v` is the vertical effective stress (kN/m² or lb/ft²).
-
-- :math:`\phi` is the friction angle of the soil (degrees).
-
-- :math:`R` is the pile radius or equivalent diameter (m or ft).
-
-- :math:`N_q` and :math:`N_\gamma` are bearing capacity factors.
 
