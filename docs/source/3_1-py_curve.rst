@@ -60,8 +60,6 @@ Key challenges and future directions:
 
 - **Data acquisition and sharing**: Wider availability of well-documented field data and standardized testing procedures for calibration and validation of p-y curves is essential for advancing the field of geotechnical engineering.
 
-In conclusion, the development of p-y curves for offshore clay and sand soils has evolved from early empirical correlations to sophisticated numerical models and advanced constitutive models. Ongoing research and emerging technologies continue to enhance the accuracy and applicability of p-y curves, ensuring the safe design of offshore structures in challenging marine environments.
-
 
 Empirical equation
 --------------------
