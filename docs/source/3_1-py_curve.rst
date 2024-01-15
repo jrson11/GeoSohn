@@ -71,19 +71,18 @@ Matlock developed empirical equations for different soil types, taking into acco
 .. math::
    p = k \cdot y
 
-  Where:
+Where:
 
   - :math:`p` is the lateral soil resistance (force per unit length, kN/m or lb/ft).
 
   - :math:`k` is the subgrade modulus, representing the soil's stiffness (kN/m³ or lb/ft³).
-
-
 
   \[
   k = c \cdot \left(\frac{R}{N_q}\right) + \sigma_v \cdot \tan(\phi) \cdot \left(\frac{R}{N_\gamma}\right)
   \]
 
 Where:
+
 - :math:`c` is the cohesion of the soil (kN/m² or lb/ft²).
 
 - :math:`\sigma_v` is the vertical effective stress (kN/m² or lb/ft²).
