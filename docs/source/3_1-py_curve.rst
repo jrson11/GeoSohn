@@ -33,29 +33,29 @@ The concept of p-y curves for analyzing the lateral response of piles dates back
 1990s-2000s:
 .............
 
-- Calibration and validation of p-y curves: Jardine & Chow (1991) emphasized calibrating and validating existing p-y curves through back-analysis of field data and centrifuge tests. This involved adjusting the parameters in the p-y curve equations to match observed behavior.
+- **Calibration and validation of p-y curves**: Jardine & Chow (1991) emphasized calibrating and validating existing p-y curves through back-analysis of field data and centrifuge tests. This involved adjusting the parameters in the p-y curve equations to match observed behavior.
 
-- Development of advanced constitutive models: Dafalias & Manzari (2004) developed more complex constitutive models for clays and sands, considering factors like dilatancy, strain-softening, and cyclic loading. These models improved the accuracy of p-y curve predictions.
+- **Development of advanced constitutive models**: Dafalias & Manzari (2004) developed more complex constitutive models for clays and sands, considering factors like dilatancy, strain-softening, and cyclic loading. These models improved the accuracy of p-y curve predictions.
 
-- Advancements in numerical modeling: Increased computational power enabled more realistic finite element simulations with advanced constitutive models, improving p-y curve accuracy and applicability. Numerical models often incorporate nonlinear soil behavior.
+- **Advancements in numerical modeling**: Increased computational power enabled more realistic finite element simulations with advanced constitutive models, improving p-y curve accuracy and applicability. Numerical models often incorporate nonlinear soil behavior.
 
 2010s-Present:
 ...............
 
-- Continued refinement of constitutive models: Ongoing research continues to refine existing constitutive models and develop new ones for specific soil types and loading conditions. These models aim to capture the full complexity of soil behavior.
+- **Continued refinement of constitutive models**: Ongoing research continues to refine existing constitutive models and develop new ones for specific soil types and loading conditions. These models aim to capture the full complexity of soil behavior.
 
-- Probabilistic approaches: Integration of probabilistic methods into design considers uncertainties in soil properties and p-y curve parameters. Probabilistic design involves assessing the likelihood of different outcomes.
+- **Probabilistic approaches**: Integration of probabilistic methods into design considers uncertainties in soil properties and p-y curve parameters. Probabilistic design involves assessing the likelihood of different outcomes.
 
-- Machine learning and AI: Emerging techniques like machine learning and artificial intelligence are being explored for p-y curve prediction and validation based on large datasets. These methods can help improve the efficiency of p-y curve generation.
+- **Machine learning and AI**: Emerging techniques like machine learning and artificial intelligence are being explored for p-y curve prediction and validation based on large datasets. These methods can help improve the efficiency of p-y curve generation.
 
 Key challenges and future directions:
 ......................................
 
-- Variability of soil behavior: Accurately capturing the complex and often-variable behavior of clays and sands, especially under cyclic loading and long-term performance, remains a challenge. Advanced constitutive models aim to address this variability.
+- **Variability of soil behavior**: Accurately capturing the complex and often-variable behavior of clays and sands, especially under cyclic loading and long-term performance, remains a challenge. Advanced constitutive models aim to address this variability.
 
-- Model-soil interaction and calibration: Improving the interaction between constitutive models and numerical simulations is crucial for robust p-y curve predictions. Calibration ensures that the models accurately represent real-world behavior.
+- **Model-soil interaction and calibration**: Improving the interaction between constitutive models and numerical simulations is crucial for robust p-y curve predictions. Calibration ensures that the models accurately represent real-world behavior.
 
-- Data acquisition and sharing: Wider availability of well-documented field data and standardized testing procedures for calibration and validation of p-y curves is essential for advancing the field of geotechnical engineering.
+- **Data acquisition and sharing**: Wider availability of well-documented field data and standardized testing procedures for calibration and validation of p-y curves is essential for advancing the field of geotechnical engineering.
 
 In conclusion, the development of p-y curves for offshore clay and sand soils has evolved from early empirical correlations to sophisticated numerical models and advanced constitutive models. Ongoing research and emerging technologies continue to enhance the accuracy and applicability of p-y curves, ensuring the safe design of offshore structures in challenging marine environments.
 
