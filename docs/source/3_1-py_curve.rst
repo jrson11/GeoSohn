@@ -72,7 +72,9 @@ Matlock developed empirical equations for different soil types, taking into acco
    p = k \cdot y
 
 Where:
+
 - :math:`p` is the lateral soil resistance (force per unit length, kN/m or lb/ft).
+
 - :math:`k` is the subgrade modulus, representing the soil's stiffness (kN/m³ or lb/ft³).
 
 
