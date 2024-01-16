@@ -10,6 +10,13 @@ gulf_of_mexico_coords = [25.8419, -90.4184]
 # Create a Folium map centered on the Gulf of Mexico
 folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=6)
 
+
+# Coordinates for Keathley Canyon Block 293 (example coordinates, replace with actual ones)
+keathley_coords = [26.935, -91.401]  # Replace with actual coordinates
+
+# Add a marker for Keathley Canyon Block 293
+folium.Marker(keathley_coords, popup='Keathley Canyon Block 293').add_to(folium_map)
+
 # Display the map in the Streamlit app
 folium_static(folium_map)
 
