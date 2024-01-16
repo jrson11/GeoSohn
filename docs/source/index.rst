@@ -6,8 +6,8 @@ Welcome to GeoSohn
 .. image:: ../images/Canvas_of_Offshore_Geotech(Sep2023).png
    :width: 800
 
-Contents
---------
+Table of Contents
+----------------
 
 .. toctree::
    :maxdepth: 2
