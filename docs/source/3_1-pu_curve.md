@@ -79,9 +79,9 @@
 ### API RP 2GEO (2014):
 
 
-$$ P_u = s_u D (3 + \frac{\gamma'}{s_u} S + J \frac{X}{D})  , for X < X_r  $$
+$$ P_u = s_u D (3 + \frac{\gamma'}{s_u} S + J \frac{X}{D}), for X < X_r  $$
 
-$$ P_u = 9*s_u*D  , for X < X_r  $$
+$$ P_u = 9 s_u D  , for X < X_r  $$
 
 
 $$X_{1,j} \mathbf{F}X_{2,j}  = 0, \tag{1}$$
