@@ -78,8 +78,7 @@
 
 ### API RP 2GEO (2014):
 
-$$ 1+1 = 2 $$
-
+$$X_{1,j} \mathbf{F}X_{2,j}  = 0, \tag{1}$$
 .. role:: raw-math(raw)
     :format: latex html
 
