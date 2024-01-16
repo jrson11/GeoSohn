@@ -18,7 +18,7 @@ Kaskida_coords = [26.935, -91.401]
 Mississippi_Canyon_coords = [28.0, -89.0]
 Mad_Dog_coords = [27.5, -90.5]
 Atlantis_coords = [29.0, -88.0] 
-Whale_coords = [25,-92]
+Whale_coords = [26,-92]
 
 # Add markers on the GoM map
 folium.Marker(Kaskida_coords, popup='Keathley Canyon Block 293').add_to(folium_map)
