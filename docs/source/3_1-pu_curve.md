@@ -78,8 +78,9 @@
 
 ### API RP 2GEO (2014):
 
+$$\left(\frac{2}{3}\right)$$
 
-$$ P_u = s_u D (3 + \gamma \frac s_u + J X \frac D)  $$
+#$$ P_u = s_u D (3 + \gamma \frac s_u + J X \frac D)  $$
 
 $$X_{1,j} \mathbf{F}X_{2,j}  = 0, \tag{1}$$
 .. role:: raw-math(raw)
