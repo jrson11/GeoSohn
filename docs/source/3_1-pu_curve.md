@@ -80,7 +80,7 @@
 
 $$\left(\frac{2}{3}\right)$$
 
-#$$ P_u = s_u D (3 + \frac{\gamma}{\s_u} + J \frac{X}{D})  $$
+$$ P_u = s_u D (3 + \frac{\gamma}{\s_u} + J \frac{X}{D})  $$
 
 $$X_{1,j} \mathbf{F}X_{2,j}  = 0, \tag{1}$$
 .. role:: raw-math(raw)
