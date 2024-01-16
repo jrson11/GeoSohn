@@ -65,6 +65,7 @@ if st.button('API RP 2GEO(2014)'):
 
 st.header("Models for Sand")
 
+st.write('$P_{us} = (C_1 X + C_2 D) \gamma' X
 
 
 
