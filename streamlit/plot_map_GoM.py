@@ -11,10 +11,10 @@ gulf_of_mexico_coords = [25.8419, -90.4184]
 folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=6)
 
 # Projects in GoM
-Kaskida_coords = [26.935, -91.401]        # Coordinates for Keathley Canyon Block 293
+Kaskida_coords = [26.935, -91.401]         # Coordinates for Keathley Canyon Block 293
 Mississippi_Canyon_coords = [28.0, -89.0]  # Coordinates for Mississippi Canyon MC 520
-Mad_Dog_coords = [27.5, -90.5]        # Coordinates for Green Canyon Block 825
-Atlantis_coords = [27.5, -90.5]        # Coordinates for Green Canyon Block 700
+Mad_Dog_coords = [27.5, -90.5]             # Coordinates for Green Canyon Block 825
+Atlantis_coords = [29.0, -88.0]            # Placeholder coordinates for Green Canyon Block 700, replace with actual
 
 # Add a marker on the GoM map
 folium.Marker(Kaskida_coords, popup='Keathley Canyon block 293').add_to(folium_map)
