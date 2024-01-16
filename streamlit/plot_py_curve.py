@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from sidebar_links import add_sidebar_links
 add_sidebar_links()
 
+# =============================================================
 # Streamlit app
 st.title("p-y Curve")
 
@@ -15,12 +16,13 @@ soil_stiffness = st.number_input("Subgrade reaction modulus of the soil (N/m3)",
 ultimate_stress = st.number_input("Ultimate lateral stress of the soil (N/m2)", min_value=0, value=100000, step=1000)
 
 
-# 1차 공학 계산
 
+# ----------------------------------------------------------------
+# 1차 계산
 st.header("Clay")
 
-API_2014_static_p_over_pu = [0,0.23,0.33,0.5,0.72,1,1]
-API_2014_static_y_over_yc = [0,0.1 ,0.3 ,1.0,3.0 ,8,15]
+## Matlock (1970)
+st.subheader("Matlock(1970)")
 
 if st.button('Matlock Soft Clay(1970)'):
     plt.plot(API_2014_static_y_over_yc, API_2014_static_p_over_pu)
@@ -29,7 +31,10 @@ if st.button('Matlock Soft Clay(1970)'):
     plt.title('p-y curve')
     plt.grid(True)
     st.pyplot(plt)
-    
+
+## API 2002
+st.subheader("API(2002)")
+
 if st.button('API RP 2GEO(2002)'):
     plt.plot(API_2014_static_y_over_yc, API_2014_static_p_over_pu)
     plt.xlabel('y/yc')
@@ -38,6 +43,13 @@ if st.button('API RP 2GEO(2002)'):
     plt.grid(True)
     st.pyplot(plt)
     
+## API 2014
+st.subheader("API(2014)")
+
+API_2014_static_p_over_pu = [0,0.23,0.33,0.5,0.72,1,1]
+API_2014_static_y_over_yc = [0,0.1 ,0.3 ,1.0,3.0 ,8,15]
+
+
 if st.button('API RP 2GEO(2014)'):
     plt.plot(API_2014_static_y_over_yc, API_2014_static_p_over_pu)
     plt.xlabel('y/yc')
@@ -46,7 +58,8 @@ if st.button('API RP 2GEO(2014)'):
     plt.grid(True)
     st.pyplot(plt)
 
-# 2차 공학 계산
+# ----------------------------------------------------------------
+# 2차 계산
 
 st.header("Sand")
 
