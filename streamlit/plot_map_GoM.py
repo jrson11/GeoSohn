@@ -53,7 +53,7 @@ add_rectangle_to_map(folium_map, northwest_corner, southeast_corner)
 folium_static(folium_map)
 
 ## 레퍼런스 링크
-st.subheader(':floppy_disk: Reference')
+st.subheader(':floppy_disk: References')
 
 st.markdown('<a href="https://en.wikipedia.org/wiki/Kaskida_Oil_Field" target="_blank">Wiki: Kaskida Oil Field</a>', unsafe_allow_html=True)
 st.markdown('<a href="https://en.wikipedia.org/wiki/Mississippi_Canyon" target="_blank">Wiki: Mississippi Canyon</a>', unsafe_allow_html=True)
