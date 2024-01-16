@@ -85,6 +85,8 @@ API RP 2GEO (2014):
 
    \frac{ \sum_{t=0}^{N}f(t,k) }{N}
 
+:math:`\frac{ \sum_{t=0}^{N}f(t,k) }{N}`
+
 
 Updates in ISO 19901-4 (??):
 ..........................
