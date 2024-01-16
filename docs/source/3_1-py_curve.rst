@@ -81,6 +81,9 @@ Matlock's Equation (1970):
 API RP 2GEO (2014):
 ..........................
 
+.. role:: raw-math(raw)
+    :format: latex html
+
 .. math::
 
    \frac{ \sum_{t=0}^{N}f(t,k) }{N}
