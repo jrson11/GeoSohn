@@ -24,7 +24,7 @@ st.header("Models for Clay")
 ## Matlock (1970)
 st.subheader("Matlock(1970)")
 
-st.write('$P_u = c_u D (3 + \gamma / c_u *X + J* X / D)$')
+st.write('$P_u = c_u D (3 + \gamma' / c_u *X + J* X / D)$')
 
 if st.button('Matlock Soft Clay(1970)'):
     plt.plot(API_2014_static_y_over_yc, API_2014_static_p_over_pu)
@@ -65,7 +65,7 @@ if st.button('API RP 2GEO(2014)'):
 
 st.header("Models for Sand")
 
-st.write('$P_{us} = (C_1 X + C_2 D) \gamma' X
+st.write('$P_{us} = (C_1 X + C_2 D) \gamma X')
 
 
 
