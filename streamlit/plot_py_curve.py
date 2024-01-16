@@ -9,6 +9,21 @@ add_sidebar_links()
 # Streamlit app
 st.title("p-y Curve")
 
+
+API_static-p_over_pu = [0,0.23,0.33,0.5,0.72,1]
+API_static-y_over_yc = [0,0.1 ,0.3 ,1.0,3.0 ,8]
+
+
+if st.button('API RP 2GEO(2014)'):
+    plt.plot(API_static-y_over_yc, API_static-p_over_pu)
+    plt.xlabel('y/yc')
+    plt.ylabel('p/pc')
+    plt.title('p-y 곡선')
+    plt.grid(True)
+    st.pyplot(plt)
+
+
+
 '''
 # 지반 및 파일 특성
 c = 100  # 토양 응력
