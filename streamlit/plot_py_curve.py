@@ -10,8 +10,8 @@ add_sidebar_links()
 st.title("p-y Curve")
 
 
-API_static-p_over_pu = [0,0.23,0.33,0.5,0.72,1]
-API_static-y_over_yc = [0,0.1 ,0.3 ,1.0,3.0 ,8]
+API_static_p_over_pu = [0,0.23,0.33,0.5,0.72,1]
+API_static_y_over_yc = [0,0.1 ,0.3 ,1.0,3.0 ,8]
 
 
 if st.button('API RP 2GEO(2014)'):
