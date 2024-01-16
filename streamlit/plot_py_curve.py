@@ -24,6 +24,8 @@ st.header("Clay")
 ## Matlock (1970)
 st.subheader("Matlock(1970)")
 
+st.write('$P_u = $')
+
 if st.button('Matlock Soft Clay(1970)'):
     plt.plot(API_2014_static_y_over_yc, API_2014_static_p_over_pu)
     plt.xlabel('y/yc')
