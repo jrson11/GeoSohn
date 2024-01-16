@@ -7,8 +7,9 @@ from sidebar_links import add_sidebar_links
 add_sidebar_links()
 
 # Streamlit app
-st.title("p-y Curve Generator")
+st.title("p-y Curve")
 
+'''
 # 지반 및 파일 특성
 c = 100  # 토양 응력
 phi = 30  # 토양의 마찰각 (degrees)
@@ -55,7 +56,6 @@ if st.button('Generate p-y Curve'):
     st.pyplot(plt)
 
 
-'''
 def api_py_curve(depth, diameter, soil_stiffness, ultimate_stress):
     y = np.linspace(0, 0.1, 100)
     p = soil_stiffness * (depth ** 0.5) * diameter * np.tanh(ultimate_stress * y / (soil_stiffness * (depth ** 0.5) * diameter))
