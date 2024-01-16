@@ -56,6 +56,6 @@ folium_static(folium_map)
 st.markdown('<a href="https://en.wikipedia.org/wiki/Kaskida_Oil_Field" target="_blank">Wiki: Kaskida Oil Field</a>', unsafe_allow_html=True)
 st.markdown('<a href="https://en.wikipedia.org/wiki/Mississippi_Canyon" target="_blank">Wiki: Mississippi Canyon</a>', unsafe_allow_html=True)
 st.markdown('<a href="https://en.wikipedia.org/wiki/Mad_Dog_oil_field" target="_blank">Wiki: Mad Dog oil field</a>', unsafe_allow_html=True)
-st.markdown('<a href="https://www.offshore-technology.com/projects/atlantis-platform/"_blank">Offshore: Atlantis oil field</a>', unsafe_allow_html=True)
+st.markdown('<a href="https://www.offshore-technology.com/projects/atlantis-platform/" target="_blank">Offshore: Atlantis oil field</a>', unsafe_allow_html=True)
 st.markdown('<a href="https://www.nsenergybusiness.com/projects/whale-field-development/" target="_blank">NS energy: Whale Field</a>', unsafe_allow_html=True)
 
