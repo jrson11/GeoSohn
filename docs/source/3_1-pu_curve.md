@@ -78,6 +78,7 @@
 
 ### API RP 2GEO (2014):
 
+$$ 1+1 = 2 $$
 
 .. role:: raw-math(raw)
     :format: latex html
