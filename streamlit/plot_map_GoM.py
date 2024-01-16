@@ -66,6 +66,8 @@ southeast_corner = [27.4, -90.4]
 
 # Call the function to add a rectangle to the map
 add_rectangle_to_map(folium_map, northwest_corner, southeast_corner)
+add_rectangle_to_map(folium_map, KC292_northwest_corner, KC292_southeast_corner)
+add_rectangle_to_map(folium_map, KC293_northwest_corner, KC293_southeast_corner)
 
 ## Display the map in the Streamlit app
 folium_static(folium_map)
