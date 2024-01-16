@@ -11,6 +11,7 @@ Table of Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: Engineering Theories
 
    1. Site Investigation <1-Site_Investigation.rst>
    2. Soil Lab Testing <2-Soil_Lab_Testing.rst>
