@@ -6,10 +6,10 @@
 
 
 ## History
---------
+
 
 ### 1950s-1960s:
-.............
+
 
 - **Early developments**: Winkler (1867) and Fleming (1940) introduced the concept of subgrade reaction, which forms the basis for p-y curves. They proposed that the lateral resistance of a soil-pile system can be represented by the following equation:
 
@@ -24,7 +24,7 @@
 - **Early analytical models**: Reese and Matlock (1956) developed early analytical models that often used simple linear or hyperbolic relationships to represent the lateral response of piles. These models were based on the concept of linear-elastic behavior.
 
 ### 1970s-1980s:
-............
+
 
 - **Refinement of empirical correlations**: Matlock (1970) and Coyle & Reese (1977) refined empirical correlations for clay and sand, taking into account factors like soil type, density, and loading direction. These correlations improved the accuracy of p-y curves.
 
@@ -33,7 +33,7 @@
 - **Finite element modeling**: Early developments in finite element software allowed for more sophisticated simulations of soil-pile interaction, but computational limitations restricted widespread use. Finite element analysis involves solving the differential equation governing pile-soil interaction.
 
 ### 1990s-2000s:
-.............
+
 
 - **Calibration and validation of p-y curves**: Jardine & Chow (1991) emphasized calibrating and validating existing p-y curves through back-analysis of field data and centrifuge tests. This involved adjusting the parameters in the p-y curve equations to match observed behavior.
 
@@ -42,7 +42,7 @@
 - **Advancements in numerical modeling**: Increased computational power enabled more realistic finite element simulations with advanced constitutive models, improving p-y curve accuracy and applicability. Numerical models often incorporate nonlinear soil behavior.
 
 ### 2010s-Present:
-...............
+
 
 - **Continued refinement of constitutive models**: Ongoing research continues to refine existing constitutive models and develop new ones for specific soil types and loading conditions. These models aim to capture the full complexity of soil behavior.
 
@@ -50,8 +50,7 @@
 
 - **Machine learning and AI**: Emerging techniques like machine learning and artificial intelligence are being explored for p-y curve prediction and validation based on large datasets. These methods can help improve the efficiency of p-y curve generation.
 
-Key challenges and future directions:
-......................................
+### Key challenges and future directions:
 
 - **Variability of soil behavior**: Accurately capturing the complex and often-variable behavior of clays and sands, especially under cyclic loading and long-term performance, remains a challenge. Advanced constitutive models aim to address this variability.
 
@@ -61,10 +60,10 @@ Key challenges and future directions:
 
 
 ## Important equations
---------------------
+
 
 ### Matlock's Equation (1970):
-..........................
+
 
 - **Origin**: The Matlock p-y curves were developed by Dr. H. Matlock in the early 1970s, specifically tailored for clays.
 
@@ -78,7 +77,7 @@ Key challenges and future directions:
 
 
 ### API RP 2GEO (2014):
-..........................
+
 
 .. role:: raw-math(raw)
     :format: latex html
