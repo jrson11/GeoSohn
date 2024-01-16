@@ -11,14 +11,14 @@ gulf_of_mexico_coords = [25.8419, -90.4184]
 folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=6)
 
 # Projects in GoM
-keathley_coords = [26.935, -91.401]        # Coordinates for Keathley Canyon Block 293
-mississippi_canyon_coords = [28.0, -89.0]  # Coordinates for Mississippi Canyon MC 520
-green_canyon_coords = [27.5, -90.5]        # Coordinates for Green Canyon Block 825
+Kaskida_coords = [26.935, -91.401]        # Coordinates for Keathley Canyon Block 293
+Mississippi_Canyon_coords = [28.0, -89.0]  # Coordinates for Mississippi Canyon MC 520
+Mad_Dog_coords = [27.5, -90.5]        # Coordinates for Green Canyon Block 825
 
 # Add a marker on the GoM map
-folium.Marker(keathley_coords, popup='Keathley Canyon Block 293').add_to(folium_map)
-folium.Marker(mississippi_canyon_coords, popup='Mississippi Canyon MC 520').add_to(folium_map)
-folium.Marker(green_canyon_coords, popup='Green Canyon Block 825').add_to(folium_map)
+folium.Marker(Kaskida_coords, popup='Kaskida KC 293').add_to(folium_map)
+folium.Marker(Mississippi_Canyon_coords, popup='Mississippi Canyon MC 520').add_to(folium_map)
+folium.Marker(Mad_Dog_coords, popup='Mad Dog at GC 825').add_to(folium_map)
 
 # Display the map in the Streamlit app
 folium_static(folium_map)
