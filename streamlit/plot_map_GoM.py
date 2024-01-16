@@ -22,6 +22,21 @@ folium.Marker(Mississippi_Canyon_coords, popup='Mississippi Canyon block 520').a
 folium.Marker(Mad_Dog_coords, popup='Green Canyon block 825').add_to(folium_map)
 folium.Marker(Atlantis_coords, popup='Green Canyon block 700').add_to(folium_map)
 
+# Placeholder coordinates for the corners of the rectangle
+# Replace these with the actual coordinates of Green Canyon Block 700
+northwest_corner = [27.6, -90.6]
+southeast_corner = [27.4, -90.4]
+
+# Add a rectangle to the map
+folium.Rectangle(
+    bounds=[northwest_corner, southeast_corner],
+    color='#ff7800',
+    fill=True,
+    fill_color='#ffff00',
+    fill_opacity=0.2
+).add_to(folium_map)
+
+
 # Display the map in the Streamlit app
 folium_static(folium_map)
 
