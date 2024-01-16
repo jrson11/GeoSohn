@@ -15,7 +15,7 @@ API_static_y_over_yc = [0,0.1 ,0.3 ,1.0,3.0 ,8]
 
 
 if st.button('API RP 2GEO(2014)'):
-    plt.plot(API_static-y_over_yc, API_static-p_over_pu)
+    plt.plot(API_static_y_over_yc, API_static_p_over_pu)
     plt.xlabel('y/yc')
     plt.ylabel('p/pc')
     plt.title('p-y 곡선')
