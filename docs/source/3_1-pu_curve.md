@@ -83,6 +83,10 @@ $$ P_u = s_u D (3 + \frac{\gamma'}{s_u} S + J \frac{X}{D}), for X < X_r  $$
 
 $$ P_u = 9 s_u D  , for X < X_r  $$
 
+The only difference between API model and Matlock (1970)'s model is that the piece-wise curves are used as shown in the figures below for both static and cyclic loading conditions.
+
+
+
 
 
 ### Updates in ISO 19901-4 (??):
