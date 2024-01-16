@@ -2,10 +2,12 @@ import streamlit as st
 import folium
 from streamlit_folium import folium_static
 
-
+# =============================================================================
 ## 스트림릿 타이틀
 st.title("Map of the Gulf of Mexico")
 
+
+# =============================================================================
 ## 기본이 되는 GoM
 # Latitude and longitude coordinates for the center of the Gulf of Mexico
 gulf_of_mexico_coords = [25.8419, -90.4184]
@@ -27,7 +29,7 @@ folium.Marker(Mad_Dog_coords, popup='Green Canyon Block 825').add_to(folium_map)
 folium.Marker(Atlantis_coords, popup='Green Canyon Block 700').add_to(folium_map)
 folium.Marker(Whale_coords, popup='Alaminos Canyon Block 772').add_to(folium_map)
 
-
+# =============================================================================
 ## Placeholder coordinates for the corners of the rectangle
 
 # 함수 정의
@@ -48,9 +50,11 @@ southeast_corner = [27.4, -90.4]
 # Call the function to add a rectangle to the map
 add_rectangle_to_map(folium_map, northwest_corner, southeast_corner)
 
-
 ## Display the map in the Streamlit app
 folium_static(folium_map)
+
+
+# =============================================================================
 
 ## 레퍼런스 링크
 st.subheader(':floppy_disk: References')
