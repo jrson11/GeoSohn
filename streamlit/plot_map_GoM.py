@@ -16,9 +16,9 @@ Mississippi_Canyon_coords = [28.0, -89.0]  # Coordinates for Mississippi Canyon 
 Mad_Dog_coords = [27.5, -90.5]        # Coordinates for Green Canyon Block 825
 
 # Add a marker on the GoM map
-folium.Marker(Kaskida_coords, popup='Kaskida KC 293').add_to(folium_map)
-folium.Marker(Mississippi_Canyon_coords, popup='Mississippi Canyon MC 520').add_to(folium_map)
-folium.Marker(Mad_Dog_coords, popup='Mad Dog at GC 825').add_to(folium_map)
+folium.Marker(Kaskida_coords, popup='Keathley Canyon block 293').add_to(folium_map)
+folium.Marker(Mississippi_Canyon_coords, popup='Mississippi Canyon block 520').add_to(folium_map)
+folium.Marker(Mad_Dog_coords, popup='Green Canyon block 825').add_to(folium_map)
 
 # Display the map in the Streamlit app
 folium_static(folium_map)
