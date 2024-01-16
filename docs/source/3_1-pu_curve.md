@@ -78,6 +78,9 @@
 
 ### API RP 2GEO (2014):
 
+
+$$ P_u = s_u D (3 + \Gamma + J) $$
+
 $$X_{1,j} \mathbf{F}X_{2,j}  = 0, \tag{1}$$
 .. role:: raw-math(raw)
     :format: latex html
