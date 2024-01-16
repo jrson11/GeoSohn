@@ -2,6 +2,10 @@ import streamlit as st
 import folium
 from streamlit_folium import folium_static
 
+st.title("Map of the Gulf of Mexico")
+
+
+'''
 # Function to create the Folium map
 def create_map():
     # Latitude and longitude coordinates for the center of the Gulf of Mexico
@@ -44,3 +48,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+'''
