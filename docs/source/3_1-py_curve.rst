@@ -78,6 +78,14 @@ Matlock's Equation (1970):
 - **Industry Standard**: They have been incorporated into various engineering standards and guidelines, including those by the American Petroleum Institute (API).
 
 
+API RP 2GEO (2014):
+..........................
+
+.. math::
+
+   \frac{ \sum_{t=0}^{N}f(t,k) }{N}
+
+
 Updates in ISO 19901-4 (??):
 ..........................
 
