@@ -17,7 +17,7 @@ st.title("Map of the Gulf of Mexico")
 gulf_of_mexico_coords = [25.8419, -90.4184]
 
 # Create a Folium map centered on the Gulf of Mexico
-folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=6)
+folium_map = folium.Map(location=gulf_of_mexico_coords, zoom_start=7)
 
 # Projects in GoM
 Kaskida_coords = [26.935, -91.401]
