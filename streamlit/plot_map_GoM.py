@@ -6,6 +6,8 @@ from streamlit_folium import folium_static
 ## 스트림릿 타이틀
 st.title("Map of the Gulf of Mexico")
 
+## Note
+# [위도,경도]를 사용하는 시스템이기 때문에 좌표는 [y,x]로 이해해야 한다.
 
 # =============================================================================
 ## 기본이 되는 GoM
@@ -21,6 +23,20 @@ Mississippi_Canyon_coords = [28.0, -89.0]
 Mad_Dog_coords = [27.5, -90.5]
 Atlantis_coords = [29.0, -88.0] 
 Whale_coords = [26,-92]
+#
+KC292_northwest_corner = [26,-91]
+KC292_southeast_corner = [27,-92]
+KC293_northwest_corner = [28,-89]
+KC293_southeast_corner = [29,-90]
+#
+GC520_northwest_corner = [0,0]
+GC520_southeast_corner = [0,0]
+#
+GC700_northwest_corner = [0,0]
+GC700_southeast_corner = [0,0]
+#
+AC772_northwest_corner = [0,0]
+AC772_southeast_corner = [0,0]
 
 # Add markers on the GoM map
 folium.Marker(Kaskida_coords, popup='Keathley Canyon Block 293').add_to(folium_map)
@@ -28,6 +44,7 @@ folium.Marker(Mississippi_Canyon_coords, popup='Mississippi Canyon Block 520').a
 folium.Marker(Mad_Dog_coords, popup='Green Canyon Block 825').add_to(folium_map)
 folium.Marker(Atlantis_coords, popup='Green Canyon Block 700').add_to(folium_map)
 folium.Marker(Whale_coords, popup='Alaminos Canyon Block 772').add_to(folium_map)
+
 
 # =============================================================================
 ## Placeholder coordinates for the corners of the rectangle
