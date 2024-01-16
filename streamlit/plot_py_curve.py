@@ -19,7 +19,7 @@ ultimate_stress = st.number_input("Ultimate lateral stress of the soil (N/m2)", 
 
 # ----------------------------------------------------------------
 # 1차 계산
-st.header("Clay")
+st.header("Models for Clay")
 
 ## Matlock (1970)
 st.subheader("Matlock(1970)")
@@ -63,7 +63,7 @@ if st.button('API RP 2GEO(2014)'):
 # ----------------------------------------------------------------
 # 2차 계산
 
-st.header("Sand")
+st.header("Models for Sand")
 
 
 
