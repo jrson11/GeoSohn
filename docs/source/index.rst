@@ -10,8 +10,8 @@ Table of Contents
 ----------------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Engineering Theories
+   :maxdepth: 1
+   :caption: Offshore Geotechnics
 
    1. Site Investigation <1-Site_Investigation.rst>
    2. Soil Lab Testing <2-Soil_Lab_Testing.rst>
@@ -21,3 +21,16 @@ Table of Contents
    6. Numerical Modeling <6-Numerical_Modeling.rst>
    7. Offshore History <7-Offshore_History.rst>
    
+.. toctree::
+   :maxdepth: 1
+   :caption: Python Applications
+
+   1. TBD <xxx.rst>
+   2. TBD <xxx.rst>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: About
+
+   1. Author <xxx.rst>
+   2. Features <xxx.rst>
