@@ -26,13 +26,12 @@ st.subheader("Matlock(1970)")
 
 st.write("$P_u = c_u D (3 + \gamma' / c_u *X + J* X / D)$")
 
-Matlock_1970_static_p_over_pu = [0,0.23,0.33,0.5,0.72,1,1]
 Matlock_1970_static_y_over_y50 = np.arange(0,15,0.1)
-st.write(Matlock_1970_static_y_over_y50)
+Matlock_1970_static_p_over_pu = 0.5*Matlock_1970_static_y_over_y50**(1/3)
 
 if st.button('Matlock Soft Clay(1970)'):
-    plt.plot(API_2014_static_y_over_yc, API_2014_static_p_over_pu)
-    plt.xlabel('y/yc')
+    plt.plot(Matlock_1970_static_y_over_y50, Matlock_1970_static_p_over_pu)
+    plt.xlabel('y/y50')
     plt.ylabel('p/pc')
     plt.title('p-y curve')
     plt.grid(True)
