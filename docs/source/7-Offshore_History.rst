@@ -15,15 +15,13 @@ Trinidad
 Others
 ---------
 
-Dr.Jeanjean's paper review
-..........................
 
+- Dr.Jeanjean's paper review
 
-Dr.Zakeri's paper review
-..........................
+- Dr.Zakeri's paper review
 
-Dr.Anderson's paper review
-..........................
+- Dr.Anderson's paper review
+
 
 Subsea Engineering
 ...................
