@@ -19,9 +19,8 @@ add_sidebar_links()
 
 # Title
 st.title("In-situ CPT data processing")
-st.write('- Because this runs MCMC everytime when I click any buttons below')
-st.write('- Purpose: Uncertainty quantification')
-st.write('- Method: MCMC calibration based on Bayesian method')
+st.write('- Purpose: To estimate Gmax from CPT data')
+st.write('- Method: Empirical equations based on Robertson2010')
 
 
 # =============================================================================
