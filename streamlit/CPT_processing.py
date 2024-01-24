@@ -103,3 +103,15 @@ def Ic_Robertson1990():
             Ic_soil.append(7) # SAND gravel
         else:
             Ic_soil.append(np.nan)
+
+def Isbt_Robertson2010():
+## Isbt (Robertson, 2010)
+    Isbt = np.array([((3.47-np.log10(x/(Patm)))**2 + (np.log10(y)+1.22)**2)**0.5 for x,y in zip(qc,Rf)])
+    Isbt_soil = []
+    for i in range(len(z)):
+        if Isbt[i] > Isbt_val and Isbt[i] <= 4.0:
+            Isbt_soil.append(4)
+        elif Isbt[i] > 1 and Isbt[i] <= Isbt_val:
+            Isbt_soil.append(5)
+        else:
+            Isbt_soil.append(np.nan)
