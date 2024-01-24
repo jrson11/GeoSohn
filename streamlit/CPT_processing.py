@@ -56,7 +56,7 @@ def fig_1_CPTdata(df_CPT):
     z = df_CPT['Depth_m']
     qc = df_CPT['qc_MPa']
     fs = df_CPT['fs_kPa']
-    u2 = df_CPT['qc_kPa']
+    u2 = df_CPT['u2_kPa']
     Rf = df_CPT['Fr_%']
     Bq = df_CPT['Bq_x']
     
