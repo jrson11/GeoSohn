@@ -50,3 +50,21 @@ n_loca = len(loca_list)
 
 loca = st.selectbox("Pick the location: ", loca_list)
 UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
+
+
+# =============================================================================
+# Soil Classification 
+def cal_UW_Robertson2010(gw,Rf,qc):
+    gamma = gw * (0.27*np.log10(Rf) + 0.36*np.log10(qc/Patm) + 1.236) 
+    gamma[np.where(Rf == 0)[0]] = np.nan
+    return np.array(gamma) # [kN/m3]
+
+#uw = cal_UW_Robertson2010(gw,Rf,qc)
+#bd = uw/g # soil bulk density [g/cc]
+
+def cal_UW_Mayne2012(fs):
+    fs_kPa = fs*1e3
+    gamma = 26 - 14/(1+(0.5*np.log10(fs_kPa+1))**2)
+    return np.array(gamma) # [kN/m3]
+
+
