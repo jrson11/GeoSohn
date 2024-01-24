@@ -42,3 +42,7 @@ df_CPT['qt_MPa'] = df_Raw.loc[2:,'SCPT_QT']
 df_CPT['qnet_MPa'] = df_Raw.loc[2:,'SCPT_QNET']
 
 st.dataframe(df_CPT)
+
+
+loca_list = list(df_CPT['LOCA_ID'].unique())
+n_loca = len(loca_list)
