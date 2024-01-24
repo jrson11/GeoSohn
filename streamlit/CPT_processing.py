@@ -41,7 +41,7 @@ df_CPT['u2_kPa'] = df_Raw.loc[2:,'SCPT_PWP2']
 df_CPT['qt_MPa'] = df_Raw.loc[2:,'SCPT_QT']
 df_CPT['qnet_MPa'] = df_Raw.loc[2:,'SCPT_QNET']
 
-st.dataframe(df_CPT)
+#st.dataframe(df_CPT)
 
 
 loca_list = list(df_CPT['LOCA_ID'].unique())
@@ -49,3 +49,4 @@ n_loca = len(loca_list)
 
 
 loca = st.selectbox("Pick the location: ", loca_list)
+UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
