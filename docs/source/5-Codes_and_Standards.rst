@@ -4,74 +4,15 @@ Codes and Standards
 API
 ---
 
-API RP 2A-WSD: Fixed offshore
-..............
+: Confidential link: <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EerYM9IH4XtOlvDc1P6kYJMBrWG47-ktecX9Qut-Bc0etw?e=vfYauS>
 
-8. Fatigue
+- API RP 2A-WSD: Fixed offshore
 
-  - 8.3 SCF (Stress Concent. Fac.)
-  - 8.4 S-N curves
+- API RP 2GEO: Geotech
 
-9. Foundation design
+- API RP 2SK: Stationkeeping
 
-  - 9.2.2 Driven piles
-  - 9.2.3 Drilled & grouped piles
-
-15. Installation
-
-  - 15.5 Pile installation
-
-
-API RP 2GEO: Geotech
-........
-
-6. Site characterization
-
-7. Shallow foundation
-  - Bearing capacity
-  - Settlement
-  - Sliding/Overturning/Torsion
-
-8. Pile foundation
-  - Capacity: compression/pullout
-  - Soil reaction: axial/lateral
-  - Pile group
-
-9. Soil-structure interaction
-  - Soil design depth > 3*diameter
-
-
-API RP 2SK: Stationkeeping
-..........
-
-6. Fatigue
-  - M&K in T-N curve (Table3)
-
-7. Design criteria
-  - Safety Factors (Table7)
-
-    - Intact condition FoS: Permanent Lateral:Axial=1.6:2.0, Mobile Lateral:Axial=1.2:1.5
-    - Damaged condition FoS: Permanent Lateral:Axial=1.2:1.5, Mobile Lateral:Axial=1.0:1.2
-
-
-App.A. Mooring components
-
-App.E. Pile and plate anchor
-  - E.3 Geotechnical design
-  - E.5 Structural design
-  - E.6 Installation
-
-    - Tolerance: Tile / Orientation / Penetration / Target area
-  - E.7 Driven pile anchor
-
-API RP 2T: Tension leg
-........
-
-6. Environmental forces
-  - Vortex-induced vibration (VIV)
-9. Tension system design
-10. Foundation analysis and design
-11. Riser systems
+- API RP 2T: Tension leg
 
 
 
