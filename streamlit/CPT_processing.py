@@ -58,7 +58,7 @@ st.dataframe(df_CPT[ii])
 
 # 체크하기 위한 플롯팅
 
-def plot_fig_1_CPTdata():
+def fig_1_CPTdata():
     z = df_CPT['Depth_m']
     qc = df_CPT['qc_MPa']
     fs = df_CPT['fs_MPa']
@@ -99,8 +99,16 @@ def plot_fig_1_CPTdata():
         ax[i].xaxis.set_label_position('top')
         ax[i].yaxis.grid(which="minor",linestyle='dotted')
     #
-    fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
+    #fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
 
+    # 완성
+    plt.tight_layout()
+    return fig
+
+if st.button('1st click: plot raw data'):
+    fig=fig_1_CPTdata()
+    st.pyplot(fig)
+    
 # =============================================================================
 # Soil Classification 
 def cal_UW_Robertson2010(gw,Rf,qc):
