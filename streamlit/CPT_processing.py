@@ -127,3 +127,178 @@ def cal_Vs_Robertson2009(Ic,qt,sv):
     Vs = (alpha*(qt-sv)/Patm)**0.5
     return Vs
 #Vs_R = cal_Vs_Robertson2009(Ic,qt,sv_tot)
+
+def cal_Gmax_Mayne1993(sbt,qc):
+    # https://www.astm.org/DIGITAL_LIBRARY/JOURNALS/GEOTECH/PAGES/GTJ10267J.htm
+    qc_kPa = qc*1e3
+    Gmax = 0.00287*qc_kPa**1.335 # only for CLAY
+    #
+    ii = (sbt <= 4) # CLAY
+    Gmax[~ii] = np.nan
+    #
+    return Gmax
+
+def cal_Gmax_Mayne2007(sbt,qn):
+    Gmax_CLAY = 50*qn
+    Gmax_SILT = 50*Patm*(qn/Patm)**0.8
+    Gmax_SAND = 50*Patm*(qn/Patm)**0.6
+    Gmax = np.zeros(len(qn))
+    ii = (sbt <= 3) # Clay
+    Gmax[ii] = Gmax_CLAY[ii].copy()
+    ii = (sbt == 4) # Silt
+    Gmax[ii] = Gmax_SILT[ii].copy()
+    ii = (sbt >= 5) # Sand
+    Gmax[ii] = Gmax_SAND[ii].copy()
+    return Gmax
+
+
+# Other empirical equations ==================================================
+
+## All: Su
+def cal_su(qt,sv_t):
+    Nkt_low = 10
+    Nkt_high = 18
+    #
+    su_lb = (qt-sv_t)/Nkt_high
+    su_ub = (qt-sv_t)/Nkt_low
+    #
+    return su_lb,su_ub
+
+def cal_su_Vs_Clay(sbt,Vs):
+    su_kPa = (Vs/7.93)**1.59
+    #
+    ii = (sbt <= 4) # CLAY
+    su_kPa[~ii] = np.nan
+    #
+    su = su_kPa/1e3
+    return su
+
+## SAND/CLAY: phi
+def cal_phi_Robertson1983(sbt,qc,sv_e):
+    tan_phi = 1/2.68 * (np.log10(qc/sv_e) + 0.29)
+    phi_rad = np.arctan(tan_phi)
+    phi_deg = phi_rad*180/np.pi
+    #
+    #ii = (sbt >= 5) # SAND
+    #phi_deg[~ii] = np.nan
+    #
+    return phi_deg
+
+def cal_phi_Mayne2001(sbt,fs,sv_t):
+    # Not sure where this came from....but Asitha used it.
+    phi_deg = 30.8*(np.log10(fs/sv_t) + 1.26) # only for CLAY
+    #
+    ii = (sbt <= 4) # CLAY
+    phi_deg[~ii] = np.nan
+    #
+    return phi_deg
+    
+def cal_phi_Mayne2007(sbt,qt,sv_e):
+    q_t1 = (qt/Patm) * (Patm/sv_e)**0.5
+    phi = 17.6 + 11.0*np.log10(q_t1)  # only for SAND
+    #
+    ii = (sbt >= 5) # SAND
+    phi[~ii] = np.nan
+    #
+    return phi
+
+
+## SAND/CLAY: K0
+def cal_K0_Kulhawy1990(sbt,qc,qn,sv_e):
+    K0 = 0.1*(qn/sv_e)
+    # Note: There is some more for SAND based on OCR.
+    OCR_SAND = 1 # This cannot be correct, but let's try for now.
+    K_D = 2*OCR_SAND**(1/1.56)
+    #
+    ii = (sbt >= 5) # SAND
+    K0[ii] = 0.359 + 0.071*K_D - 0.00093*(qc[ii]/sv_e[ii])
+    # 
+    return K0
+
+def cal_K0_Mayne1995():
+    K0 = 0
+    return K0
+K0_M1995 = cal_K0_Mayne1995()
+
+def cal_K0_Mayne2007_Eq26(qt,sv_e):
+    OCR = 1 # Not sure this part
+    K0 = 0.192*(qt/Patm)**0.22 * (Patm/sv_e)**0.31 * OCR**0.27
+    return K0
+#
+
+
+
+
+## SAND: Dr ------------------------------------------------------------------
+def cal_Dr_Jamiolkowski2001(sbt,qt,sv_e):
+    q_t1 = (qt/Patm) * (Patm/sv_e)**0.5
+    bx = 0.675
+    # Reference was cited by Mayne 2014
+    #   high compressibility SAND: bx=0.525
+    #   medium compressibility SAND: bx=0.625
+    #   low compressibility SAND: bx=0.825
+    Dr = 100*(0.268*np.log(q_t1) - bx)
+    #
+    ii = (sbt >= 5) # SAND
+    Dr[~ii] = np.nan
+    #
+    return Dr
+
+def cal_Dr_Jamiokowski2003_dry(sbt,qc,smean):
+    Dr = (1.0/0.0295)*np.log(qc/2.494 / smean/100)**0.46
+    #
+    ii = (sbt >= 5) # SAND
+    Dr[~ii] = np.nan
+    #
+    return Dr
+
+def cal_Dr_ratio_Jamiokowski2003_sat(sbt,qc,sv_e):
+    qc_kPa = qc*1e3
+    Dr_ratio = (((-1.87 + 2.32*np.log(1e3*qc_kPa/(100*sv_e)**0.5))/100) + 1)
+    #
+    ii = (sbt >= 5) # SAND
+    Dr_ratio[~ii] = np.nan
+    #
+    return Dr_ratio
+def cal_Dr_Mayne2014(sbt,qt,sv_e):
+    OCR = 1 # Not sure this part
+    q_t1 = (qt/Patm) * (Patm/sv_e)**0.5
+    Dr = 100 * (q_t1/(305*OCR**0.2))**0.5
+    return Dr
+
+
+## CLAY: preconsolidation + OCR ----------------------------------------------
+def cal_OCR_Robertson2009(sbt,Qt):
+    OCR = 0.25*Qt**1.25
+    #
+    ii = (sbt <= 4) # CLAY
+    OCR[~ii] = np.nan
+    return OCR
+
+def cal_sp_Mayne2014(sbt,Ic,qn):
+    m = 1.0-0.28/(1+(Ic/2.65**25))
+    qn_kPa = qn*1e3
+    sp_kPa = 0.33*(qn_kPa)**m
+    #
+    #ii = (sbt <= 4) # CLAY
+    #sp_kPa[~ii] = np.nan
+    #
+    return np.round(sp_kPa)/1e3
+
+
+def cal_St_Robertson2009(sbt,Fr):
+    St = 7.1/Fr
+    #
+    ii = (sbt <= 4) # CLAY
+    St[~ii] = np.nan
+    #
+    return St
+
+## SILT: K0 ------------------------------------------------------------------
+def cal_K0_Robertson2015(sbt,ocr):
+    K0 = 0.5*ocr**0.5
+    #
+    ii = (sbt == 5) # SILT
+    K0[~ii] = np.nan
+    #
+    return K0
