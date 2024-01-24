@@ -302,3 +302,94 @@ def cal_K0_Robertson2015(sbt,ocr):
     K0[~ii] = np.nan
     #
     return K0
+
+# Plotting to check ==========================================================
+
+def plot_fig_1_CPTdata():
+    fig,ax = plt.subplots(1,5, figsize=(11,6), dpi=200)    
+    ax[0].plot(qc,z, color='C0',label='qc')
+    ax[1].plot(fs,z, color='C0',label='fs')
+    ax[2].plot(u2,z, color='C0',label='u2')
+    ax[3].plot(Rf,z, color='C0',label='Rf')
+    ax[4].plot(Bq,z, color='C0',label='Bq')
+    #
+    ax[0].set_ylabel("Depth [m]",size=ls)
+    ax[0].set_xlabel("Cone resistance [MPa]",size=ls)
+    ax[1].set_xlabel("Friction [MPa]",size=ls)
+    ax[2].set_xlabel("Pore pressure [MPa]",size=ls)
+    ax[3].set_xlabel("Friction ratio [%]",size=ls)
+    ax[4].set_xlabel("Pore pressure ratio [-]",size=ls)
+    #
+    ax[3].set(ylim=(zmax,0),xlim=(0,6.5))
+    ax[3].set(xticks=([0,2,6]))
+    ax[3].yaxis.grid(which="minor",linestyle='dotted')
+    ax[3].add_patch(patches.Rectangle((0,0),2,zmax,facecolor='goldenrod',alpha=0.4))
+    ax[3].add_patch(patches.Rectangle((2,0),4,zmax,facecolor='mediumseagreen',alpha=0.4))
+    ax[3].add_patch(patches.Rectangle((6,0),0.5,zmax,facecolor='sienna',alpha=al))
+    ax[3].text(1.05, 9.8, "SAND", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(3.05, 9.8, "CLAY or SILT", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(6.05, 9.8, "Glauconite", va='bottom', rotation=90, size=ts, color="black")
+    #
+    for i in range(5):
+        ax[i].set(ylim=(zmax,0))
+        ax[i].legend(loc='upper center', bbox_to_anchor=(0.5, 0), fancybox=True, shadow=False)
+        ax[i].grid(linestyle='dotted')
+        ax[i].minorticks_on()
+        ax[i].xaxis.set_ticks_position('top')
+        ax[i].xaxis.set_label_position('top')
+        ax[i].yaxis.grid(which="minor",linestyle='dotted')
+    #
+    fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
+
+
+def plot_fig_2_CPTsoil():
+    fig,ax = plt.subplots(1,5, figsize=(11,6), dpi=200)
+    ax[0].plot(qc,z, color='C0',label='qc')
+    ax[1].plot(uw,z, color='C1',label='Robertson, 2010')
+    ax[1].plot(uw_M,z, '--',color='C0',label='Mayne, 2012')
+    ax[2].plot(sv_tot,z, color='C0',label='σ_v_total')
+    ax[2].plot(sv_eff,z, '--',color='C0',label='σ_v_effective')
+    ax[3].plot(Ic,z,color='yellow',linewidth=lw, label='Ic: Robertson, 1990')
+    ax[4].plot(Isbt,z,color='yellow',linewidth=lw, label='Isbt: Robertson, 2010')
+    #
+    ax[0].set_ylabel("Depth [m]",size=ls)
+    ax[0].set_xlabel("Cone resistance [MPa]",size=ls)
+    ax[1].set_xlabel("Unit weight [kN/m3]",size=ls)
+    ax[2].set_xlabel("In-situ stress [MPa]",size=ls)
+    ax[3].set_xlabel("Soil Behavior Type [-]",size=ls)
+    ax[4].set_xlabel("Soil Behavior Type [-]",size=ls)
+    #
+    ax[1].set(xlim=(16,23))
+    ax[2].set(xlim=(0,round(max(sv_tot[~np.isnan(sv_tot)]))))
+    ax[3].set(ylim=(zmax,0),xlim=(1,4))
+    ax[3].set(xticks=([1.3,2.0,2.6,4]))
+    ax[3].add_patch(patches.Rectangle((0,0),1.31,zmax,facecolor='darkorange',alpha=al))
+    ax[3].add_patch(patches.Rectangle((1.31,0),0.74,zmax,facecolor='darkgoldenrod',alpha=al))
+    ax[3].add_patch(patches.Rectangle((2.05,0),0.55,zmax,facecolor='mediumseagreen',alpha=al))
+    ax[3].add_patch(patches.Rectangle((2.60,0),0.35,zmax,facecolor='seagreen',alpha=al))
+    ax[3].add_patch(patches.Rectangle((2.95,0),0.65,zmax,facecolor='steelblue',alpha=al))
+    ax[3].add_patch(patches.Rectangle((3.6,0),0.4,zmax,facecolor='sienna',alpha=al))
+    ax[3].text(1.05, 9.8, "gravel - dense sand", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(1.55, 9.8, "clean sand - silty sand", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(2.22, 9.8, "silty sand - sandy silt", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(2.65, 9.8, "clayey silt - silty clay", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(3.2, 9.8, "silty clay - clay", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(3.65, 9.8, "peat", va='bottom', rotation=90, size=ts, color="black")
+    #
+    ax[4].set(ylim=(zmax,0),xlim=(1,4))
+    ax[4].set(xticks=([1.0,Isbt_val,4]))
+    ax[4].add_patch(patches.Rectangle((0,0),Isbt_val,zmax,facecolor='darkgoldenrod',alpha=al))
+    ax[4].add_patch(patches.Rectangle((Isbt_val,0),4-Isbt_val,zmax,facecolor='seagreen',alpha=al))
+    ax[4].text(1.5, 9.8, "SAND", va='bottom', rotation=90, size=ts, color="black")
+    ax[4].text(3.0, 9.8, "CLAY", va='bottom', rotation=90, size=ts, color="black")
+    #
+    for i in range(5):
+        ax[i].set(ylim=(zmax,0))
+        ax[i].legend(loc='upper center', bbox_to_anchor=(0.5, 0), fancybox=True, shadow=False)
+        ax[i].grid(linestyle='dotted')
+        ax[i].minorticks_on()
+        ax[i].xaxis.set_ticks_position('top')
+        ax[i].xaxis.set_label_position('top')
+        ax[i].yaxis.grid(which="minor",linestyle='dotted')
+    #
+    fig.suptitle("CPT soil type: "+file_CPT, y=1, size=1.2*ls)
