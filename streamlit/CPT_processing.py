@@ -96,11 +96,11 @@ def fig_1_CPTdata(df_CPT):
     #fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
 
     # 완성
-    plt.tight_layout(df_CPT)
+    plt.tight_layout()
     return fig
 
 if st.button('1st click: plot raw data'):
-    fig=fig_1_CPTdata()
+    fig=fig_1_CPTdata(df_CPT)
     st.pyplot(fig)
 
 UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
