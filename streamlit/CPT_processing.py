@@ -46,3 +46,6 @@ st.dataframe(df_CPT)
 
 loca_list = list(df_CPT['LOCA_ID'].unique())
 n_loca = len(loca_list)
+
+
+loca = st.selectbox("Pick the location: ", loca_list)
