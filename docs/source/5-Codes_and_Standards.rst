@@ -25,12 +25,6 @@ ISO
 Others
 ------
 
-The greatest ;)
-...
-
-- GP 04-50
-- GP 04-52
-
 DNV
 ...
 
@@ -39,3 +33,9 @@ DNV
 - DNVGL-RP-E303: Geotechnical design and installation of Suction anchor in CLAY
 - DNVGL-RP-F114: Pipe-Soil Interaction for submarine pipelines
 - DNVGL-RP-N103: Modelling and analysis of marine operations
+
+Best of all Practical analysis ;)
+...
+
+- GP 04-50
+- GP 04-52
