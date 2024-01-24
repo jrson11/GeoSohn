@@ -24,9 +24,9 @@ Offshore Geotechnical Surveys
 
 2. Core Sampling Methods
 
-  - Box Core
-  - Piston Core
-  - Jumbo Piston Core
+    - Box Core
+    - Piston Core
+    - Jumbo Piston Core
 
 3. Cone Penetration Testing (CPT)
 
