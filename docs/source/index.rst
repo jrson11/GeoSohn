@@ -6,8 +6,6 @@ Welcome to GeoSohn
 .. image:: ../images/Canvas_of_Offshore_Geotech(Sep2023).png
    :width: 800
 
-Table of Contents
-----------------
 
 .. toctree::
    :maxdepth: 1
@@ -25,12 +23,13 @@ Table of Contents
    :maxdepth: 1
    :caption: Python Applications
 
-   1. TBD <xxx.rst>
-   2. TBD <xxx.rst>
+   1. MCMC <https://mcmcsoillayerspy-5twn22pprrmtclrnykhwze.streamlit.app/>
+   2. CPT <xxx.rst>
+   2. p-y curve <https://plotpycurvepy-j833amvwazrskraswjxgbw.streamlit.app/>
 
 .. toctree::
    :maxdepth: 1
    :caption: About
 
-   1. Author <xxx.rst>
+   1. Author <https://sites.google.com/view/jungrak-son-phd-pe>
    2. Features <xxx.rst>
