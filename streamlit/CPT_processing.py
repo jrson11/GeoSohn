@@ -51,6 +51,9 @@ n_loca = len(loca_list)
 loca = st.selectbox("Pick the location: ", loca_list)
 UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
 
+ii = loca == df_CPT['LOCA_ID'] 
+st.dataframe(df_CPT[ii])
+
 
 # =============================================================================
 # Soil Classification 
