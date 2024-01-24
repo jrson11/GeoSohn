@@ -24,7 +24,7 @@ st.write('- Method: Empirical equations based on Robertson2010')
 
 
 # =============================================================================
-# Import raw data
+# Raw 데이터 가져오기
 st.subheader(':floppy_disk: Step 1: Import in-situ CPT data')
 
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_CPTs_Fugro_TNW/TNW_20200508_FNLM_AGS4.0_V02_F-SCPT_052.csv')
@@ -40,6 +40,8 @@ df_CPT['fs_kPa'] = df_Raw.loc[2:,'SCPT_FRES']
 df_CPT['u2_kPa'] = df_Raw.loc[2:,'SCPT_PWP2']
 df_CPT['qt_MPa'] = df_Raw.loc[2:,'SCPT_QT']
 df_CPT['qnet_MPa'] = df_Raw.loc[2:,'SCPT_QNET']
+df_CPT['Fr_%'] = df_Raw.loc[2:,'SCPT_FRR']
+df_CPT['Bq_x'] = df_Raw.loc[2:,'SCPT_BQ']
 
 #st.dataframe(df_CPT)
 
@@ -54,6 +56,50 @@ UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
 ii = loca == df_CPT['LOCA_ID'] 
 st.dataframe(df_CPT[ii])
 
+# 체크하기 위한 플롯팅
+
+def plot_fig_1_CPTdata():
+    z = df_CPT['Depth_m']
+    qc = df_CPT['qc_MPa']
+    fs = df_CPT['fs_MPa']
+    u2 = df_CPT['qc_MPa']
+    Rf = df_CPT['Fr_%']
+    Bq = df_CPT['Bq_x']
+    
+    fig,ax = plt.subplots(1,5, figsize=(11,6), dpi=200)    
+    ax[0].plot(qc,z, color='C0',label='qc')
+    ax[1].plot(fs,z, color='C0',label='fs')
+    ax[2].plot(u2,z, color='C0',label='u2')
+    ax[3].plot(Rf,z, color='C0',label='Rf')
+    ax[4].plot(Bq,z, color='C0',label='Bq')
+    #
+    ax[0].set_ylabel("Depth [m]",size=ls)
+    ax[0].set_xlabel("Cone resistance [MPa]",size=ls)
+    ax[1].set_xlabel("Friction [MPa]",size=ls)
+    ax[2].set_xlabel("Pore pressure [MPa]",size=ls)
+    ax[3].set_xlabel("Friction ratio [%]",size=ls)
+    ax[4].set_xlabel("Pore pressure ratio [-]",size=ls)
+    #
+    ax[3].set(ylim=(zmax,0),xlim=(0,6.5))
+    ax[3].set(xticks=([0,2,6]))
+    ax[3].yaxis.grid(which="minor",linestyle='dotted')
+    ax[3].add_patch(patches.Rectangle((0,0),2,zmax,facecolor='goldenrod',alpha=0.4))
+    ax[3].add_patch(patches.Rectangle((2,0),4,zmax,facecolor='mediumseagreen',alpha=0.4))
+    ax[3].add_patch(patches.Rectangle((6,0),0.5,zmax,facecolor='sienna',alpha=al))
+    ax[3].text(1.05, 9.8, "SAND", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(3.05, 9.8, "CLAY or SILT", va='bottom', rotation=90, size=ts, color="black")
+    ax[3].text(6.05, 9.8, "Glauconite", va='bottom', rotation=90, size=ts, color="black")
+    #
+    for i in range(5):
+        ax[i].set(ylim=(zmax,0))
+        ax[i].legend(loc='upper center', bbox_to_anchor=(0.5, 0), fancybox=True, shadow=False)
+        ax[i].grid(linestyle='dotted')
+        ax[i].minorticks_on()
+        ax[i].xaxis.set_ticks_position('top')
+        ax[i].xaxis.set_label_position('top')
+        ax[i].yaxis.grid(which="minor",linestyle='dotted')
+    #
+    fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
 
 # =============================================================================
 # Soil Classification 
@@ -308,41 +354,6 @@ def cal_K0_Robertson2015(sbt,ocr):
 
 # Plotting to check ==========================================================
 
-def plot_fig_1_CPTdata():
-    fig,ax = plt.subplots(1,5, figsize=(11,6), dpi=200)    
-    ax[0].plot(qc,z, color='C0',label='qc')
-    ax[1].plot(fs,z, color='C0',label='fs')
-    ax[2].plot(u2,z, color='C0',label='u2')
-    ax[3].plot(Rf,z, color='C0',label='Rf')
-    ax[4].plot(Bq,z, color='C0',label='Bq')
-    #
-    ax[0].set_ylabel("Depth [m]",size=ls)
-    ax[0].set_xlabel("Cone resistance [MPa]",size=ls)
-    ax[1].set_xlabel("Friction [MPa]",size=ls)
-    ax[2].set_xlabel("Pore pressure [MPa]",size=ls)
-    ax[3].set_xlabel("Friction ratio [%]",size=ls)
-    ax[4].set_xlabel("Pore pressure ratio [-]",size=ls)
-    #
-    ax[3].set(ylim=(zmax,0),xlim=(0,6.5))
-    ax[3].set(xticks=([0,2,6]))
-    ax[3].yaxis.grid(which="minor",linestyle='dotted')
-    ax[3].add_patch(patches.Rectangle((0,0),2,zmax,facecolor='goldenrod',alpha=0.4))
-    ax[3].add_patch(patches.Rectangle((2,0),4,zmax,facecolor='mediumseagreen',alpha=0.4))
-    ax[3].add_patch(patches.Rectangle((6,0),0.5,zmax,facecolor='sienna',alpha=al))
-    ax[3].text(1.05, 9.8, "SAND", va='bottom', rotation=90, size=ts, color="black")
-    ax[3].text(3.05, 9.8, "CLAY or SILT", va='bottom', rotation=90, size=ts, color="black")
-    ax[3].text(6.05, 9.8, "Glauconite", va='bottom', rotation=90, size=ts, color="black")
-    #
-    for i in range(5):
-        ax[i].set(ylim=(zmax,0))
-        ax[i].legend(loc='upper center', bbox_to_anchor=(0.5, 0), fancybox=True, shadow=False)
-        ax[i].grid(linestyle='dotted')
-        ax[i].minorticks_on()
-        ax[i].xaxis.set_ticks_position('top')
-        ax[i].xaxis.set_label_position('top')
-        ax[i].yaxis.grid(which="minor",linestyle='dotted')
-    #
-    fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
 
 
 def plot_fig_2_CPTsoil():
