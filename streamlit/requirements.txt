@@ -8,3 +8,4 @@ scipy
 geopandas
 folium
 streamlit_folium
+python-ags4
