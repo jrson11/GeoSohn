@@ -67,4 +67,39 @@ def cal_UW_Mayne2012(fs):
     gamma = 26 - 14/(1+(0.5*np.log10(fs_kPa+1))**2)
     return np.array(gamma) # [kN/m3]
 
+def Ic_Robertson1990():
+## Ic (Robertson, 1990) / ## Ic (Robertson and Wride, 1998)
+# Reference: https://geotech40.blogspot.com/
 
+#    SBT zone 1: sensitive fine-grained
+#    SBT zone 2: CLAY - organic soil
+#    SBT zone 3: CLAYs: clay to silty clay
+#    SBT zone 4: SILT mixtures: clayey silt & silty clay
+#    --------------------------------------------------- Ic = 2.60
+#    SBT zone 5: SAND mixture: silty sand to sandy silt
+#    SBT zone 6: SANDs: clean sands to silty sands
+#    SBT zone 7: Dense sand to gravelly sand
+#    SBT zone 8: Stiff sand to clayey sand
+#    SBT zone 9: Stiff fine-grained (overconsolidated)
+
+    qt = qc + (1-alpha_CPT)*u2
+    qn = qt - sv_tot
+    Qt = qn/sv_eff
+    Fr = np.array([a/(b-c)*100 for a,b,c in zip(fs,qc,sv_tot)])
+    Ic = np.array([np.sqrt((3.47-np.log10(x))**2 + (np.log10(y)+1.22)**2) for x,y in zip(Qt,Fr)])
+    Ic_soil = []
+    for i in range(len(z)):
+        if Ic[i] > 3.60 and Ic[i] <=4.0:
+            Ic_soil.append(2) # peats
+        elif Ic[i] > 2.95 and Ic[i] <=3.60:
+            Ic_soil.append(3) # CLAY
+        elif Ic[i] > 2.60 and Ic[i] <=2.95:
+            Ic_soil.append(4) # SILT
+        elif Ic[i] > 2.05 and Ic[i] <=2.60:
+            Ic_soil.append(5) # SAND mix
+        elif Ic[i] > 1.31 and Ic[i] <=2.05:
+            Ic_soil.append(6) # SAND clean
+        elif Ic[i] > 1.00 and Ic[i] <=1.31:
+            Ic_soil.append(7) # SAND gravel
+        else:
+            Ic_soil.append(np.nan)
