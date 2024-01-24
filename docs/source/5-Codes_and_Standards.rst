@@ -34,8 +34,8 @@ DNV
 - DNVGL-RP-F114: Pipe-Soil Interaction for submarine pipelines
 - DNVGL-RP-N103: Modelling and analysis of marine operations
 
-Best of all Practical analysis ;)
-...
+Best of all Practical analysis
+..............................
 
 - GP 04-50
 - GP 04-52
