@@ -115,3 +115,15 @@ def Isbt_Robertson2010():
             Isbt_soil.append(5)
         else:
             Isbt_soil.append(np.nan)
+
+def cal_Vs_Mayne2007(fs):
+    fs_kPa = fs*1e3 # [kPa]
+    Vs = 51.6*np.log(fs_kPa) + 18.5
+    return Vs
+#Vs_M = cal_Vs_Mayne2007(fs)
+
+def cal_Vs_Robertson2009(Ic,qt,sv):
+    alpha = 10**(0.55*Ic+1.68) # [m2/s2]
+    Vs = (alpha*(qt-sv)/Patm)**0.5
+    return Vs
+#Vs_R = cal_Vs_Robertson2009(Ic,qt,sv_tot)
