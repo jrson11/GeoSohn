@@ -18,7 +18,7 @@ from sidebar_links import add_sidebar_links
 add_sidebar_links()
 
 # Title
-st.title("Stratigraphic Soil Layer Modeling (Not Ready)")
+st.title("In-situ CPT data processing")
 st.write('- Because this runs MCMC everytime when I click any buttons below')
 st.write('- Purpose: Uncertainty quantification')
 st.write('- Method: MCMC calibration based on Bayesian method')
