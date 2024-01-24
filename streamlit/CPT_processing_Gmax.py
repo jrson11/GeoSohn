@@ -115,5 +115,9 @@ if st.button('1st click: plot raw data'):
     fig=fig_CPT_raw_data(df_CPT)
     st.pyplot(fig)
 
+
+# =============================================================================
+# Engineering parameters
+st.subheader(':desktop_computer: Step 2: Derive engineering parameters')
 UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
 
