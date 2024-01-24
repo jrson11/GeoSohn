@@ -70,12 +70,12 @@ def fig_CPT_raw_data(df_CPT):
     Bq = df_CPT['Bq_x']
     
     fig,ax = plt.subplots(1,5, figsize=(12,6), dpi=200)    
-    ax[0].plot(qc,z, color='C0',label='qc')
-    ax[0].plot(qt,z, '--', color='C1',label='qt')
-    ax[1].plot(fs,z, color='C0',label='fs')
-    ax[2].plot(u2,z, color='C0',label='u2')
-    ax[3].plot(Rf,z, color='C0',label='Rf')
-    ax[4].plot(Bq,z, color='C0',label='Bq')
+    ax[0].plot(qc,z, '.',color='C0',label='qc')
+    ax[0].plot(qt,z, 'x', color='C1',label='qt')
+    ax[1].plot(fs,z, '.',color='C0',label='fs')
+    ax[2].plot(u2,z, '.',color='C0',label='u2')
+    ax[3].plot(Rf,z, '.',color='C0',label='Rf')
+    ax[4].plot(Bq,z, '.',color='C0',label='Bq')
     #
     ax[0].set_ylabel("Depth [m]",size=ls)
     ax[0].set_xlabel("Cone resistance \n [MPa]",size=ls)
