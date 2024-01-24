@@ -30,7 +30,7 @@ st.subheader(':floppy_disk: Step 1: Import in-situ CPT data')
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_CPTs_Fugro_TNW/TNW_20200508_FNLM_AGS4.0_V02_F-SCPT_052.csv')
 st.write('Imported data: Unit Weight derived from in-situ CPT')
 
-st.dataframe(df_Raw)
+#st.dataframe(df_Raw)
 
 df_CPT = pd.DataFrame()
 df_CPT['LOCA_ID'] = df_Raw.loc[2:,'LOCA_ID']
