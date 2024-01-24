@@ -62,6 +62,7 @@ def fig_1_CPTdata(df_CPT):
     
     fig,ax = plt.subplots(1,5, figsize=(11,6), dpi=200)    
     ax[0].plot(qc,z, color='C0',label='qc')
+    '''
     ax[1].plot(fs,z, color='C0',label='fs')
     ax[2].plot(u2,z, color='C0',label='u2')
     ax[3].plot(Rf,z, color='C0',label='Rf')
@@ -94,7 +95,7 @@ def fig_1_CPTdata(df_CPT):
         ax[i].yaxis.grid(which="minor",linestyle='dotted')
     #
     #fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
-
+    '''
     # 완성
     plt.tight_layout()
     return fig
