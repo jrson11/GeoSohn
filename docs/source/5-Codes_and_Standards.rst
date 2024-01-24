@@ -4,7 +4,7 @@ Codes and Standards
 API
 ---
 
-: `Confidential link: <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EerYM9IH4XtOlvDc1P6kYJMBrWG47-ktecX9Qut-Bc0etw?e=vfYauS>`_
+: `Confidential link <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EerYM9IH4XtOlvDc1P6kYJMBrWG47-ktecX9Qut-Bc0etw?e=vfYauS>`_
 
 - API RP 2A-WSD: Fixed offshore
 
