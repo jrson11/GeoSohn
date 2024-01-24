@@ -4,17 +4,17 @@ Site Investigation
 Offshore Geophysical Surveys
 --------------------
 
-1. Seismic Profiling:
+1. Seismic Profiling
 
-2. Side-Scan Sonar:
+2. Side-Scan Sonar
 
-3. Multibeam Echo Sounder (MBES):
+3. Multibeam Echo Sounder (MBES)
 
-4. Sub-Bottom Profiling:
+4. Sub-Bottom Profiling
 
-5. Electromagnetic Surveys:
+5. Electromagnetic Surveys
 
-6. Borehole Logging:
+6. Borehole Logging
 
 
 Offshore Geotechnical Surveys
@@ -25,9 +25,7 @@ Offshore Geotechnical Surveys
 2. Core Sampling Methods
 
   - Box Core
-
   - Piston Core
-
   - Jumbo Piston Core
 
 3. Cone Penetration Testing (CPT)
