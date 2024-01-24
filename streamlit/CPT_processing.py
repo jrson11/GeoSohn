@@ -26,12 +26,10 @@ st.write('- Method: Empirical equations based on Robertson2010')
 # =============================================================================
 # Raw 데이터 가져오기
 st.subheader(':floppy_disk: Step 1: Import in-situ CPT data')
-
 df_Raw = pd.read_csv('https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/input_CPTs_Fugro_TNW/TNW_20200508_FNLM_AGS4.0_V02_F-SCPT_052.csv')
 st.write('Imported data: Unit Weight derived from in-situ CPT')
 
-#st.dataframe(df_Raw)
-
+## Raw 데이터에서 헤더 빼고 필요한 파라미터만 가져오기
 df_CPT = pd.DataFrame()
 df_CPT['LOCA_ID'] = df_Raw.loc[2:,'LOCA_ID']
 df_CPT['Depth_m'] = df_Raw.loc[2:,'SCPT_DPTH']
@@ -43,22 +41,18 @@ df_CPT['qnet_MPa'] = df_Raw.loc[2:,'SCPT_QNET']
 df_CPT['Fr_%'] = df_Raw.loc[2:,'SCPT_FRR']
 df_CPT['Bq_x'] = df_Raw.loc[2:,'SCPT_BQ']
 
-#st.dataframe(df_CPT)
-
-
+## 데이터 갯수 확인
 loca_list = list(df_CPT['LOCA_ID'].unique())
 n_loca = len(loca_list)
 
-
+## 원하는 데이터 선택하기
 loca = st.selectbox("Pick the location: ", loca_list)
-UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
-
 ii = loca == df_CPT['LOCA_ID'] 
 st.dataframe(df_CPT[ii])
 
-# 체크하기 위한 플롯팅
-
-def fig_1_CPTdata():
+## 체크하기 위한 플롯팅
+def fig_1_CPTdata(df_CPT):
+    ls = 10    # 라벨사이즈
     z = df_CPT['Depth_m']
     qc = df_CPT['qc_MPa']
     fs = df_CPT['fs_MPa']
@@ -108,7 +102,10 @@ def fig_1_CPTdata():
 if st.button('1st click: plot raw data'):
     fig=fig_1_CPTdata()
     st.pyplot(fig)
-    
+
+UW = st.number_input("Soil density: ", min_value=10, value=18, step=1)
+
+
 # =============================================================================
 # Soil Classification 
 def cal_UW_Robertson2010(gw,Rf,qc):
