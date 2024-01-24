@@ -96,7 +96,7 @@ def fig_1_CPTdata(df_CPT):
     #fig.suptitle("CPT data: "+file_CPT, y=1, size=1.2*ls)
 
     # 완성
-    plt.tight_layout()
+    plt.tight_layout(df_CPT)
     return fig
 
 if st.button('1st click: plot raw data'):
