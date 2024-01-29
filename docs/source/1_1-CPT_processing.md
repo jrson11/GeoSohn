@@ -5,9 +5,13 @@
 ## Fundamental CPT processing
 
 1. Interpolation
-2. Unit Weight (UW)
-3. In-situ stress
-4. qnet
+    - $q_c$ : Tip Resistance
+    - $f_s$ : Sleeve Friction
+    - $u_2$ : Porewater pressure
+    - 
+3. Unit Weight (UW)
+4. In-situ stress
+5. $q_{net}$
     - $q_{net} = q_t - \sigma_{v0}$   
 
 
