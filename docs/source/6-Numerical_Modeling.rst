@@ -1,13 +1,13 @@
-Numerical Modeling
+6.Numerical Modeling
 ===================
 
-Plaxis3D
+6.1 Paxis3D
 ---------
 
-1. Mudmat
+6.1.1 Mudmat
 .........
 
-2. Suction pile
+6.1.2. Suction pile
 ...............
 
 - Note
@@ -16,25 +16,25 @@ Plaxis3D
   - Range of mooring line angle at padeye: 15 ~ 45 (API RP 2SK-R2015, Figure E.3)
 
 
-3. Slope Stability
+6.2 Slope Stability
 ..................
 
 - Slope 2D
 - Slope 3D
 
-Python
+6.3 Python
 ------
 
-1. Groundhog
+6.3.1. Groundhog
 ............
 
-2. GeoSohn
+6.3.2. GeoSohn
 ..........
 
-Others
+6.3 Others
 -------
 
-1. NGI
+6.3.1. NGI
 .....
 
 - Bifurc: 2D suction pile
@@ -54,7 +54,7 @@ Others
     - Force calculated for critical surface
 
 
-2. Fugro
+6.3.2. Fugro
 ........
 
 - AGSPANC: pile capacity analyses
@@ -62,7 +62,7 @@ Others
   - Randolph,2020, "A Lifetime of Offshore Geotechnics - Career Reflections and Lessons Learned" has AGSPANC in Fig. 12.
 
 
-3.Delmar
+6.3.3.Delmar
 .........
 
 - DEAP: Suction pile by PLE
@@ -70,7 +70,7 @@ Others
   - API RP 2SK D.10 5th requirement, PLE may NOT be suitable for LAYERED soil profile.
   - API RP 2SK E., 3.2.3.2 is also skeptical in PLE.
 
-4. DNV
+6.3.4 DNV
 ......
 
 - SESAM
