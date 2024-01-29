@@ -10,7 +10,7 @@
     - $u_2$ : Porewater pressure
     - $q_t$ : Total Cone Resistance = $q_t = q_c + u_2(1-\alpha)$
       
-| LOCA_ID | Depth | **qc** | fs | u2 | qt |
+| LOCA_ID | Depth | (qc) | fs | u2 | qt |
 | ------- | ----- | -- | -- | -- | -- |
       
 2. Unit Weight (UW)
