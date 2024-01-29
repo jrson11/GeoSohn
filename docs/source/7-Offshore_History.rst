@@ -24,7 +24,7 @@
     - 2006a:
     - 2006b:
     - 2010:
-    - 2012:
+    - 2012: Jeanjean-2012-State of Practice Offshore Geotechnics throughout the Life of an Oil and Gas Field `Confidential Link<>`_
     - 2017:
     - 2022:
 
