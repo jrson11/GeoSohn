@@ -1,7 +1,7 @@
-Site Investigation
+1. Site Investigation
 ===================
 
-Offshore Geophysical Surveys
+1.1 Offshore Geophysical Surveys
 --------------------
 
 1. Seismic Profiling
@@ -17,7 +17,7 @@ Offshore Geophysical Surveys
 6. Borehole Logging
 
 
-Offshore Geotechnical Surveys
+1.2 Offshore Geotechnical Surveys
 --------------------
 
 1. Seabed Sampling
