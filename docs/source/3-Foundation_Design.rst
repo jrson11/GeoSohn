@@ -1,10 +1,10 @@
-Offshore Foundation Design
+3. Offshore Foundation Design
 ==================
 
-Shallow Foundation
+3.1 Shallow Foundation
 -------------------
 
-Mudmat
+3.1.1 Mudmat
 .......
 
 1. Bearing capacity (API RP 2GEO)
@@ -12,7 +12,7 @@ Mudmat
 3. Settlement (API RP 2GEO-7.8.1 / API RP 2GEO-7.8.2)
 4. Skirt penetration (DNV CN30.4 / API RP 2GEO-7.12)
 
-Others
+3.1.2 Others
 .......
 
 1. Plate anchor
@@ -20,21 +20,21 @@ Others
 3. Drag embedded anchor
 4. Gravity-based foundation
 
-Challenging Topics
+3.1.3 Challenging Topics
 -------------------
 
 - `V-H envelops for mudmat <https://github.com/jrson11/GeoSohn/blob/main/docs/source/zzz.md>`_
 
-Deep Foundation
+3.2 Deep Foundation
 ----------------
 
-Driven Pile
+3.2.1 Driven Pile
 ............
 
 1. PISA design model
 2. Pile Driving Analysis (PDA)
 
-Suction Pile
+3.2.2 Suction Pile
 .............
 
 1. Geotechnical holding capacity
@@ -45,7 +45,7 @@ Suction Pile
 
 
 
-Challenging Topics
+3.2.3 Challenging Topics
 -------------------
 
 - `p-y curve <https://github.com/jrson11/GeoSohn/blob/main/docs/source/3_1-pu_curve.md>`_
