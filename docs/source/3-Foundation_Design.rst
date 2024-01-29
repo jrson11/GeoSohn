@@ -20,6 +20,11 @@ Others
 3. Drag embedded anchor
 4. Gravity-based foundation
 
+Challenging Topics
+-------------------
+
+- `V-H envelops for mudmat <https://github.com/jrson11/GeoSohn/blob/main/docs/source/zzz.md>`_
+
 Deep Foundation
 ----------------
 
