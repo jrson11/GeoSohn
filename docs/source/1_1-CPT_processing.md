@@ -17,7 +17,7 @@
     - Summary Table of Soil Units is required from integrated study with geoscience.
     - Then, assign corresponding UW for each depth.
    
-| LOCA_ID | Depth | qc | fs | u2 | qt | *SoilUnit* | <u>UW</u> |
+| LOCA_ID | Depth | qc | fs | u2 | qt | *SoilUnit* | <ins>UW</ins> |
 | ------- | ----- | -- | -- | -- | -- | -- | -- |
 
 4. In-situ stress
