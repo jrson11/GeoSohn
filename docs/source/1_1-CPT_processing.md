@@ -14,6 +14,8 @@
 | ------- | ----- | -- | -- | -- | -- |
       
 2. Unit Weight (UW)
+    - Summary Table of Soil Units is required from integrated study with geoscience.
+    - Then, assign corresponding UW for each depth.
    
 | LOCA_ID | Depth | qc | fs | u2 | qt | SoilUnit | UW |
 | ------- | ----- | -- | -- | -- | -- | -- | -- |
