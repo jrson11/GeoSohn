@@ -8,7 +8,7 @@
 2. Unit Weight (UW)
 3. In-situ stress
 4. qnet
-  - qnet = qt - $\sigma_{v0}$   
+  - $q_{net} = q_t - \sigma_{v0}$   
 
 
 
