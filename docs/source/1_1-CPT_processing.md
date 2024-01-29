@@ -14,6 +14,7 @@
 | ------- | ----- | -- | -- | -- | -- |
       
 2. Unit Weight (UW)
+   
 | LOCA_ID | Depth | qc | fs | u2 | qt | SoilUnit | UW |
 | ------- | ----- | -- | -- | -- | -- | -- | -- |
 
