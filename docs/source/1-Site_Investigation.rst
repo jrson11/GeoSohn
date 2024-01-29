@@ -37,7 +37,7 @@ Offshore Geotechnical Surveys
 
 Presentations
 .............
-`Confidential Link: Drill ship vs PROD (Jan.2024) <https://>`_
+Drill ship vs PROD (Jan.2024): `Confidential Link <https://>`_
 
 Integration
 --------------------
