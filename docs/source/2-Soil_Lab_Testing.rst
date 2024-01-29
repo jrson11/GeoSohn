@@ -1,8 +1,8 @@
-Soil Lab Testing
+2. Soil Lab Testing
 =================
 
 
-Standard Lab Testing
+2.1 Standard Lab Testing
 ---------------------
 1. Strength: PP / TV / LV/ FC
 2. Weight: WC / UW / SUW / MinMax
@@ -11,7 +11,7 @@ Standard Lab Testing
 5. Others: CC / OC / TC / Resistivity
 
 
-Advanced Lab Testing
+2.2 Advanced Lab Testing
 ---------------------
 
 1. Consolidation: IL / CRS
