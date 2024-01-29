@@ -24,9 +24,7 @@
     - 2006a:
     - 2006b:
     - 2010:
-    - 2012: Jeanjean-2012-State of Practice Offshore Geotechnics throughout the Life of an Oil and Gas Field `Confidential Link<https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/ETO8BoiqJqVNjRN1DWxE-FQB9bmcZxFQrJY2fG45CrUfNg?e=4%3AOGZg6R&fromShare=true&at=9&CID=8afe5c0a-4290-fb0a-501e-8c7e84d79c06>`_
-
-`Confidential Link<https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/Documents/bp_Presentation_by_JS/_GeoSohn/7.3.1.1-Summary_Dr.Jeanjean%27s_paper(2012).pptx?d=w8806bc3326aa4da58d13750d6c44f854&csf=1&web=1&e=gA2KvI>`_
+    - 2012: Jeanjean-2012-State of Practice Offshore Geotechnics throughout the Life of an Oil and Gas Field `Confidential Link <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/Documents/bp_Presentation_by_JS/_GeoSohn/7.3.1.1-Summary_Dr.Jeanjean%27s_paper(2012).pptx?d=w8806bc3326aa4da58d13750d6c44f854&csf=1&web=1&e=fLBbMV>`_
 
     - 2017:
     - 2022:
