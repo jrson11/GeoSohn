@@ -52,6 +52,7 @@ def main():
   ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
   ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x'])
 
+  st.write(list_LOCA_BD)
   
   loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD,'n/a')
   loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
