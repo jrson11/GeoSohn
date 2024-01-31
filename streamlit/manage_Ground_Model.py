@@ -25,6 +25,9 @@ def main():
   project = st.selectbox(':floppy_disk: Please select a project', (['n/a','Kaskida','ASWX','NaKika','Tiber']))
   st.write('You selected: ', project)
 
+  ## Memory allocation
+  df_PROJ = pd.DataFrame()
+
   if project == "Kaskida":
     df_PROJ = Kaskida()
   st.dataframe(df_PROJ)
