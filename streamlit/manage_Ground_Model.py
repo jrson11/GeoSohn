@@ -15,12 +15,19 @@ def map_altair(proj):
 
 def Kaskida():
   st.write('Kaskida')
+  filename = 'https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/src_AGS/AGS_Kaskida(01Dec23).xlsx'
+  df_PROJ = pd.read_excel(filename, sheet_name='PROJ', header=2)
+  return df_PROJ
   
 # =======================================================
 # 메인 
 def main():
   project = st.selectbox(':floppy_disk: Please select a project', (['n/a','Kaskida','ASWX','NaKika','Tiber']))
   st.write('You selected: ', project)
+
+  if project == "Kaskida":
+    df_PROJ = Kaskida()
+  st.dataframe(df_PROJ)
 
   list_BC = list(['n/a','b','c'])
   list_PC = list(['n/a','b','c'])
@@ -30,6 +37,8 @@ def main():
   loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
   loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_JPC,'n/a')
   loca_CPT = st.multiselect('Please select the **CPT**', list_CPT,'n/a')
+
+
 
   ## ---------------------------------------------------------
   ## Map
