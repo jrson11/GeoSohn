@@ -10,7 +10,8 @@ password = st.text_input('Password?', 'password')
 
 # Main --------------------------------------------------
 def main():
-  st.title("Manage Ground Model")
+  proj = st.selectbox('Please select a project', ('Kaskida','ASWX','NaKika','Tiber')
+  st.write('You selected: ', proj)
 
 # Membership --------------------------------------------
 if password == st.secrets['DB_pw']:
@@ -20,6 +21,3 @@ if password == st.secrets['DB_pw']:
 else:
   st.markdown('## Sorry, this is confidential')
 
-# Title
-#st.write('- Purpose: To estimate Gmax from CPT data')
-#st.write('- Method: Empirical equations based on Robertson2010')
