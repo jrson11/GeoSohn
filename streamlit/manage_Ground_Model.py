@@ -21,6 +21,10 @@ def Kaskida():
   df_SCPT = pd.read_excel(filename, sheet_name='SCPT', header=2)
   df_IVAN = pd.read_excel(filename, sheet_name='IVAN', header=2)
   return df_PROJ, df_LOCA, df_SCPT, df_IVAN
+
+def list_loca(db):
+  list_loca = df['LOCA_ID_x'].unique()
+  return list_loca
   
 # =======================================================
 # 메인 
@@ -44,6 +48,8 @@ def main():
   st.dataframe(df_PROJ)
   st.dataframe(df_LOCA)
 
+  ## 자료 리스트 확인
+  list_BC = list_loca(df_LOCA)
 
   loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_BC,'n/a')
   loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
