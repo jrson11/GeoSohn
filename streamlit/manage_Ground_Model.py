@@ -19,7 +19,7 @@ def Kaskida():
 # =======================================================
 # 메인 
 def main():
-  project = st.selectbox(':floppy_disk: Please select a project', (['n/a','Kaskida','ASWX','NaKika','Tiber']),'n/a')
+  project = st.selectbox(':floppy_disk: Please select a project', (['n/a','Kaskida','ASWX','NaKika','Tiber']))
   st.write('You selected: ', project)
 
   list_BC = list(['n/a','b','c'])
