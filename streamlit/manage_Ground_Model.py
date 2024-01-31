@@ -6,7 +6,7 @@ import altair as alt
 
 # =======================================================
 # Confidential
-password = st.sidebar.text_input('Password?', 'password')
+password = st.text_input('Password?', 'password')
 
 # Main --------------------------------------------------
 def main():
