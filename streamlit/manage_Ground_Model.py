@@ -5,7 +5,7 @@ import streamlit as st
 import altair as alt
 
 # =======================================================
-# Confidential
+# 컨피덴셜
 # password = st.text_input('Password?', 'password')
 
 # =======================================================
@@ -25,17 +25,22 @@ def main():
   project = st.selectbox(':floppy_disk: Please select a project', (['n/a','Kaskida','ASWX','NaKika','Tiber']))
   st.write('You selected: ', project)
 
-  ## Memory allocation
+  ## 메모리 얼로케이션
   df_PROJ = pd.DataFrame()
-
-  if project == "Kaskida":
-    df_PROJ = Kaskida()
-  st.dataframe(df_PROJ)
-
+  df_LOCA = pd.DataFrame()
+  df_IVAN = pd.DataFrame()
+  #
   list_BC = list(['n/a','b','c'])
   list_PC = list(['n/a','b','c'])
   list_JPC = list(['n/a','b','c'])  
   list_CPT = list(['n/a','b','c'])  
+
+  ## 프로젝트 선택
+  if project == "Kaskida":
+    df_PROJ = Kaskida()
+  st.dataframe(df_PROJ)
+
+
   loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_BC,'n/a')
   loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
   loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_JPC,'n/a')
