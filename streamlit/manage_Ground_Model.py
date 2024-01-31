@@ -47,8 +47,10 @@ def main():
 
   ## 자료 LOCA 확인
   list_LOCA_ID = df_LOCA['LOCA_ID_x']
-  st.write(list_LOCA_ID)
+  ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BD = list(df_LOCA.loc[ii,'LOCA_ID_x')
+  st.write(list_LOCA_BD)
 
+  
   loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_BC,'n/a')
   loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
   loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_JPC,'n/a')
