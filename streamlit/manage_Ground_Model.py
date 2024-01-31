@@ -17,7 +17,10 @@ def Kaskida():
   st.write('Kaskida')
   filename = 'https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/src_AGS/AGS_Kaskida(01Dec23).xlsx'
   df_PROJ = pd.read_excel(filename, sheet_name='PROJ', header=2)
-  return df_PROJ
+  df_LOCA = pd.read_excel(filename, sheet_name='LOCA', header=2)
+  df_SCPT = pd.read_excel(filename, sheet_name='SCPT', header=2)
+  df_IVAN = pd.read_excel(filename, sheet_name='IVAN', header=2)
+  return df_PROJ, df_LOCA, df_SCPT, df_IVAN
   
 # =======================================================
 # 메인 
@@ -37,8 +40,9 @@ def main():
 
   ## 프로젝트 선택
   if project == "Kaskida":
-    df_PROJ = Kaskida()
+    df_PROJ, df_LOCA, df_SCPT, df_IVAN = Kaskida()
   st.dataframe(df_PROJ)
+  st.dataframe(df_LOCA)
 
 
   loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_BC,'n/a')
