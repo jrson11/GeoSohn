@@ -13,7 +13,9 @@ def main():
   proj = st.selectbox('Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
   st.write('You selected: ', proj)
 
-  loca_BC = st.multiselect('Please select the Box Core locations', ('n/a','b','c'),'n/a')
+
+  list_BC = list('n/a','b','c')
+  loca_BC = st.multiselect('Please select the Box Core locations', list_BC,'n/a')
   loca_PC = st.multiselect('Please select the Piston Core locations', ('n/a','b','c'))
   loca_JPC = st.multiselect('Please select the Jumbo Piston Core locations', ('n/a','b','c'))
   loca_CPT = st.multiselect('Please select the CPT locations', ('n/a','b','c'))
