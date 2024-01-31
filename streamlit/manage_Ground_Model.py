@@ -55,9 +55,9 @@ def main():
   st.write(list_LOCA_BD)
   
   loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD)
-  loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
-  loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_JPC,'n/a')
-  loca_CPT = st.multiselect('Please select the **CPT**', list_CPT,'n/a')
+  loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC)
+  loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
+  loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
 
 
 
