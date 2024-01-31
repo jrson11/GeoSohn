@@ -22,7 +22,7 @@ def Kaskida():
   df_IVAN = pd.read_excel(filename, sheet_name='IVAN', header=2)
   return df_PROJ, df_LOCA, df_SCPT, df_IVAN
 
-def list_loca(db):
+def list_loca(df):
   list_loca = df['LOCA_ID_x'].unique()
   return list_loca
   
