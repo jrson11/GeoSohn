@@ -48,13 +48,15 @@ def main():
   ## 자료 LOCA 확인
   list_LOCA_ID = df_LOCA['LOCA_ID_x']
   ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BD = list(df_LOCA.loc[ii,'LOCA_ID_x'])
-  st.write(list_LOCA_BD)
+  ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
+  ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
+  ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x'])
 
   
-  loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_BC,'n/a')
-  loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
-  loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_JPC,'n/a')
-  loca_CPT = st.multiselect('Please select the **CPT**', list_CPT,'n/a')
+  loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD,'n/a')
+  loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC,'n/a')
+  loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC,'n/a')
+  loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT,'n/a')
 
 
 
