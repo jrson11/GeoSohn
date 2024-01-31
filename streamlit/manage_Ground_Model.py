@@ -49,7 +49,6 @@ def main():
   st.dataframe(df_LOCA)
 
   ## 자료 리스트 확인
-  list_BC = list_loca(df_LOCA)
 
   loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_BC,'n/a')
   loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_PC,'n/a')
