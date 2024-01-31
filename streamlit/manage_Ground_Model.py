@@ -14,7 +14,7 @@ def main():
   st.write('You selected: ', proj)
 
 
-  list_BC = list('n/a','b','c')
+  list_BC = list(['n/a','b','c'])
   loca_BC = st.multiselect('Please select the Box Core locations', list_BC,'n/a')
   loca_PC = st.multiselect('Please select the Piston Core locations', ('n/a','b','c'))
   loca_JPC = st.multiselect('Please select the Jumbo Piston Core locations', ('n/a','b','c'))
