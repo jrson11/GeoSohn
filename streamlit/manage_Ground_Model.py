@@ -9,10 +9,12 @@ import altair as alt
 password = st.text_input('Password?', 'password')
 
 # Main --------------------------------------------------
-def main():
-  proj = st.selectbox(':floppy_disk: Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
-  st.write('You selected: ', proj)
+def map_altair(proj):
+  st.write('Show me'+proj)
 
+def main():
+  project = st.selectbox(':floppy_disk: Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
+  st.write('You selected: ', project)
 
   list_BC = list(['n/a','b','c'])
   list_PC = list(['n/a','b','c'])
@@ -22,6 +24,10 @@ def main():
   loca_PC = st.multiselect('Please select the Piston Core (**PC**) locations', list_PC,'n/a')
   loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**) locations', list_JPC,'n/a')
   loca_CPT = st.multiselect('Please select the **CPT** locations', list_CPT,'n/a')
+
+  ## ---------------------------------------------------------
+  ## Map
+  map_altair(project)
 
 # Membership --------------------------------------------
 if password == st.secrets['DB_pw']:
