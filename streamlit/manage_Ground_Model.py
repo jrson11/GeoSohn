@@ -12,11 +12,14 @@ import altair as alt
 # 서브펑션 
 def map_altair(proj):
   st.write('Show me'+proj)
+
+def Kaskida():
+  st.write('Kaskida')
   
 # =======================================================
 # 메인 
 def main():
-  project = st.selectbox(':floppy_disk: Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
+  project = st.selectbox(':floppy_disk: Please select a project', ('n/a','Kaskida','ASWX','NaKika','Tiber'),'n/a')
   st.write('You selected: ', project)
 
   list_BC = list(['n/a','b','c'])
