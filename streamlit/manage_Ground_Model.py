@@ -6,12 +6,15 @@ import altair as alt
 
 # =======================================================
 # Confidential
-password = st.text_input('Password?', 'password')
+# password = st.text_input('Password?', 'password')
 
-# Main --------------------------------------------------
+# =======================================================
+# 서브펑션 
 def map_altair(proj):
   st.write('Show me'+proj)
-
+  
+# =======================================================
+# 메인 
 def main():
   project = st.selectbox(':floppy_disk: Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
   st.write('You selected: ', project)
@@ -29,7 +32,12 @@ def main():
   ## Map
   map_altair(project)
 
-# Membership --------------------------------------------
+# =======================================================
+# Confidential
+
+## 비번확인
+password = st.text_input('Password?', 'password')
+
 if password == st.secrets['DB_pw']:
   st.markdown('## Welcome to Database by JS')
   main()
