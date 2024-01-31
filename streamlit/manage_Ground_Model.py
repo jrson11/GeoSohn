@@ -13,6 +13,9 @@ def main():
   proj = st.selectbox('Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
   st.write('You selected: ', proj)
 
+  loca = st.multiselect('Please select the locations to check', ('a','b','c'))
+  st.write('You selected:', loca)
+
 # Membership --------------------------------------------
 if password == st.secrets['DB_pw']:
   st.markdown('## Welcome to Database by JS')
