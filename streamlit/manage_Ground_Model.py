@@ -38,10 +38,10 @@ def main():
 ## 비번확인
 password = st.text_input('Password?', 'password')
 
+## 조건문
 if password == st.secrets['DB_pw']:
   st.markdown('## Welcome to Database by JS')
   main()
-  
 else:
   st.markdown('## Sorry, this is confidential')
 
