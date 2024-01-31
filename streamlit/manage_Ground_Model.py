@@ -13,8 +13,10 @@ def main():
   proj = st.selectbox('Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
   st.write('You selected: ', proj)
 
-  loca = st.multiselect('Please select the locations to check', ('a','b','c'))
-  st.write('You selected:', loca)
+  loca_BC = st.multiselect('Please select the Box Core locations', ('n/a','b','c'),'n/a')
+  loca_PC = st.multiselect('Please select the Piston Core locations', ('n/a','b','c'))
+  loca_JPC = st.multiselect('Please select the Jumbo Piston Core locations', ('n/a','b','c'))
+  loca_CPT = st.multiselect('Please select the CPT locations', ('n/a','b','c'))
 
 # Membership --------------------------------------------
 if password == st.secrets['DB_pw']:
