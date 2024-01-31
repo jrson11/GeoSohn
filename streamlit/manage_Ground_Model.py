@@ -10,7 +10,7 @@ password = st.text_input('Password?', 'password')
 
 # Main --------------------------------------------------
 def main():
-  proj = st.selectbox('Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
+  proj = st.selectbox(':floppy_disk: Please select a project', ('Kaskida','ASWX','NaKika','Tiber'))
   st.write('You selected: ', proj)
 
 
