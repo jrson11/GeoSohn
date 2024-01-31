@@ -15,10 +15,13 @@ def main():
 
 
   list_BC = list(['n/a','b','c'])
+  list_PC = list(['n/a','b','c'])
+  list_JPC = list(['n/a','b','c'])  
+  list_CPT = list(['n/a','b','c'])  
   loca_BC = st.multiselect('Please select the Box Core locations', list_BC,'n/a')
-  loca_PC = st.multiselect('Please select the Piston Core locations', ('n/a','b','c'))
-  loca_JPC = st.multiselect('Please select the Jumbo Piston Core locations', ('n/a','b','c'))
-  loca_CPT = st.multiselect('Please select the CPT locations', ('n/a','b','c'))
+  loca_PC = st.multiselect('Please select the Piston Core locations', list_PC,'n/a')
+  loca_JPC = st.multiselect('Please select the Jumbo Piston Core locations', list_JPC,'n/a')
+  loca_CPT = st.multiselect('Please select the CPT locations', list_CPT,'n/a')
 
 # Membership --------------------------------------------
 if password == st.secrets['DB_pw']:
