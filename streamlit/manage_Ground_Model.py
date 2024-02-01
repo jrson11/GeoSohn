@@ -41,6 +41,9 @@ def plot_su(df_IVAN):
   ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
   ax[0].set_ylabel('Depth (ft)')
   ax[0].set_xlabel('su (ksf)')
+  #
+  ax[1].set_ylabel('Depth (m)')
+  ax[1].set_xlabel('su (kPa)')
 
   for j in range(2):
     ax[j].set_ylim([zmax_ft,0])
