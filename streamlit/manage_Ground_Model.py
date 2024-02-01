@@ -114,14 +114,27 @@ def main():
     switch_JPC_all = st.toggle('Plot all JPCs')
     switch_CPT_all = st.toggle('Plot all CPTs')
     #### 하나씩 플로팅
-    st.write(switch_BC_all)
+    if switch_BC_all == False:
+      loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
+    else:
+      loca_BC = list_LOCA_BC
       
-    loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
-    loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
-    loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
-    loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
-
-    col1, col2 = st.columns(2)
+    if switch_PC_all == False:
+      loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
+    else:
+      loca_PC = list_LOCA_PC
+      
+    if switch_PC_all == False:
+      loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
+    else:
+      loca_JPC = list_LOCA_JPC
+      
+    if switch_CPT_all == False:
+      loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
+    else:
+      loca_CPT = list_LOCA_CPT
+      
+      col1, col2 = st.columns(2)
     with col1:
       plot_CPT(df_SCPT)
     with col2:
