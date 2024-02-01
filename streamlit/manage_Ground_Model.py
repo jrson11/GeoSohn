@@ -81,7 +81,7 @@ def main():
   st.sidebar.markdown('# Project: '+project)
   #
   st.sidebar.markdown('## Site Investigations')
-  st.sidebar.markdown('#### No. of BC: '+str(n_LOCA_CPT))
+  st.sidebar.markdown('#### No. of BC: '+str(n_LOCA_BC))
   st.sidebar.markdown('#### No. of PC: '+str(n_LOCA_PC))
   st.sidebar.markdown('#### No. of JPC: '+str(n_LOCA_JPC))
   st.sidebar.markdown('#### No. of CPT: '+str(n_LOCA_CPT))
