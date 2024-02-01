@@ -30,6 +30,10 @@ def map_altair(df_LOCA):
   # Display the chart using Streamlit
   st.altair_chart(base, use_container_width=True)
 
+def plot_su(df_IVAN):
+  fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
+  st.pyplot(fig)
+
 def plot_CPT(df_SCPT):
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
   st.pyplot(fig)
@@ -136,7 +140,7 @@ def main():
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
     col1, col2 = st.columns(2)
     with col1:
-      plot_CPT(df_SCPT)
+      plot_su(df_IVAN)
     with col2:
       plot_CPT(df_SCPT)
 
