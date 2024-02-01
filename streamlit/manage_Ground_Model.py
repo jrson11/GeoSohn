@@ -31,11 +31,21 @@ def map_altair(df_LOCA):
   st.altair_chart(base, use_container_width=True)
 
 def plot_su(df_IVAN):
+  ## Setup
+  zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
+
+  ## Plot
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
 
-  ax[0].plot(df_IVAN['IVAN_TV_ksf'],df_IVAN['IVAN_DEPTH_ft'], 'x', label='TV')
-  ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DEPTH_ft'], '.', label='MV')
-  
+  ax[0].plot(df_IVAN['IVAN_TV_ksf'],df_IVAN['IVAN_DPTH_ft'], 'x', label='TV')
+  ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
+
+  for j in range(2):
+    ax[j].set_ylim([zmax,0])
+    ax[j].grid(linestyle='dotted')
+    ax[j].minorticks_on()
+    ax[j].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
+
   st.pyplot(fig)
 
 def plot_CPT(df_SCPT):
