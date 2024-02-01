@@ -78,8 +78,9 @@ def main():
 
   ## ---------------------------------------------------------
   ## 사이드바 만들기: 써머리 용
-  st.sidebar.markdown('## Yes')
-  
+  st.sidebar.markdown('## Project: '+project)
+  st.sidebar.markdown('## No. of CPT: '+n_LOCA_CPT)
+
   ## ---------------------------------------------------------
   ## 지도
   st.markdown('#### :floppy_disk: 2. MAP')
