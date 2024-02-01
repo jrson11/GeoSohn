@@ -10,8 +10,17 @@ import altair as alt
 
 # =======================================================
 # 서브펑션 
-def map_altair(proj):
-  st.write('Show map of '+proj)
+def map_altair(df_LOCA):
+  base = alt.Chart(df_LOCA).mark_point(opacity=0.8).encode(
+      x=alt.X('LOCA_NATE_ft'), 
+      y=alt.Y('LOCA_NATN_ft'),  
+      color=('LOCA_TYPE_x'),
+      shape=('LOCA_TYPE_x'),
+      tooltip=['LOCA_ID_x','LOCA_FDEO_ft']
+      ).properties(width=900, height=600).interactive()
+
+  # Display the chart using Streamlit
+  st.altair_chart(base, use_container_width=True)
 
 def Kaskida():
   st.write('Kaskida')
@@ -33,6 +42,7 @@ def main():
   df_LOCA = pd.DataFrame()
   df_IVAN = pd.DataFrame()
 
+  
   ## ---------------------------------------------------------
   ## 프로젝트 불러오기
   st.markdown('#### :floppy_disk: 1. Imported Data')
@@ -53,11 +63,6 @@ def main():
     ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
     ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x'])
 
-    st.write(list_LOCA_BD)
-
-
-
-
 
   ## ---------------------------------------------------------
   ## 지도
@@ -65,8 +70,9 @@ def main():
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
-    map_altair(project)
+    map_altair(df_LOCA)
 
+  
   ## ---------------------------------------------------------
   ## 수직 지하 프로파일
   st.markdown('#### :floppy_disk: 3. Soil Profiles')
@@ -78,6 +84,7 @@ def main():
     loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
     loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
 
+  
   ## ---------------------------------------------------------
   ## 평면 지역 분할
   st.markdown('#### :floppy_disk: 4. Soil Province')
