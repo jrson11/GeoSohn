@@ -45,19 +45,22 @@ def main():
   st.dataframe(df_PROJ)
   st.dataframe(df_LOCA)
 
+  if project =="n/a":
+    st.write('Please select one of projects')
+  else:
   ## 자료 LOCA 확인
-  list_LOCA_ID = df_LOCA['LOCA_ID_x']
-  ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BD = list(df_LOCA.loc[ii,'LOCA_ID_x'])
-  ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
-  ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
-  ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x'])
+    list_LOCA_ID = df_LOCA['LOCA_ID_x']
+    ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BD = list(df_LOCA.loc[ii,'LOCA_ID_x'])
+    ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
+    ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
+    ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x'])
 
-  st.write(list_LOCA_BD)
+    st.write(list_LOCA_BD)
   
-  loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD)
-  loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC)
-  loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
-  loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
+    loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD)
+    loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC)
+    loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
+    loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
 
 
 
