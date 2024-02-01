@@ -70,10 +70,16 @@ def main():
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     list_LOCA_ID = df_LOCA['LOCA_ID_x']
-    ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_BC = len(list_LOCA_BC)
-    ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_PC = len(list_LOCA_PC)
-    ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_JPC = len(list_LOCA_JPC)
-    ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_CPT = len(list_LOCA_CPT)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  
+    ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  
+    ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  
+    ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x']);  
+  
+  #### LOCA 내용 정리
+  n_LOCA_BC = len(list_LOCA_BC)
+  n_LOCA_PC = len(list_LOCA_PC)
+  n_LOCA_JPC = len(list_LOCA_JPC)
+  n_LOCA_CPT = len(list_LOCA_CPT)
 
 
   ## ---------------------------------------------------------
