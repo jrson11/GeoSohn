@@ -104,7 +104,12 @@ def main():
     loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
     loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
 
-    plot_CPT(df_SCPT)
+    col1, col2 = st.columns(2)
+    with col1:
+      plot_CPT(df_SCPT)
+    with col2:
+      plot_CPT(df_SCPT)
+
 
   
   ## ---------------------------------------------------------
