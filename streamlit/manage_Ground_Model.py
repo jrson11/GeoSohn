@@ -30,6 +30,10 @@ def map_altair(df_LOCA):
   # Display the chart using Streamlit
   st.altair_chart(base, use_container_width=True)
 
+def plot_CPT(df_SCPT):
+  fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
+  st.plot(fig)
+
 def Kaskida():
   st.write('Kaskida')
   filename = 'https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/src_AGS/AGS_Kaskida(01Dec23).xlsx'
@@ -91,6 +95,8 @@ def main():
     loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
     loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
     loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
+
+    plot_CPT(df_SCPT)
 
   
   ## ---------------------------------------------------------
