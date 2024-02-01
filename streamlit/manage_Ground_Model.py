@@ -67,7 +67,7 @@ def main():
   
   ## 자료 LOCA 확인
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
-    st.markdown('#### --> Please select one of projects')
+    st.sidebar.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     list_LOCA_ID = df_LOCA['LOCA_ID_x']
     ii = df_LOCA['LOCA_TYPE_x'] == 'BC';    list_LOCA_BC = list(df_LOCA.loc[ii,'LOCA_ID_x']);   n_LOCA_BC = len(list_LOCA_BC)
