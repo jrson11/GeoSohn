@@ -19,13 +19,13 @@ def map_altair(df_LOCA):
   max_NATE = max(df_LOCA['LOCA_NATE_ft'])
 
   ## 플롯
-  base = alt.Chart(df_LOCA).mark_point(opacity=0.8).encode(
+  base = alt.Chart(df_LOCA).mark_point(opacity=1.0).encode(
       x=alt.X('LOCA_NATE_ft', scale=alt.Scale(domain=(min_NATE-1e3,max_NATE+1e3))), 
       y=alt.Y('LOCA_NATN_ft', scale=alt.Scale(domain=(min_NATN-1e3,max_NATN+1e3))), 
       color=('LOCA_TYPE_x'),
       shape=('LOCA_TYPE_x'),
       tooltip=['LOCA_ID_x','LOCA_FDEO_ft']
-      ).properties(width=900, height=600).interactive()
+      ).properties(width=800, height=600).interactive()
 
   # Display the chart using Streamlit
   st.altair_chart(base, use_container_width=True)
