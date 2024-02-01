@@ -32,7 +32,7 @@ def map_altair(df_LOCA):
 
 def plot_CPT(df_SCPT):
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
-  st.plot(fig)
+  st.pyplot(fig)
 
 def Kaskida():
   st.write('Kaskida')
