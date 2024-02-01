@@ -11,9 +11,16 @@ import altair as alt
 # =======================================================
 # 서브펑션 
 def map_altair(df_LOCA):
+  ## 지도 범위 설정
+  min_NATN = min(df_LOCA['LOCA_NATN_ft'])
+  max_NATN = max(df_LOCA['LOCA_NATN_ft'])
+  min_NATE = min(df_LOCA['LOCA_NATE_ft'])
+  max_NATE = max(df_LOCA['LOCA_NATE_ft'])
+
+  ## 플롯
   base = alt.Chart(df_LOCA).mark_point(opacity=0.8).encode(
-      x=alt.X('LOCA_NATE_ft'), 
-      y=alt.Y('LOCA_NATN_ft'),  
+      x=alt.X('LOCA_NATE_ft', scale=alt.Scale(domain=(min_NATE-1e3,max_NATE+1e3))), 
+      y=alt.Y('LOCA_NATN_ft', scale=alt.Scale(domain=(min_NATN-1e3,max_NATN+1e3))), 
       color=('LOCA_TYPE_x'),
       shape=('LOCA_TYPE_x'),
       tooltip=['LOCA_ID_x','LOCA_FDEO_ft']
