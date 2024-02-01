@@ -65,10 +65,12 @@ def main():
 
   ## ---------------------------------------------------------
   ## 지도
+  st.markdown('## MAP')
   map_altair(project)
 
   ## ---------------------------------------------------------
   ## 수직 지하 프로파일
+  st.markdown('## Soil Profiles')
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 타입별로 데이터 분류  
@@ -77,6 +79,9 @@ def main():
     loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
     loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
 
+  ## ---------------------------------------------------------
+  ## 평면 지역 분할
+  st.markdown('## Soil Province')
 
 # =======================================================
 # Confidential
