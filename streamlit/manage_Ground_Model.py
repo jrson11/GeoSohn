@@ -70,29 +70,27 @@ def main():
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     list_LOCA_ID = df_LOCA['LOCA_ID_x']
-    ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  
-    ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  
-    ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  
-    ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  
-  
-  #### LOCA 내용 정리
-  list_LOCA_BC = list(df_LOCA.loc[ii,'LOCA_ID_x']);   n_LOCA_BC = len(list_LOCA_BC)
-  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x']);   n_LOCA_PC = len(list_LOCA_PC)
-  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_JPC = len(list_LOCA_JPC)
-  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_CPT = len(list_LOCA_CPT)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'BC';    list_LOCA_BC = list(df_LOCA.loc[ii,'LOCA_ID_x']);   n_LOCA_BC = len(list_LOCA_BC)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'PC';    list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x']);   n_LOCA_PC = len(list_LOCA_PC)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';    list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_JPC = len(list_LOCA_JPC)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';    list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_CPT = len(list_LOCA_CPT)
 
+  
 
   ## ---------------------------------------------------------
   ## 사이드바 만들기: 써머리 용
   st.sidebar.markdown('# Project: '+project)
   #
-  st.sidebar.markdown('## Site Investigations')
-  st.sidebar.markdown('#### No. of BC: '+str(n_LOCA_BC))
-  st.sidebar.markdown('#### No. of PC: '+str(n_LOCA_PC))
-  st.sidebar.markdown('#### No. of JPC: '+str(n_LOCA_JPC))
-  st.sidebar.markdown('#### No. of CPT: '+str(n_LOCA_CPT))
-  #
-  st.sidebar.markdown('## Soil Units')
+  if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
+    st.markdown('#### --> Please select one of projects')
+  else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
+    st.sidebar.markdown('## Site Investigations')
+    st.sidebar.markdown('#### No. of BC: '+str(n_LOCA_BC))
+    st.sidebar.markdown('#### No. of PC: '+str(n_LOCA_PC))
+    st.sidebar.markdown('#### No. of JPC: '+str(n_LOCA_JPC))
+    st.sidebar.markdown('#### No. of CPT: '+str(n_LOCA_CPT))
+    #
+    st.sidebar.markdown('## Soil Units')
 
 
   ## ---------------------------------------------------------
