@@ -41,7 +41,7 @@ def plot_su(df_IVAN):
   ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
 
   for j in range(2):
-    ax[j].set_ylim([zmax,0])
+    ax[j].set_ylim([zmax_ft,0])
     ax[j].grid(linestyle='dotted')
     ax[j].minorticks_on()
     ax[j].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
