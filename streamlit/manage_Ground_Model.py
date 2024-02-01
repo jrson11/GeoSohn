@@ -39,6 +39,8 @@ def plot_su(df_IVAN):
 
   ax[0].plot(df_IVAN['IVAN_TV_ksf'],df_IVAN['IVAN_DPTH_ft'], 'x', label='TV')
   ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
+  ax[0].set_ytitle('Depth (ft)')
+  ax[0].set_xtitle('su (ksf)')
 
   for j in range(2):
     ax[j].set_ylim([zmax_ft,0])
@@ -132,19 +134,19 @@ def main():
       loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
     else:
       loca_BC = list_LOCA_BC
-      
+    #  
     switch_PC_each = st.toggle('Plot each PC')
     if switch_PC_each == True:
       loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
     else:
       loca_PC = list_LOCA_PC
-      
+    #  
     switch_JPC_each = st.toggle('Plot each JPC')
     if switch_JPC_each == True:
       loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
     else:
       loca_JPC = list_LOCA_JPC
-      
+    #  
     switch_CPT_each = st.toggle('Plot each CPT')
     if switch_CPT_each == True:
       loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
