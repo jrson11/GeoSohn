@@ -72,10 +72,10 @@ def main():
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 타입별로 데이터 분류  
-  loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD)
-  loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC)
-  loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
-  loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
+    loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD)
+    loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC)
+    loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
+    loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
 
 
 # =======================================================
