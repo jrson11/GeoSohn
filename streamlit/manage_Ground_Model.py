@@ -32,6 +32,10 @@ def map_altair(df_LOCA):
 
 def plot_su(df_IVAN):
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
+
+  ax[0].plot(df_IVAN['IVAN_TV'_ksf],df_IVAN['IVAN_DEPTH_ft'], 'x', label='TV')
+  ax[0].plot(df_IVAN['IVAN_MV'_ksf],df_IVAN['IVAN_DEPTH_ft'], '.', label='MV')
+  
   st.pyplot(fig)
 
 def plot_CPT(df_SCPT):
