@@ -45,7 +45,7 @@ def main():
   
   ## 자료 LOCA 확인
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
-    st.markdown('#### Please select one of projects')
+    st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 타입별로 데이터 분류
     list_LOCA_ID = df_LOCA['LOCA_ID_x']
     ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BD = list(df_LOCA.loc[ii,'LOCA_ID_x'])
@@ -68,7 +68,7 @@ def main():
   ## 수직 지하 프로파일
   st.markdown('#### :floppy_disk: 3. Soil Profiles')
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
-    st.markdown('#### Please select one of projects')
+    st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 타입별로 데이터 분류  
     loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD)
     loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC)
@@ -78,6 +78,11 @@ def main():
   ## ---------------------------------------------------------
   ## 평면 지역 분할
   st.markdown('#### :floppy_disk: 4. Soil Province')
+  if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
+    st.markdown('#### --> Please select one of projects')
+  else:  # 프로젝트가 선택 되었을 시에는 타입별로 데이터 분류  
+    pass
+
 
 # =======================================================
 # Confidential
