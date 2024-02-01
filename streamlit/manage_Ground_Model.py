@@ -27,7 +27,6 @@ def Kaskida():
 # 메인 
 def main():
   project = st.selectbox(':floppy_disk: Please select a project', (['n/a','Kaskida','ASWX','NaKika','Tiber']))
-  st.write('You selected: ', project)
 
   ## 메모리 얼로케이션
   df_PROJ = pd.DataFrame()
@@ -39,11 +38,13 @@ def main():
   list_JPC = list(['n/a','b','c'])  
   list_CPT = list(['n/a','b','c'])  
 
-  ## 프로젝트 선택
+  ## ---------------------------------------------------------
+  ## 프로젝트 불러오기
+  st.markdown('#### :floppy_disk: Imported Data')
+
   if project == "Kaskida":
     df_PROJ, df_LOCA, df_SCPT, df_IVAN = Kaskida()
-
-  st.markdown('#### :floppy_disk:Data')
+  #
   st.dataframe(df_PROJ)
   st.dataframe(df_LOCA)
   
