@@ -36,7 +36,7 @@ def plot_CPT(df_SCPT):
 
 def Kaskida():
   st.write('Kaskida')
-  filename = 'https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/src_AGS/AGS_Kaskida(01Dec23).xlsx'
+  filename = 'https://raw.githubusercontent.com/jrson11/GeoSohn/main/streamlit/src_AGS/AGS_Kaskida.xlsx'
   df_PROJ = pd.read_excel(filename, sheet_name='PROJ', header=2)
   df_LOCA = pd.read_excel(filename, sheet_name='LOCA', header=2)
   df_SCPT = pd.read_excel(filename, sheet_name='SCPT', header=2)
