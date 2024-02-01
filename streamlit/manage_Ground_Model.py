@@ -40,7 +40,7 @@ def main():
 
   ## ---------------------------------------------------------
   ## 프로젝트 불러오기
-  st.markdown('#### :floppy_disk: Imported Data')
+  st.markdown('#### :floppy_disk: 1. Imported Data')
 
   if project == "Kaskida":
     df_PROJ, df_LOCA, df_SCPT, df_IVAN = Kaskida()
@@ -66,12 +66,12 @@ def main():
 
   ## ---------------------------------------------------------
   ## 지도
-  st.markdown('## MAP')
+  st.markdown('## :floppy_disk: 2. MAP')
   map_altair(project)
 
   ## ---------------------------------------------------------
   ## 수직 지하 프로파일
-  st.markdown('## Soil Profiles')
+  st.markdown('## :floppy_disk: 3. Soil Profiles')
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 타입별로 데이터 분류  
@@ -82,7 +82,7 @@ def main():
 
   ## ---------------------------------------------------------
   ## 평면 지역 분할
-  st.markdown('## Soil Province')
+  st.markdown('## :floppy_disk: 4. Soil Province')
 
 # =======================================================
 # Confidential
