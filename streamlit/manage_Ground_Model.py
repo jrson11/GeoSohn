@@ -66,10 +66,10 @@ def main():
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     list_LOCA_ID = df_LOCA['LOCA_ID_x']
-    ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BD = list(df_LOCA.loc[ii,'LOCA_ID_x'])
-    ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
-    ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x'])
-    ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x'])
+    ii = df_LOCA['LOCA_TYPE_x'] == 'BC';  list_LOCA_BD = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_BD = len(list_LOCA_BD)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'PC';  list_LOCA_PC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_PC = len(list_LOCA_PC)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'JPC';  list_LOCA_JPC = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_JPC = len(list_LOCA_JPC)
+    ii = df_LOCA['LOCA_TYPE_x'] == 'CPT';  list_LOCA_CPT = list(df_LOCA.loc[ii,'LOCA_ID_x']);  n_LOCA_CPT = len(list_LOCA_CPT)
 
 
   ## ---------------------------------------------------------
@@ -87,7 +87,7 @@ def main():
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
-    loca_BC = st.multiselect('Please select the Box Core (**BC**)', list_LOCA_BD)
+    loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BD), list_LOCA_BD)
     loca_PC = st.multiselect('Please select the Piston Core (**PC**)', list_LOCA_PC)
     loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**)', list_LOCA_JPC)
     loca_CPT = st.multiselect('Please select the **CPT**', list_LOCA_CPT)
