@@ -11,7 +11,7 @@ import altair as alt
 # =======================================================
 # 서브펑션 
 def map_altair(proj):
-  st.write('Show me'+proj)
+  st.write('Show map of '+proj)
 
 def Kaskida():
   st.write('Kaskida')
@@ -46,7 +46,7 @@ def main():
   st.dataframe(df_LOCA)
 
   if project =="n/a":
-    st.write('Please select one of projects')
+    st.markdown('#### Please select one of projects')
   else:
   ## 자료 LOCA 확인
     list_LOCA_ID = df_LOCA['LOCA_ID_x']
