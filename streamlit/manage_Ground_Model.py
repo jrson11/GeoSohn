@@ -108,6 +108,14 @@ def main():
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
+    #### 전부 플로팅할지 스위치
+    switch_BC_all = st.toggle('Plot all BCs')
+    switch_PC_all = st.toggle('Plot all PCs')
+    switch_JPC_all = st.toggle('Plot all JPCs')
+    switch_CPT_all = st.toggle('Plot all CPTs')
+    #### 하나씩 플로팅
+    st.write(switch_BC_all)
+      
     loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
     loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
     loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
