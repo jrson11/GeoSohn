@@ -88,9 +88,9 @@ def main():
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
-    loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC)', list_LOCA_PC)
-    loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC)', list_LOCA_JPC)
-    loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT)', list_LOCA_CPT)
+    loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
+    loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
+    loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
 
   
   ## ---------------------------------------------------------
