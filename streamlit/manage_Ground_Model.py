@@ -255,10 +255,9 @@ def main():
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
     col1, col2 = st.columns(2)
     with col1:
-      plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line)
-    with col2:
       plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line)
-
+    with col2:
+      plot_su(df_IVAN)
 
   
   ## ---------------------------------------------------------
