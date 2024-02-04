@@ -53,7 +53,7 @@ def map_pyplot(df_LOCA):
   ii1 = df_LOCA['LOCA_TYPE_x'] == 'BC'
   ii2 = df_LOCA['LOCA_TYPE_x'] == 'PC' 
   ii3 = df_LOCA['LOCA_TYPE_x'] == 'JPC'
-  ii = ii1 or ii2 or ii3
+  ii = any(ii1,ii2,ii3)
   ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-3:], fontsize=8)
   #for i in range(len(df_LOCA)):
   #  ax.text(df_LOCA.loc[i,'LOCA_NATE_ft']+1e2,df_LOCA.loc[i,'LOCA_NATN_ft'],df_LOCA.loc[i,'LOCA_ID_x'][-3:], fontsize=8)
