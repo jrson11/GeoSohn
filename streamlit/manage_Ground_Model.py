@@ -50,7 +50,7 @@ def map_pyplot(df_LOCA):
   ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'x',label='CPT')
   
   ## 텍스팅
-  ii1 = df_LOCA['LOCA_TYPE_x'] == any'BC'
+  ii1 = df_LOCA['LOCA_TYPE_x'] == 'BC'
   ii2 = df_LOCA['LOCA_TYPE_x'] == 'PC' 
   ii3 = df_LOCA['LOCA_TYPE_x'] == 'JPC'
   ii = df_LOCA['LOCA_TYPE_x'] == any('BC','PC','JPC')
