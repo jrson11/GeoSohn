@@ -231,6 +231,9 @@ def main():
     with col2: 
       #### 플로팅 설정 스위치: CPT
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
+      if switch_Nkt == True:
+        Nkt = st.slider('Nkt = ', 18,25,1)
+
 
       
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
