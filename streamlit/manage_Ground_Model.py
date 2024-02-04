@@ -30,6 +30,42 @@ def map_altair(df_LOCA):
   # Display the chart using Streamlit
   st.altair_chart(base, use_container_width=True)
 
+def map_pyplot(df_LOCA):
+  ## 지도 범위 설정
+  min_NATN = min(df_LOCA['LOCA_NATN_ft'])
+  max_NATN = max(df_LOCA['LOCA_NATN_ft'])
+  min_NATE = min(df_LOCA['LOCA_NATE_ft'])
+  max_NATE = max(df_LOCA['LOCA_NATE_ft'])
+  
+  ## 플롯
+  fig,ax = plt.subplots(figsize=(9,6), dpi=100)
+  #
+  ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
+  ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'s',label='BC')
+  ii = df_LOCA['LOCA_TYPE_x'] == 'PC'
+  ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'+',label='PC')
+  ii = df_LOCA['LOCA_TYPE_x'] == 'JPC'
+  ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'p',label='JPC')
+  ii = df_LOCA['LOCA_TYPE_x'] == 'CPT'
+  ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'x',label='CPT')
+  
+  ## 텍스팅
+  #for i in range(len(df_LOCA)):
+  #    ax.text(df_LOCA.loc[i,'LOCA_NATE_ft']+1e2,df_LOCA.loc[i,'LOCA_NATN_ft'],df_LOCA.loc[i,'LOCA_ID_x'], fontsize=5)
+
+  ## 라벨벨
+  ax.set_xlabel("Easting (ft)")
+  ax.set_ylabel("Northing (ft)")
+  ax.grid(linestyle='dotted')
+  ax.minorticks_on()
+  ax.legend(loc=3, fancybox=True, shadow=True, fontsize=10, ncol=1)
+  ax.axis('equal')
+  fig.suptitle('Map with equal scale in x&y axes')
+  #
+  st.pyplot(fig)
+
+
+
 def plot_su(df_IVAN):
   ## Setup
   zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
@@ -123,7 +159,7 @@ def main():
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     map_altair(df_LOCA)
-
+    map_pyplot(df_LOCA)
   
   ## ---------------------------------------------------------
   ## 수직 지하 프로파일
