@@ -237,7 +237,7 @@ def main():
       #### 플로팅 설정 스위치: CPT
       switch_CPT_line = st.toggle('Plot linear line of CPT')
       if switch_CPT_line == True:
-        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=0.8,max_value=1.6,value=1.0)
+        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=15,max_value=30,value=20)
       
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
