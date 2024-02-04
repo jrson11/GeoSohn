@@ -96,6 +96,7 @@ def plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line):
   ## 셋업
   zmax_ft = max(df_SCPT['SCPT_DPTH_ft'])
   zmax_m = max(df_SCPT['SCPT_DPTH_m'])
+  qmax_ksf = max(df_SCPT['SCPT_QNET_ksf'])
   qmax_kPa = max(df_SCPT['SCPT_QNET_kPa'])
 
   ## 위치별로 분류
@@ -115,12 +116,14 @@ def plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line):
   ax[0].set_ylabel('Depth (ft)')
   ax[0].set_xlabel('qnet (ksf)')
   ax[0].set_ylim([zmax_ft,0])
+  ax[0].set_xlim([0,qmax_ksf])
   #
   #ax[1].plot(df_SCPT['SCPT_QNET_kPa'],df_SCPT['SCPT_DPTH_m'], '.', label='qnet')
   ax[1].set_ylabel('Depth (m)')
   ax[1].set_xlabel('qnet (kPa)')
   ax[1].set_ylim([zmax_m,0])
-  
+  ax[1].set_xlim([0,qmax_kPa])
+
   for j in range(2):
     ax[j].grid(linestyle='dotted')
     ax[j].minorticks_on()
@@ -239,7 +242,7 @@ def main():
       #### 플로팅 설정 스위치: CPT
       switch_CPT_line = st.toggle('Plot linear line of CPT')
       if switch_CPT_line == True:
-        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=15,max_value=30,value=25)
+        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=15,max_value=35,value=30)
       
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
