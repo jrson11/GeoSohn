@@ -225,6 +225,8 @@ def main():
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
         Nkt = st.slider('Nkt = ', min_value=15,max_value=25,value=20)    
+      else:
+        Nkt = 0
         
     with col2:
       #### 플로팅 설정 스위치: 디폴트가 off 니까 on 하면 하나씩 보여주는걸로
