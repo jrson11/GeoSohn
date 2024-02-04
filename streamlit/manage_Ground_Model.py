@@ -68,6 +68,7 @@ def map_pyplot(df_LOCA):
 def plot_su(df_IVAN):
   ## Setup
   zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
+  zmax_m = max(df_IVAN['IVAN_DPTH_m'])
 
   ## Plot
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
@@ -76,14 +77,15 @@ def plot_su(df_IVAN):
   ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
   ax[0].set_ylabel('Depth (ft)')
   ax[0].set_xlabel('su (ksf)')
+  ax[0].set_ylim([zmax_ft,0])
   #
   ax[1].plot(df_IVAN['IVAN_TV_kPa'],df_IVAN['IVAN_DPTH_m'], 'x', label='TV')
   ax[1].plot(df_IVAN['IVAN_MV_kPa'],df_IVAN['IVAN_DPTH_m'], '.', label='MV')
   ax[1].set_ylabel('Depth (m)')
   ax[1].set_xlabel('su (kPa)')
-
+  ax[1].set_ylim([zmax_m,0])
+  
   for j in range(2):
-    ax[j].set_ylim([zmax_ft,0])
     ax[j].grid(linestyle='dotted')
     ax[j].minorticks_on()
     ax[j].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
@@ -91,7 +93,30 @@ def plot_su(df_IVAN):
   st.pyplot(fig)
 
 def plot_CPT(df_SCPT):
+  ## Setup
+  zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
+  zmax_m = max(df_IVAN['IVAN_DPTH_m'])
+
+  ## Plot
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
+
+  ax[0].plot(df_IVAN['IVAN_TV_ksf'],df_IVAN['IVAN_DPTH_ft'], 'x', label='TV')
+  ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
+  ax[0].set_ylabel('Depth (ft)')
+  ax[0].set_xlabel('su (ksf)')
+  ax[0].set_ylim([zmax_ft,0])
+  #
+  ax[1].plot(df_IVAN['IVAN_TV_kPa'],df_IVAN['IVAN_DPTH_m'], 'x', label='TV')
+  ax[1].plot(df_IVAN['IVAN_MV_kPa'],df_IVAN['IVAN_DPTH_m'], '.', label='MV')
+  ax[1].set_ylabel('Depth (m)')
+  ax[1].set_xlabel('su (kPa)')
+  ax[1].set_ylim([zmax_m,0])
+  
+  for j in range(2):
+    ax[j].grid(linestyle='dotted')
+    ax[j].minorticks_on()
+    ax[j].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
+
   st.pyplot(fig)
 
 def Kaskida():
