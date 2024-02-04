@@ -202,6 +202,7 @@ def main():
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     col1, col2 = st.columns(2)
+    
     with col1:
       #### 플로팅 설정 스위치: 디폴트가 off 니까 on 하면 하나씩 보여주는걸로
       switch_BC_each = st.toggle('Plot each BC')
@@ -209,24 +210,28 @@ def main():
         loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
       else:
         loca_BC = list_LOCA_BC
-    with col2: 
       switch_PC_each = st.toggle('Plot each PC')
       if switch_PC_each == True:
         loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
       else:
         loca_PC = list_LOCA_PC
-    #  
-    switch_JPC_each = st.toggle('Plot each JPC')
-    if switch_JPC_each == True:
-      loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
-    else:
-      loca_JPC = list_LOCA_JPC
-    #  
-    switch_CPT_each = st.toggle('Plot each CPT')
-    if switch_CPT_each == True:
-      loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
-    else:
-      loca_CPT = list_LOCA_CPT
+      #  
+      switch_JPC_each = st.toggle('Plot each JPC')
+      if switch_JPC_each == True:
+        loca_JPC = st.multiselect('Please select the Jumbo Piston Core (**JPC**): No. of JPC = '+str(n_LOCA_JPC), list_LOCA_JPC)
+      else:
+        loca_JPC = list_LOCA_JPC
+      #  
+      switch_CPT_each = st.toggle('Plot each CPT')
+      if switch_CPT_each == True:
+        loca_CPT = st.multiselect('Please select the **CPT**: No. of CPT = '+str(n_LOCA_CPT), list_LOCA_CPT)
+      else:
+        loca_CPT = list_LOCA_CPT
+
+      with col2: 
+      #### 플로팅 설정 스위치: CPT
+      switch_Nkt = st.toggle('Plot su from CPT with Nkt')
+
       
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
     col1, col2 = st.columns(2)
