@@ -65,7 +65,7 @@ def map_pyplot(df_LOCA):
   st.pyplot(fig)
 
 
-def plot_su(df_IVAN):
+def plot_su(df_IVAN, switch_Nkt):
   ## Setup
   zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
   zmax_m = max(df_IVAN['IVAN_DPTH_m'])
@@ -259,7 +259,7 @@ def main():
     with col1:
       plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line)
     with col2:
-      plot_su(df_IVAN)
+      plot_su(df_IVAN, switch_Nkt)
 
   
   ## ---------------------------------------------------------
