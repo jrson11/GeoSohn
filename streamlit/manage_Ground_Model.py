@@ -50,8 +50,8 @@ def map_pyplot(df_LOCA):
   ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'x',label='CPT')
   
   ## 텍스팅
-  #for i in range(len(df_LOCA)):
-  #    ax.text(df_LOCA.loc[i,'LOCA_NATE_ft']+1e2,df_LOCA.loc[i,'LOCA_NATN_ft'],df_LOCA.loc[i,'LOCA_ID_x'], fontsize=5)
+  for i in range(len(df_LOCA)):
+    ax.text(df_LOCA.loc[i,'LOCA_NATE_ft']+1e2,df_LOCA.loc[i,'LOCA_NATN_ft'],df_LOCA.loc[i,'LOCA_ID_x'], fontsize=2)
 
   ## 라벨벨
   ax.set_xlabel("Easting (ft)")
