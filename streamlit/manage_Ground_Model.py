@@ -117,7 +117,7 @@ def plot_CPT(df_SCPT):
   #
   #ax[1].plot(df_SCPT['SCPT_QNET_kPa'],df_SCPT['SCPT_DPTH_m'], '.', label='qnet')
   ax[1].set_ylabel('Depth (m)')
-  ax[1].set_xlabel('qnet (ksf)')
+  ax[1].set_xlabel('qnet (kPa)')
   ax[1].set_ylim([zmax_m,0])
   
   for j in range(2):
@@ -230,12 +230,15 @@ def main():
 
     with col2: 
       #### 플로팅 설정 스위치: CPT
+      switch_CPT_line = st.toggle('Plot linear line of CPT')
+      if switch_CPT_line == True:
+        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=0.8,max_value=1.6,value=1)
+      
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
         Nkt = st.slider('Nkt = ', min_value=15,max_value=25,value=20)
 
 
-      
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
     col1, col2 = st.columns(2)
     with col1:
