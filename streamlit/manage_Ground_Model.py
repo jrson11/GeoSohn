@@ -261,10 +261,14 @@ def main():
     with col2:
       plot_su(df_IVAN, switch_Nkt)
 
+  ## ---------------------------------------------------------
+  ## 토질실험
+  st.markdown('#### :floppy_disk: 4. Soil Lab Testing')
+
   
   ## ---------------------------------------------------------
   ## 평면 지역 분할
-  st.markdown('#### :floppy_disk: 4. Soil Province')
+  st.markdown('#### :floppy_disk: 5. Soil Province')
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
