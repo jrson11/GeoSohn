@@ -201,18 +201,20 @@ def main():
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
-    #### 플로팅 설정 스위치: 디폴트가 off 니까 on 하면 하나씩 보여주는걸로
-    switch_BC_each = st.toggle('Plot each BC')
-    if switch_BC_each == True:
-      loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
-    else:
-      loca_BC = list_LOCA_BC
-    #  
-    switch_PC_each = st.toggle('Plot each PC')
-    if switch_PC_each == True:
-      loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
-    else:
-      loca_PC = list_LOCA_PC
+    col1, col2 = st.columns(2)
+    with col1:
+      #### 플로팅 설정 스위치: 디폴트가 off 니까 on 하면 하나씩 보여주는걸로
+      switch_BC_each = st.toggle('Plot each BC')
+      if switch_BC_each == True:
+        loca_BC = st.multiselect('Please select the Box Core (**BC**): No. of BC = '+str(n_LOCA_BC), list_LOCA_BC)
+      else:
+        loca_BC = list_LOCA_BC
+    with col2: 
+      switch_PC_each = st.toggle('Plot each PC')
+      if switch_PC_each == True:
+        loca_PC = st.multiselect('Please select the Piston Core (**PC**): No. of PC = '+str(n_LOCA_PC), list_LOCA_PC)
+      else:
+        loca_PC = list_LOCA_PC
     #  
     switch_JPC_each = st.toggle('Plot each JPC')
     if switch_JPC_each == True:
