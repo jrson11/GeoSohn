@@ -65,7 +65,7 @@ def map_pyplot(df_LOCA):
   st.pyplot(fig)
 
 
-def plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line):
+def plot_su(df_IVAN):
   ## Setup
   zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
   zmax_m = max(df_IVAN['IVAN_DPTH_m'])
@@ -215,8 +215,18 @@ def main():
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     col1, col2 = st.columns(2)
-    
-    with col1:
+
+    with col1: 
+      #### 플로팅 설정 스위치: CPT
+      switch_CPT_line = st.toggle('Plot linear line of CPT')
+      if switch_CPT_line == True:
+        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=20,max_value=40,value=30)
+      #
+      switch_Nkt = st.toggle('Plot su from CPT with Nkt')
+      if switch_Nkt == True:
+        Nkt = st.slider('Nkt = ', min_value=15,max_value=25,value=20)    
+        
+    with col2:
       #### 플로팅 설정 스위치: 디폴트가 off 니까 on 하면 하나씩 보여주는걸로
       switch_BC_each = st.toggle('Plot each BC')
       if switch_BC_each == True:
@@ -241,15 +251,7 @@ def main():
       else:
         loca_CPT = list_LOCA_CPT
 
-    with col2: 
-      #### 플로팅 설정 스위치: CPT
-      switch_CPT_line = st.toggle('Plot linear line of CPT')
-      if switch_CPT_line == True:
-        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=20,max_value=40,value=30)
-      
-      switch_Nkt = st.toggle('Plot su from CPT with Nkt')
-      if switch_Nkt == True:
-        Nkt = st.slider('Nkt = ', min_value=15,max_value=25,value=20)
+
 
 
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
