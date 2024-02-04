@@ -228,7 +228,7 @@ def main():
       else:
         loca_CPT = list_LOCA_CPT
 
-      with col2: 
+    with col2: 
       #### 플로팅 설정 스위치: CPT
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
 
