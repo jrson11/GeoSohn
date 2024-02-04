@@ -128,7 +128,7 @@ def plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line):
 
   ## 추세선 추가
   if switch_CPT_line == True:
-    ax[1].plot([0,qmax_kPa],[0,qmax_kPa*slope_CPT_line],'k-')
+    ax[1].plot([0,zmax_m*slope_CPT_line],[0,zmax_m],'k-')
     st.write('qmax_kPa =',qmax_kPa)
     st.write('slope_CPT_line =',slope_CPT_line)
 
