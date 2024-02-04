@@ -93,16 +93,23 @@ def plot_su(df_IVAN):
   st.pyplot(fig)
 
 def plot_CPT(df_SCPT):
-  ## Setup
+  ## 셋업
   zmax_ft = max(df_SCPT['SCPT_DPTH_ft'])
   zmax_m = max(df_SCPT['SCPT_DPTH_m'])
 
-  ## Plot
+  ## 위치별로 분류
+  loca_list = df_SCPT['LOCA_ID'].unique()
+  n_loca = len(loca_list)
+  
+  ## 플로팅
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
-
-  ax[0].plot(df_SCPT['SCPT_QNET_ksf'],df_SCPT['SCPT_DPTH_ft'], '.', label='qnet')
+  
+  for i in range(n_loca)
+    loca_name = loca_list[i]
+    ii = loca_name == df_SCPT['LOCA_ID']
+      ax[0].plot(df_SCPT.loc[ii,'SCPT_QNET_ksf'],df_SCPT.loc[ii,'SCPT_DPTH_ft'], '.', label=loca_name)
   ax[0].set_ylabel('Depth (ft)')
-  ax[0].set_xlabel('resistance (ksf)')
+  ax[0].set_xlabel('qnet (ksf)')
   ax[0].set_ylim([zmax_ft,0])
   #
   ax[1].plot(df_SCPT['SCPT_QNET_kPa'],df_SCPT['SCPT_DPTH_m'], '.', label='qnet')
