@@ -65,7 +65,7 @@ def map_pyplot(df_LOCA):
   st.pyplot(fig)
 
 
-def plot_su(df_IVAN):
+def plot_su(df_IVAN, switch_Nkt, Nkt):
   ## Setup
   zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
   zmax_m = max(df_IVAN['IVAN_DPTH_m'])
@@ -84,11 +84,16 @@ def plot_su(df_IVAN):
   ax[1].set_ylabel('Depth (m)')
   ax[1].set_xlabel('su (kPa)')
   ax[1].set_ylim([zmax_m,0])
-  
+
+  ## 라벨벨
   for j in range(2):
     ax[j].grid(linestyle='dotted')
     ax[j].minorticks_on()
     ax[j].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
+
+  ## 추세선 추가
+  if switch_Nkt == True:
+    ax[1].plot([0,zmax_m*slope_CPT_line/Nkt],[0,zmax_m],'k-')
 
   st.pyplot(fig)
 
@@ -132,8 +137,6 @@ def plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line):
   ## 추세선 추가
   if switch_CPT_line == True:
     ax[1].plot([0,zmax_m*slope_CPT_line],[0,zmax_m],'k-')
-    st.write('qmax_kPa =',qmax_kPa)
-    st.write('slope_CPT_line =',slope_CPT_line)
 
   st.pyplot(fig)
 
@@ -242,7 +245,7 @@ def main():
       #### 플로팅 설정 스위치: CPT
       switch_CPT_line = st.toggle('Plot linear line of CPT')
       if switch_CPT_line == True:
-        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=15,max_value=35,value=30)
+        slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=20,max_value=40,value=30)
       
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
@@ -252,7 +255,7 @@ def main():
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
     col1, col2 = st.columns(2)
     with col1:
-      plot_su(df_IVAN)
+      plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line)
     with col2:
       plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line)
 
