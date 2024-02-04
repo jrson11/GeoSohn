@@ -94,22 +94,20 @@ def plot_su(df_IVAN):
 
 def plot_CPT(df_SCPT):
   ## Setup
-  zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
-  zmax_m = max(df_IVAN['IVAN_DPTH_m'])
+  zmax_ft = max(df_SCPT['SCPT_DPTH_ft'])
+  zmax_m = max(df_SCPT['SCPT_DPTH_m'])
 
   ## Plot
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
 
-  ax[0].plot(df_IVAN['IVAN_TV_ksf'],df_IVAN['IVAN_DPTH_ft'], 'x', label='TV')
-  ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
+  ax[0].plot(df_SCPT['SCPT_qt_ksf'],df_IVAN['SCPT_DPTH_ft'], 'x', label='qt')
+  ax[0].plot(df_SCPT['SCPT_qnet_ksf'],df_IVAN['SCPT_DPTH_ft'], '.', label='qnet')
   ax[0].set_ylabel('Depth (ft)')
-  ax[0].set_xlabel('su (ksf)')
+  ax[0].set_xlabel('resistance (ksf)')
   ax[0].set_ylim([zmax_ft,0])
   #
-  ax[1].plot(df_IVAN['IVAN_TV_kPa'],df_IVAN['IVAN_DPTH_m'], 'x', label='TV')
-  ax[1].plot(df_IVAN['IVAN_MV_kPa'],df_IVAN['IVAN_DPTH_m'], '.', label='MV')
   ax[1].set_ylabel('Depth (m)')
-  ax[1].set_xlabel('su (kPa)')
+  ax[1].set_xlabel('resistance (kPa)')
   ax[1].set_ylim([zmax_m,0])
   
   for j in range(2):
