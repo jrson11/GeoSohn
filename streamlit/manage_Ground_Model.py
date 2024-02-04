@@ -71,7 +71,7 @@ def plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line):
   zmax_m = max(df_IVAN['IVAN_DPTH_m'])
 
   ## Plot
-  fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
+  fig,ax = plt.subplots(1,2, figsize=(9,7), dpi=200)
 
   ax[0].plot(df_IVAN['IVAN_TV_ksf'],df_IVAN['IVAN_DPTH_ft'], 'x', label='TV')
   ax[0].plot(df_IVAN['IVAN_MV_ksf'],df_IVAN['IVAN_DPTH_ft'], '.', label='MV')
@@ -109,7 +109,7 @@ def plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line):
   n_loca = len(loca_list)
   
   ## 플로팅
-  fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
+  fig,ax = plt.subplots(1,2, figsize=(9,7), dpi=200)
   
   for i in range(n_loca):
     loca_name = loca_list[i]
