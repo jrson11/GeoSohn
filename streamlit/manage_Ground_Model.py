@@ -65,7 +65,6 @@ def map_pyplot(df_LOCA):
   st.pyplot(fig)
 
 
-
 def plot_su(df_IVAN):
   ## Setup
   zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
@@ -78,6 +77,8 @@ def plot_su(df_IVAN):
   ax[0].set_ylabel('Depth (ft)')
   ax[0].set_xlabel('su (ksf)')
   #
+  ax[1].plot(df_IVAN['IVAN_TV_kPa'],df_IVAN['IVAN_DPTH_m'], 'x', label='TV')
+  ax[1].plot(df_IVAN['IVAN_MV_kPa'],df_IVAN['IVAN_DPTH_m'], '.', label='MV')
   ax[1].set_ylabel('Depth (m)')
   ax[1].set_xlabel('su (kPa)')
 
