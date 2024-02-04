@@ -38,7 +38,7 @@ def map_pyplot(df_LOCA):
   max_NATE = max(df_LOCA['LOCA_NATE_ft'])
   
   ## 플롯
-  fig,ax = plt.subplots(figsize=(9,6), dpi=100)
+  fig,ax = plt.subplots(figsize=(9,4), dpi=200)
   #
   ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
   ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'s',label='BC')
