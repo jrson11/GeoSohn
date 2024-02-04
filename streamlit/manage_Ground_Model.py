@@ -39,7 +39,7 @@ def map_pyplot(df_LOCA):
   
   ## 플롯
   fig,ax = plt.subplots(figsize=(9,4), dpi=200)
-  ax.set_facecolor('aquamarine')
+  ax.set_facecolor('lightcyan')
   #
   ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
   ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'s',label='BC')
