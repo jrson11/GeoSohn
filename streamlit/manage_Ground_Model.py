@@ -92,10 +92,11 @@ def plot_su(df_IVAN):
 
   st.pyplot(fig)
 
-def plot_CPT(df_SCPT):
+def plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line):
   ## 셋업
   zmax_ft = max(df_SCPT['SCPT_DPTH_ft'])
   zmax_m = max(df_SCPT['SCPT_DPTH_m'])
+  qmax_kPa = max(df_SCPT['SCPT_QNET_kPa'])
 
   ## 위치별로 분류
   loca_list = df_SCPT['LOCA_ID_x'].unique()
@@ -124,6 +125,10 @@ def plot_CPT(df_SCPT):
     ax[j].grid(linestyle='dotted')
     ax[j].minorticks_on()
     ax[j].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
+
+  ## 추세선 추가
+  if switch_CPT_line == True:
+    ax[1].plot([0,qmax_kPa],[0,qmax_kPa*slope_CPT_line],'k-')
 
   st.pyplot(fig)
 
@@ -244,7 +249,7 @@ def main():
     with col1:
       plot_su(df_IVAN)
     with col2:
-      plot_CPT(df_SCPT)
+      plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line)
 
 
   
