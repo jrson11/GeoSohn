@@ -98,9 +98,9 @@ def plot_CPT(df_SCPT):
   zmax_m = max(df_SCPT['SCPT_DPTH_m'])
 
   ## 위치별로 분류
-  loca_list = df_SCPT['LOCA_ID'].unique()
-  st.write(loca_name)
-  n_loca = len(loca_list)
+  #loca_list = df_SCPT['LOCA_ID'].unique()
+  #st.write(loca_name)
+  #n_loca = len(loca_list)
   
   ## 플로팅
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
