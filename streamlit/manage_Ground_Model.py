@@ -100,12 +100,12 @@ def plot_CPT(df_SCPT):
   ## Plot
   fig,ax = plt.subplots(1,2, figsize=(9,6), dpi=200)
 
-  ax[0].plot(df_SCPT['SCPT_QNET_ksf'],df_IVAN['SCPT_DPTH_ft'], '.', label='qnet')
+  ax[0].plot(df_SCPT['SCPT_QNET_ksf'],df_SCPT['SCPT_DPTH_ft'], '.', label='qnet')
   ax[0].set_ylabel('Depth (ft)')
   ax[0].set_xlabel('resistance (ksf)')
   ax[0].set_ylim([zmax_ft,0])
   #
-  ax[1].plot(df_SCPT['SCPT_QNET_kPa'],df_IVAN['SCPT_DPTH_m'], '.', label='qnet')
+  ax[1].plot(df_SCPT['SCPT_QNET_kPa'],df_SCPT['SCPT_DPTH_m'], '.', label='qnet')
   ax[1].set_ylabel('Depth (m)')
   ax[1].set_xlabel('resistance (kPa)')
   ax[1].set_ylim([zmax_m,0])
