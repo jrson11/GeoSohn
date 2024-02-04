@@ -224,7 +224,7 @@ def main():
       #
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
-        Nkt = st.slider('Nkt = ', min_value=15,max_value=25,value=20)    
+        Nkt = st.slider('Nkt = ', min_value=15,max_value=25,value=25)    
       else:
         Nkt = 0
         
