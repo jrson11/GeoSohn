@@ -232,7 +232,7 @@ def main():
       #### 플로팅 설정 스위치: CPT
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
-        Nkt = st.slider('Nkt = ', 18,25,1)
+        Nkt = st.slider('Nkt = ', min_value=15,max_value=25,value=20)
 
 
       
