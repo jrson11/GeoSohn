@@ -65,7 +65,7 @@ def map_pyplot(df_LOCA):
   st.pyplot(fig)
 
 
-def plot_su(df_IVAN, switch_Nkt):
+def plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line):
   ## Setup
   zmax_ft = max(df_IVAN['IVAN_DPTH_ft'])
   zmax_m = max(df_IVAN['IVAN_DPTH_m'])
@@ -251,15 +251,12 @@ def main():
       else:
         loca_CPT = list_LOCA_CPT
 
-
-
-
     #### 플로팅: 왼쪽에 su, 오른쪽에 CPT
     col1, col2 = st.columns(2)
     with col1:
       plot_CPT(df_SCPT, switch_CPT_line, slope_CPT_line)
     with col2:
-      plot_su(df_IVAN, switch_Nkt)
+      plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line)
 
   ## ---------------------------------------------------------
   ## 토질실험
