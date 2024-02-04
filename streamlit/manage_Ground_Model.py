@@ -50,16 +50,16 @@ def map_pyplot(df_LOCA):
   ax.plot(df_LOCA.loc[ii,'LOCA_NATE_ft'],df_LOCA.loc[ii,'LOCA_NATN_ft'],'x',label='CPT')
   
   ## 텍스팅
-  ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
-  ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-2:], fontsize=8)
-  ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
-  ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-2:], fontsize=8)
-  ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
-  ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-2:], fontsize=8)
-  ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
-  ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-3:], fontsize=8)
+  #ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
+  #ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-2:], fontsize=8)
+  #ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
+  #ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-2:], fontsize=8)
+  #ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
+  #ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-2:], fontsize=8)
+  #ii = df_LOCA['LOCA_TYPE_x'] == 'BC'
+  #ax.text(df_LOCA.loc[ii,'LOCA_NATE_ft']+1e2,df_LOCA.loc[ii,'LOCA_NATN_ft'],df_LOCA.loc[ii,'LOCA_ID_x'][-3:], fontsize=8)
 
-  ## 라벨벨
+  ## 라벨
   ax.set_xlabel("Easting (ft)")
   ax.set_ylabel("Northing (ft)")
   ax.grid(linestyle='dotted')
