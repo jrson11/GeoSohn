@@ -51,7 +51,7 @@ def map_pyplot(df_LOCA):
   
   ## 텍스팅
   for i in range(len(df_LOCA)):
-    ax.text(df_LOCA.loc[i,'LOCA_NATE_ft']+1e2,df_LOCA.loc[i,'LOCA_NATN_ft'],df_LOCA.loc[i,'LOCA_ID_x'], fontsize=2)
+    ax.text(df_LOCA.loc[i,'LOCA_NATE_ft']+1e2,df_LOCA.loc[i,'LOCA_NATN_ft'],df_LOCA.loc[i,'LOCA_ID_x'], fontsize=5)
 
   ## 라벨벨
   ax.set_xlabel("Easting (ft)")
