@@ -86,7 +86,7 @@ def plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line):
   ax[1].set_xlabel('su (kPa)')
   ax[1].set_ylim([zmax_m,0])
 
-  ## 라벨벨
+  ## 라벨
   for j in range(2):
     ax[j].grid(linestyle='dotted')
     ax[j].minorticks_on()
@@ -222,6 +222,8 @@ def main():
       switch_CPT_line = st.toggle('Plot linear line of CPT')
       if switch_CPT_line == True:
         slope_CPT_line = st.slider('slope of CPT line in SI unit = ', min_value=20,max_value=40,value=30)
+      else:
+        slope_CPT_line = 0
       #
       switch_Nkt = st.toggle('Plot su from CPT with Nkt')
       if switch_Nkt == True:
