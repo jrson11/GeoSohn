@@ -209,8 +209,11 @@ def main():
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
     st.markdown('#### --> Please select one of projects')
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
-    map_altair(df_LOCA)
-    map_pyplot(df_LOCA)
+    tab1, tab2 = st.tabs(['pyplot','altair'])
+    with tab1:
+      map_pyplot(df_LOCA)
+    with tab2:
+      map_altair(df_LOCA)
   
   ## ---------------------------------------------------------
   ## 수직 지하 프로파일
