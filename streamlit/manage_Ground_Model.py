@@ -79,7 +79,7 @@ def plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line):
   ax[0].set_ylabel('Depth (ft)')
   ax[0].set_xlabel('su (ksf)')
   ax[0].set_ylim([zmax_ft,0])
-  ax[0].set_ylim([0,0.6])
+  ax[0].set_xlim([0,0.6])
   #
   ax[1].plot(df_IVAN['IVAN_TV_kPa'],df_IVAN['IVAN_DPTH_m'], 'x', label='TV')
   ax[1].plot(df_IVAN['IVAN_MV_kPa'],df_IVAN['IVAN_DPTH_m'], '.', label='MV')
