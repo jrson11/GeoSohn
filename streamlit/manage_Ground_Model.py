@@ -90,7 +90,7 @@ def plot_su(df_IVAN, switch_Nkt, Nkt, slope_CPT_line):
 
   ## 라벨
   for j in range(2):
-    ax[j].grid(which='major',linestyle='solid')
+    ax[j].grid(which='major',linestyle='dotted')
     ax[j].grid(which='minor',linestyle='dotted')
     ax[j].minorticks_on()
     ax[j].legend(loc=1, fancybox=True, shadow=True, fontsize=10, ncol=1)
