@@ -192,7 +192,7 @@ def main():
   st.sidebar.markdown('# Project: '+project)
   #
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
-    st.sidebar.markdown('#### --> Please select one of projects')
+    pass
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     st.sidebar.markdown('## Site Investigations')
     st.sidebar.markdown('#### No. of BC: '+str(n_LOCA_BC))
@@ -207,7 +207,7 @@ def main():
   ## 지도
   st.markdown('#### :floppy_disk: 2. MAP')
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
-    st.markdown('#### --> Please select one of projects')
+    pass
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     tab1, tab2 = st.tabs(['pyplot','altair'])
     with tab1:
@@ -219,7 +219,7 @@ def main():
   ## 수직 지하 프로파일
   st.markdown('#### :floppy_disk: 3. Soil Profiles')
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
-    st.markdown('#### --> Please select one of projects')
+    pass
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     col1, col2 = st.columns(2)
 
@@ -278,7 +278,7 @@ def main():
   ## 평면 지역 분할
   st.markdown('#### :floppy_disk: 5. Soil Province')
   if project =="n/a":  # 아무것도 선택 안됐을 때는 메세지만 보이도록
-    st.markdown('#### --> Please select one of projects')
+    pass
   else:  # 프로젝트가 선택 되었을 시에는 펑션 실행
     pass
 
@@ -291,7 +291,7 @@ password = st.text_input('Password?', 'password')
 
 ## 조건문
 if password == st.secrets['DB_pw']:
-  st.markdown('## Welcome to Database by JS')
+  st.markdown('## Welcome to Database in GeoSohn')
   main()
 else:
   st.markdown('## Sorry, this is confidential')
