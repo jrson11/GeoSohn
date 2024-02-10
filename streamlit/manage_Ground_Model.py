@@ -157,7 +157,7 @@ def Kaskida():
 # =======================================================
 # 메인 
 def main():
-  project = st.selectbox('List of Jung's projects', (['n/a','Kaskida','ASWX','NaKika','Tiber']))
+  project = st.selectbox("List of Jung's projects", (['n/a','Kaskida','ASWX','NaKika','Tiber']))
 
   ## 메모리 얼로케이션
   df_PROJ = pd.DataFrame()
