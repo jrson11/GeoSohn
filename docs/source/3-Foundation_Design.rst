@@ -10,7 +10,7 @@
 1. Bearing capacity (API RP 2GEO)
 2. Resistance: Sliding (API RP 2GEO-7.15) / Overturning (API RP 2GEO-7.16) / Torsion
 3. Settlement (API RP 2GEO-7.8.1 / API RP 2GEO-7.8.2)
-4. Skirt penetration (DNV RP C212 / API RP 2GEO-7.12)
+4. Skirt penetration (DNV RP C212 / DNV RP N103 / API RP 2GEO-7.12)
 5. Recovery
 
 3.1.2 Others
