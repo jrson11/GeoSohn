@@ -10,7 +10,7 @@
 1. Bearing capacity (API RP 2GEO)
 2. Resistance: Sliding (API RP 2GEO-7.15) / Overturning (API RP 2GEO-7.16) / Torsion
 3. Settlement (API RP 2GEO-7.8.1 / API RP 2GEO-7.8.2)
-4. Skirt penetration (DNV CN30.4 / API RP 2GEO-7.12)
+4. Skirt penetration (DNV RP C212 / API RP 2GEO-7.12)
 5. Recovery
 
 3.1.2 Others
@@ -43,7 +43,7 @@
 1. Geotechnical holding capacity (API RP 2GEO 8)
 2. Geotechnical suction pressure
 3. Structural yield and buckling
-4. Fabrication / Lifting / Transportation / Installation (API RP 2SK E.3~7)
+4. Fabrication / Lifting / Transportation / Installation (DNV RP N103 / API RP 2SK E.3~7)
 5. Operation: Corrosion / Fatigue
 
 
