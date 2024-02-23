@@ -33,7 +33,9 @@
 ............
 
 1. PISA design model
-2. Pile Driving Analysis (PDA)
+2. Foundation design (API RP 2A-WSD 9.2.2)
+3. Pile Installation (API RP 2A-WSD 15)
+4. Pile Driving Analysis (PDA)
 
 3.2.2 Suction Pile
 .............
