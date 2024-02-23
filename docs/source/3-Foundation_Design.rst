@@ -11,6 +11,7 @@
 2. Resistance: Sliding (API RP 2GEO-7.15) / Overturning (API RP 2GEO-7.16) / Torsion
 3. Settlement (API RP 2GEO-7.8.1 / API RP 2GEO-7.8.2)
 4. Skirt penetration (DNV CN30.4 / API RP 2GEO-7.12)
+5. Recovery
 
 3.1.2 Others
 .......
@@ -21,7 +22,7 @@
 4. Gravity-based foundation
 
 3.1.3 Challenging Topics
--------------------
+.........................
 
 - `V-H envelops for mudmat <https://github.com/jrson11/GeoSohn/blob/main/docs/source/zzz.md>`_
 
