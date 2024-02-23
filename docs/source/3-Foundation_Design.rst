@@ -40,10 +40,10 @@
 3.2.2 Suction Pile
 .............
 
-1. Geotechnical holding capacity
+1. Geotechnical holding capacity (API RP 2GEO 8)
 2. Geotechnical suction pressure
 3. Structural yield and buckling
-4. Fabrication / Lifting / Transportation / Installation
+4. Fabrication / Lifting / Transportation / Installation (API RP 2SK E.3~7)
 5. Operation: Corrosion / Fatigue
 
 
