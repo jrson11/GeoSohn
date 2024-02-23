@@ -17,7 +17,11 @@
 4.3 Bayesian Network (BN)
 ----------------
 
+4.4 Fatigue
+----------------
 
+- SCF: Stress Concentration Factor (API RP 2A-WSD 8.3)
+- S-N curves (API RP 2A-WSD 8.4)
 
-4.4 Corrosion
+4.5 Corrosion
 ----------------
