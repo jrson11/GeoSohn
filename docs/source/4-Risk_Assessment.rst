@@ -24,6 +24,7 @@
 - S-N curves (API RP 2A-WSD 8.4)
 - M&K in T-N curve (API RP 2SK 6 Table3)
 - Safety Factors (API RP 2SK 6 Table7)
+- Vortex-induced Vibration (VIV) (API RP 2T 6 & 10)
 
 4.5 Corrosion
 ----------------
