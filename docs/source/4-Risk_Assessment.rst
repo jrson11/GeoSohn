@@ -22,6 +22,8 @@
 
 - SCF: Stress Concentration Factor (API RP 2A-WSD 8.3)
 - S-N curves (API RP 2A-WSD 8.4)
+- M&K in T-N curve (API RP 2SK 6 Table3)
+- Safety Factors (API RP 2SK 6 Table7)
 
 4.5 Corrosion
 ----------------
