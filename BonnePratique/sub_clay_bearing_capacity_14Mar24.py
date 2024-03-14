@@ -29,9 +29,9 @@ def clay_bearing_capacity(project):
             with col_g1:
                 B = st.number_input('B: Width (m)', value = 10)      # Width (m)
             with col_g2:
-                L = st.number_input('L = ', value = 10)      # Length (m)
+                L = st.number_input('L: Length (m)', value = 10)      # Length (m)
             with col_g3:
-                D = st.number_input('D = ', value = 2)       # Embedment (m)
+                D = st.number_input('D\nEmbedment (m) ', value = 2)       # Embedment (m)
 
             ## Loads
             st.subheader('Loads')
