@@ -16,14 +16,12 @@ def inputs_for_mudmat(project):
 
     B = 15
 
+    st.write('B = '+str(B))
+    
     return B
 
 
-class clay_bearing_capacity():
 
-    B = inputs_for_mudmat('asdf')
-
-    st.write('B = '+str(B))
 
 
 # ====================================================================
