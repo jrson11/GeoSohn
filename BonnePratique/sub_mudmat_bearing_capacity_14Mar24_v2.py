@@ -3,6 +3,22 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+class Dog:
+    breed = "Unknown"
+    
+    def __init__(self, name):
+        self.name = name
+        
+dog1 = Dog("Fido")
+dog2 = Dog("Rover")
+
+print(dog1.breed)   # Output: Unknown
+print(dog2.breed)   # Output: Unknown
+
+print(dog1.name)   # Output: Fido
+print(dog2.name)   # Output: Rover    
+
 '''
 # ====================================================================
 ## 서브펑션
