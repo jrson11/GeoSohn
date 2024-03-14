@@ -19,10 +19,12 @@ def inputs_for_mudmat(project):
 
     if project == 'asdf':
         B = 0
+        L = 0
     else:
         B = 15
+        L = 15
 
-    mudmat = Mudmat(B)
+    mudmat = Mudmat(B,L)
 
     st.write('B = '+str(B))
     st.write('class B = '+str(mudmat.B))
