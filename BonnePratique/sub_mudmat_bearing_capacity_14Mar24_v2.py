@@ -3,9 +3,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 # log
-#    03/13/2024: Made the first version
-#    03/14/2024: First time to introduce this web-app to Dr.Jeanjean
-#    03/14/2024: Tried to convert code into class objects
+#    03/13/2024: 첫번째 버전 완성
+#    03/14/2024: 진진 박사님께 처음으로 시연
+#    03/14/2024: 클래스를 사용한 객체화 시도
 
 # ================================================================================
 ## 클래스
@@ -13,9 +13,10 @@ import matplotlib.pyplot as plt
 class Mudmat:
     Nc = 5.14
     
-    def __init__(self,B,L):
+    def __init__(self,B,L,D):
         self.B = B
         self.L = L
+        self.D = D
 
 
 def inputs_for_mudmat(project):
@@ -23,11 +24,11 @@ def inputs_for_mudmat(project):
     if project == '10inchFTA_Tortue':
         B = 6
         L = 12
+        D = 0.2
     else:
-        B = 15
-        L = 15
+        pass
 
-    Mudmat_inputs = Mudmat(B,L)
+    Mudmat_inputs = Mudmat(B,L,D)
 
     return Mudmat_inputs
 
