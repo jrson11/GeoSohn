@@ -50,12 +50,12 @@ def clay_bearing_capacity(project):
             st.subheader('Soil')
             col_s1,col_s2,col_s3 = st.columns(3)
             with col_s1:
-                Su0 = st.number_input('Su0 = ', value = 10)        # Shear strength at mudline (kPa)
-                k = st.number_input('k = ', value = 1)           # rate of increasment with depth (kPa/m)
+                Su0 = st.number_input('Su0: Su at the seafloor', value = 10)        # Shear strength at mudline (kPa)
+                k = st.number_input('k: rate of increasement', value = 1)           # rate of increasment with depth (kPa/m)
             with col_s2:
-                SUW = st.number_input('SUW = ', value = 4)         # Average submerged unit weight (kN/m3)
-                UWw = st.number_input('UWs = ', value = 10)        # Water unit weight (kN/m3)
-                phi = st.number_input('phi = ', value = 0)         # Triaxial drained friction angle (deg)
+                SUW = st.number_input('SUW: submerged UW', value = 4)         # Average submerged unit weight (kN/m3)
+                UWw = st.number_input('UWw: UW of water', value = 10)        # Water unit weight (kN/m3)
+                phi = st.number_input('phi: friction angle', value = 0)         # Triaxial drained friction angle (deg)
             with col_s3:
                 α1 = st.number_input('α1 = ', value = 0.1)        # Horizontal friction factor along skirt (-)
                 Kru = st.number_input('Kru = ', value = 1)         # Earth pressure coefficient (no gap) (-)
