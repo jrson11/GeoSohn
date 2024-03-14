@@ -65,9 +65,14 @@ def main(project):
             onComments = st.toggle('Comments On')
             Mudmat_inputs = inputs_for_mudmat(project)
             
+            st.subheader('Foundation Geometry')
             st.write('B (m) ='+str(Mudmat_inputs.B))
             st.write('L (m) ='+str(Mudmat_inputs.L))
-            
+
+            st.subheader('Loads')
+            st.subheader('Soil')
+            st.subheader('Factors')
+
         with tab2:
             st.header(':green[Deduced Values]')   
             st.write('Nc ='+str(Mudmat_inputs.Nc))
