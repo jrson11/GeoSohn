@@ -3,7 +3,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+# ====================================================================
+## 클래스
 class Dog:
     breed = "Unknown"
     
@@ -13,10 +14,17 @@ class Dog:
 def inputs_for_mudmat(project):
     st.write(project)
 
-    if project == "example_CLAY":
-        B = st.number_input('B (m)', value = 10)
+    B = 15
 
-    
+    return B
+
+
+class clay_bearing_capacity(project):
+
+    B = inputs_for_mudmat(project)
+
+    st.write('B = '+str(B))
+
 
 # ====================================================================
 ## 서브펑션
