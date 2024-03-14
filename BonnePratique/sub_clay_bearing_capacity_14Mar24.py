@@ -59,18 +59,19 @@ def clay_bearing_capacity(project):
                 comment(onComments, 'θ', 'angle between Hext and long axis')
             with col_l3:
                 Mext_B = st.number_input('Mext_B (kNm)', value = 0) # Moment in B direction (kNm)
-                if onComments:
+                comment(onComments, 'Mext_B', 'Moment in B direction')
                     st.write(':blue[Mext_B]: Moment in B direction')
                 Mext_L = st.number_input('Mext_L (kNm)', value = 0) # Moment in L direction (kNm)
-                if onComments:
-                    st.write(':blue[Mext_L]: Moment in L direction')
+                comment(onComments, 'Mext_B', 'Moment in L direction')
 
             ## Soil
             st.subheader('Soil')
             col_s1,col_s2,col_s3 = st.columns(3)
             with col_s1:
                 Su0 = st.number_input('Su0 (kPa)', value = 10)        # Shear strength at mudline (kPa)
+                comment(onComments, 'Su0', 'Shear strength at mudline')
                 k = st.number_input('k (kPa/m)', value = 1)           # rate of increasment with depth (kPa/m)
+                comment(onComments, 'k', 'rate of increasment with depth')
             with col_s2:
                 SUW = st.number_input('SUW (kN/m3)', value = 4)         # Average submerged unit weight (kN/m3)
                 UWw = st.number_input('UWw (kN/m3)', value = 10)        # Water unit weight (kN/m3)
