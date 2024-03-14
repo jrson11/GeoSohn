@@ -59,7 +59,11 @@ def clay_bearing_capacity(project):
                     st.write(':blue[θ]: angle between Hext and long axis')
             with col_l3:
                 Mext_B = st.number_input('Mext_B (kNm)', value = 0) # Moment in B direction (kNm)
+                if onComments:
+                    st.write(':blue[Mext_B]: Moment in B direction')
                 Mext_L = st.number_input('Mext_L (kNm)', value = 0) # Moment in L direction (kNm)
+                if onComments:
+                    st.write(':blue[Mext_L]: Moment in L direction')
 
             ## Soil
             st.subheader('Soil')
