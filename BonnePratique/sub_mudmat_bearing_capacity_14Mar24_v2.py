@@ -13,6 +13,9 @@ class Dog:
 def inputs_for_mudmat(project):
     st.write(project)
 
+    if project == "example_CLAY":
+        B = st.number_input('B (m)', value = 10)
+
     
 
 '''
