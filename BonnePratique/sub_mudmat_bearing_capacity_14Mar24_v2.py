@@ -19,6 +19,13 @@ print(dog2.breed)   # Output: Unknown
 print(dog1.name)   # Output: Fido
 print(dog2.name)   # Output: Rover    
 
+
+class CLAY_bearing_capacity:
+    def __init__(self, B):
+        self.B = st.number_input('B (m)', value = 10)
+
+    
+
 '''
 # ====================================================================
 ## 서브펑션
