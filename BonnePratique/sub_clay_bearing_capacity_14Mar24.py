@@ -49,18 +49,14 @@ def clay_bearing_capacity(project):
             col_l1,col_l2,col_l3 = st.columns(3)
             with col_l1:
                 SW = st.number_input('SW (kN)', value = 0)         # Self weight (kN)
-                if onComments:
-                    st.write(':blue[SW]: Self weight')
+                comment(onComments, 'SW', 'Self weight')
                 Vext = st.number_input('Vext (kN)', value = 2000)  # External Vertical load (kN)
-                if onComments:
-                    st.write(':blue[Vext]: External Vertical load')
+                comment(onComments, 'Vext', 'External Vertical load')
             with col_l2:
                 Hext = st.number_input('Hext (kN)', value = 500)   # External Horizontal load (kN)
-                if onComments:
-                    st.write(':blue[Hext]: External Horizontal load')
+                comment(onComments, 'Hext', 'External Horizontal load')
                 θ = st.number_input('θ (deg)', value = 0)           # angle between Hext and long axis (deg)
-                if onComments:
-                    st.write(':blue[θ]: angle between Hext and long axis')
+                comment(onComments, 'θ', 'angle between Hext and long axis')
             with col_l3:
                 Mext_B = st.number_input('Mext_B (kNm)', value = 0) # Moment in B direction (kNm)
                 if onComments:
