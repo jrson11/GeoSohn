@@ -52,7 +52,7 @@ def comment(toggle, symbol, note):
 def main(project):
     sidebar()
 
-    st.write(project)
+    inputs_for_mudmat(project)
 
 def eg_clay_bearing_capacity():
     sidebar()
