@@ -11,13 +11,27 @@ import matplotlib.pyplot as plt
 ## 클래스
 
 class Mudmat_Geometry:
-    Nc = 5.14
-    
     def __init__(self,B,L,D):
         self.B = B
         self.L = L
         self.D = D
 
+class Mudmat_Load:
+    def __init__(self,Vext):
+        self.Vext = Vext
+
+class Mudmat_Soil:
+    Nc = 5.14
+    def __init__(self,Su0):
+        self.Su0 = Su0
+        
+class Mudmat_Factor:
+    def __init__(self,g):
+        self.g = g
+
+
+# ================================================================================
+## 서브펑션
 
 def inputs_for_mudmat(project):
 
@@ -29,15 +43,14 @@ def inputs_for_mudmat(project):
         pass
 
     Mudmat_inputs = Mudmat_Geometry(B,L,D)
+    Mudmat_loads = Mudmat_Load(1)
+    Mudmat_soils = Mudmat_Load(1)
+    Mudmat_factorss = Mudmat_Load(1)
 
-    return Mudmat_inputs
+    return Mudmat_inputs, Mudmat_soils
 
 
 
-
-
-# ================================================================================
-## 서브펑션
 
 def sidebar():
     st.sidebar.subheader('Special thanks to the my Advisor Philippe Jeanjean, Ph.D., P.E., F.ASCE')
@@ -64,7 +77,7 @@ def main(project):
         with tab1:
             st.header(':blue[Input Properties]')
             onComments = st.toggle('Comments On')
-            Mudmat_inputs = inputs_for_mudmat(project)
+            Mudmat_inputs, Mudmat_soils = inputs_for_mudmat(project)
             
             st.subheader('Foundation Geometry')
             st.write('B (m) ='+str(Mudmat_inputs.B))
@@ -77,7 +90,7 @@ def main(project):
 
         with tab2:
             st.header(':green[Deduced Values]')   
-            st.write('Nc ='+str(Mudmat_inputs.Nc))
+            st.write('Nc ='+str(Mudmat_soils.Nc))
             
         with tab2:
             st.header(':red[Output Results]')        
