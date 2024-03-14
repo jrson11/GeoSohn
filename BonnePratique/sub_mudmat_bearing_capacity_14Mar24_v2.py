@@ -2,6 +2,10 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+# log
+#    03/13/2024: Made the first version
+#    03/14/2024: First time to introduce this web-app to Dr.Jeanjean
+
 
 # ====================================================================
 ## 클래스
