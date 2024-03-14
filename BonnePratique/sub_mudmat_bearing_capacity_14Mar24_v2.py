@@ -8,10 +8,8 @@ class Dog:
     breed = "Unknown"
     
     def __init__(self, name):
-        self.name = name
+        self.name = 10
         
-dog1 = Dog(10)
-dog2 = Dog(20)
 
 
     
