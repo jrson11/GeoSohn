@@ -22,6 +22,7 @@ def clay_bearing_capacity(project):
 
         with tab1:
             st.header(':blue[Input Properties]')
+            onComments = st.toggle('Comments On')
 
             ## Foundation Geometry
             st.subheader('Foundation Geometry')
