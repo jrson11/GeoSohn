@@ -63,11 +63,11 @@ def clay_bearing_capacity(project):
                 SUW = st.number_input('SUW (kN/m3)', value = 4)         # Average submerged unit weight (kN/m3)
                 UWw = st.number_input('UWw (kN/m3)', value = 10)        # Water unit weight (kN/m3)
                 phi = st.number_input('phi (deg)', value = 0)         # Triaxial drained friction angle (deg)
+                flagGap = st.number_input('Gap?' , value = 0)     # <-----------------------Gap is not ready yet
             with col_s3:
                 α1 = st.number_input('α1 (-) ', value = 0.1)        # Horizontal friction factor along skirt (-)
                 Kru = st.number_input('Kru (-) ', value = 1)         # Earth pressure coefficient (no gap) (-)
                 Kru_gap = st.number_input('Kru_gap (-) ', value = 2)     # Earth pressure coefficient (with gap) (-)
-                flagGap = st.number_input('Gap?' , value = 0)     # <-----------------------Gap is not ready yet
                 flagRough = st.number_input('Rough?', value = 1)   # Is footing rough? 1 for yes, 0 for no
 
             ## Factors
