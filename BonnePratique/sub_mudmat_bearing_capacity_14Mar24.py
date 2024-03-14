@@ -11,59 +11,6 @@ def comment(toggle, symbol, note):
     if toggle:
         st.write(':blue['+symbol+']: '+note)
 
-def pyplot_envelope():
-        fig,ax = plt.subplots(2,1, figsize=(6,7), dpi=200, height_ratios=[3,1])
-        #
-        ax[0].plot(H_B_base,Vext_base, 'ro', label='Load at the base')
-        ax[0].text(H_B_base*0.7,Vext_base-500, '('+str(H_B_base)+','+str(Vext_base)+')')
-        if D == 0:
-            pass
-        else:
-            ax[0].plot(Hext,Vext, 'bx', label='Load at the seafloor')
-            ax[0].text(Hext*0.7,Vext-500, '('+str(Hext)+','+str(Vext)+')',color='b')
-        #
-        ax[0].plot(df_API['API_Hult'],df_API['API_Vult'],'-',c='C0', label='API 2A ultimate')
-        ax[0].plot(df_API['WSD_Hall'],df_API['WSD_Vall'],'--',c='C1', label='API WSD allowable')
-        ax[0].plot(df_API['LRFD_Hall'],df_API['LRFD_Vall'],'-.',c='purple', label='API LRFD allowable')
-        #
-        ax[0].plot(df_GEO['GEO_Hult'],df_GEO['GEO_Vult'],'g-', label='API 2GEO ultimate')
-        ax[0].plot(df_GEO['GEO_Hall'],df_GEO['GEO_Vall'],'g--', label='API 2GEO allowable')
-        ax[0].plot(df_ISO['ISO_Hall'],df_ISO['ISO_Vall'],'k--', label='ISO 19901-4 allowable')
-        #
-        ax[0].fill_between(df_ISO['ISO_Hall'],df_ISO['min_Vall'],y2=0, color='C0', alpha=0.3)
-        ax[0].plot([H_B_base,H_B_base],[Vext_base,max_Qv_api],'k--',linewidth=0.5)
-        ax[0].text(H_B_base,max_Qv_geo+100, 'Bearing \n(2A: FS='+str(FS_bear_2A_ult)+')\n(2GEO: FS='+str(FS_bear_2GEO_ult)+')')
-        ax[0].plot([H_B_base,max_Qh_api],[Vext_base,Vext_base],'k--',linewidth=0.5)
-        ax[0].text(max_Qh_api*0.85,Vext_base*1.0, 'Sliding \n(FS='+str(FS_slid_2GEO_ult)+')')
-        ax[0].plot([0,max_Qh_geo_ult],[0,max_Qv_geo_ult],'r--',linewidth=0.5)
-        ax[0].text(max_Qh_geo_ult*0.85,max_Qv_geo_ult*0.85,'(FS='+str(FS_api_ult)+')', color='r',bbox=dict(edgecolor='None',facecolor='yellow', alpha=0.5))
-        #
-        ax[1].plot(0,0,'ro', label='Load at the base')
-        ax[1].plot(0,0,'-',c='C0', label='API 2A ultimate')
-        ax[1].plot(0,0,'--',c='C1', label='API WSD allowable')
-        ax[1].plot(0,0,'-.',c='purple', label='API LRFD allowable')
-        if D == 0:
-            pass
-        else:
-            ax[1].plot(0,0,'bx', label='Load at the mudline')
-        ax[1].plot(0,0,'g-', label='API 2GEO ultimate')
-        ax[1].plot(0,0,'g--', label='API 2GEO allowable')
-        ax[1].plot(0,0,'k--', label='ISO 19901-4 allowable')
-        ax[1].axis('off')
-        #
-        ax[0].set_xlabel('Unfactored H (kN)')
-        ax[0].set_ylabel('Unfactored V (kN)')
-        ax[0].set_xlim([0,Qh_APIult*1.1])
-        ax[0].set_ylim([0,Qv_APIult*1.1])
-        ax[0].grid(linestyle='dotted')
-        ax[0].minorticks_on()
-        ax[1].legend(loc='upper center', fancybox=True, shadow=True, fontsize=10, ncol=2)
-        ax[0].set_title('$B$='+str(B)+'(m), $L$='+str(L)+'(m), $D$='+str(D)+'(m), $s_u$='+str(Su0)+'(kPa), κ='+str(k)+'(kPa/m)', fontsize=10)
-        #ax.axis('equal')
-        fig.suptitle('Undrained Load Interaction Envelopes', y=0.95)
-
-        st.pyplot(fig)
-
 # ====================================================================
 ## 메인
 def clay_bearing_capacity(project):
@@ -369,8 +316,7 @@ def clay_bearing_capacity(project):
     
     # --------------------------------------------------------------------
     with col2:
-        pyplot_envelope()
-        '''
+
         ## Plot
         fig,ax = plt.subplots(2,1, figsize=(6,7), dpi=200, height_ratios=[3,1])
         #
@@ -423,4 +369,3 @@ def clay_bearing_capacity(project):
         fig.suptitle('Undrained Load Interaction Envelopes', y=0.95)
 
         st.pyplot(fig)
-        '''
