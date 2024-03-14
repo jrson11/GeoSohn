@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # ================================================================================
 ## 클래스
 
-class Mudmat:
+class Mudmat_Geometry:
     Nc = 5.14
     
     def __init__(self,B,L,D):
@@ -28,7 +28,7 @@ def inputs_for_mudmat(project):
     else:
         pass
 
-    Mudmat_inputs = Mudmat(B,L,D)
+    Mudmat_inputs = Mudmat_Geometry(B,L,D)
 
     return Mudmat_inputs
 
