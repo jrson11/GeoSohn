@@ -25,7 +25,8 @@ def inputs_for_mudmat(project):
     mudmat = Mudmat(B)
 
     st.write('B = '+str(B))
-    st.write('B = '+str(mudmat.B))
+    st.write('class B = '+str(mudmat.B))
+    st.write('class Nc = '+str(mudmat.Nc))
 
 
 
