@@ -30,10 +30,10 @@ def bp_mudmat_bearing_capacity(project):
 
   if project == "example_CLAY":
     from sub_mudmat_bearing_capacity_14Mar24_v2 import eg_clay_bearing_capacity
-    eg_clay_bearing_capacity()
+    eg_clay_bearing_capacity() # 클래스 없이 공식 확인이 주목적
   else:
     from sub_mudmat_bearing_capacity_14Mar24_v2 import main
-    main(project)
+    main(project) # 컨펌된 공식을 클래스 사용으로 객체화
 
 def bp_mudmat_settlement(project):
   st.header(project)
