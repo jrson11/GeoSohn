@@ -27,8 +27,17 @@ def bp_map(project):
   
 def bp_mudmat_bearing_capacity(project):
   st.header(project)
-  from sub_mudmat_bearing_capacity_14Mar24_v2 import clay_bearing_capacity
-  clay_bearing_capacity(project)
+  #from sub_mudmat_bearing_capacity_14Mar24_v2 import clay_bearing_capacity
+  #clay_bearing_capacity(project)
+
+  from sub_mudmat_bearing_capacity_14Mar24_v2 import Dog
+  dog1 = Dog("Fido")
+  dog2 = Dog("Rover")
+
+  st.write(dog1.breed)   # Output: Unknown
+  st.write(dog2.breed)   # Output: Unknown
+  st.write(dog1.name)   # Output: Fido
+  st.write(dog2.name)   # Output: Rover    
 
 def bp_mudmat_settlement(project):
   st.header(project)
