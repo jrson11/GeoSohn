@@ -73,13 +73,20 @@ def clay_bearing_capacity(project):
                 comment(onComments, 'k', 'rate of increasment with depth')
             with col_s2:
                 SUW = st.number_input('SUW (kN/m3)', value = 4)         # Average submerged unit weight (kN/m3)
+                comment(onComments, 'SUW', 'Average submerged unit weight')
                 UWw = st.number_input('UWw (kN/m3)', value = 10)        # Water unit weight (kN/m3)
+                comment(onComments, 'UWw', 'Water unit weight')
                 phi = st.number_input('phi (deg)', value = 0)         # Triaxial drained friction angle (deg)
-                flagGap = st.number_input('Gap?' , value = 0)     # <-----------------------Gap is not ready yet
+                comment(onComments, 'phi', 'Triaxial drained friction angle')
+                flagGap = st.number_input('Gap?' , value = 0)     
+                st.write('1 = yes, 0 = no')
             with col_s3:
                 α1 = st.number_input('α1 (-) ', value = 0.1)        # Horizontal friction factor along skirt (-)
+                comment(onComments, 'α1', 'rate of increasment with depth')
                 Kru = st.number_input('Kru (-) ', value = 1)         # Earth pressure coefficient (no gap) (-)
+                comment(onComments, 'Kru', 'rate of increasment with depth')
                 Kru_gap = st.number_input('Kru_gap (-) ', value = 2)     # Earth pressure coefficient (with gap) (-)
+                comment(onComments, 'Kru_gap', 'rate of increasment with depth')
                 flagRough = st.number_input('Rough?', value = 1)   # Is footing rough? 1 for yes, 0 for no
 
             ## Factors
