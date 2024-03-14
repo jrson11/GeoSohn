@@ -22,9 +22,10 @@ class Mudmat_Load:
 
 class Mudmat_Soil:
     Nc = 5.14
-    def __init__(self,Su0):
+    def __init__(self,k):
         self.Su0 = Su0
-        
+        self.k = k
+
 class Mudmat_Factor:
     def __init__(self,g):
         self.g = g
@@ -44,7 +45,7 @@ def inputs_for_mudmat(project):
 
     Mudmat_inputs = Mudmat_Geometry(B,L,D)
     Mudmat_loads = Mudmat_Load(1)
-    Mudmat_soils = Mudmat_Soil(1)
+    Mudmat_soils = Mudmat_Soil(1,1)
     Mudmat_factorss = Mudmat_Factor(1)
 
     return Mudmat_inputs, Mudmat_soils
