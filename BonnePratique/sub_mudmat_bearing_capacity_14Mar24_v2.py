@@ -19,7 +19,6 @@ class Mudmat:
 
 
 def inputs_for_mudmat(project):
-    st.write(project)
 
     if project == '10inchFTA_Tortue':
         B = 0
@@ -28,13 +27,13 @@ def inputs_for_mudmat(project):
         B = 15
         L = 15
 
-    object_inputs = Mudmat(B,L)
+    Mudmat_inputs = Mudmat(B,L)
 
     st.write('B = '+str(B))
-    st.write('class B = '+str(object_inputs.B))
-    st.write('class Nc = '+str(object_inputs.Nc))
+    st.write('class B = '+str(Mudmat_inputs.B))
+    st.write('class Nc = '+str(Mudmat_inputs.Nc))
 
-    return object_inputs
+    return Mudmat_inputs
 
 
 
@@ -68,8 +67,8 @@ def main(project):
         with tab1:
             st.header(':blue[Input Properties]')
             onComments = st.toggle('Comments On')
-            object_inputs = inputs_for_mudmat(project)
-
+            Mudmat_inputs = inputs_for_mudmat(project)
+            st.write('B ='+str(Mudmat_inputs.B))
 
 def eg_clay_bearing_capacity():
     sidebar()
