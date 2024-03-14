@@ -22,7 +22,7 @@ class Mudmat_Load:
 
 class Mudmat_Soil:
     Nc = 5.14
-    def __init__(self,k):
+    def __init__(self,Su0,k):
         self.Su0 = Su0
         self.k = k
 
