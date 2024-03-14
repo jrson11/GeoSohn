@@ -10,8 +10,8 @@ class Mudmat:
     Nc = 5.14
     
     def __init__(self,B,L):
-        self.B = 10
-        self.L = 15
+        self.B = B
+        self.L = L
 
 
 def inputs_for_mudmat(project):
