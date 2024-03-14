@@ -28,8 +28,16 @@ class Mudmat_Soil:
         self.k = k
 
 class Mudmat_Factor:
-    def __init__(self,g):
-        self.g = g
+    FSbear_API = 2
+    FSslid_API = 1.5
+
+    γ_load_LRFD = 1.35
+    γ_bear_LRFD = 0.67
+    γ_slid_LRFD = 0.8
+
+    γ_loadV_ISO = 1.35
+    γ_loadH_ISO = 1.35
+    γ_ISO_mat = 1.25
 
 
 # ================================================================================
