@@ -69,6 +69,7 @@ def main(project):
             st.subheader('Foundation Geometry')
             st.write('B (m) ='+str(Mudmat_inputs.B))
             st.write('L (m) ='+str(Mudmat_inputs.L))
+            st.write('D (m) ='+str(Mudmat_inputs.D))
 
             st.subheader('Loads')
             st.subheader('Soil')
