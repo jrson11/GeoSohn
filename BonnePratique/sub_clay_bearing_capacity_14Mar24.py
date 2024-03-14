@@ -29,14 +29,16 @@ def clay_bearing_capacity(project):
             col_g1,col_g2,col_g3 = st.columns(3)
             with col_g1:
                 B = st.number_input('B', value = 10)
+                if onComments:
+                    st.write(':blue[B]: Width (m)')
             with col_g2:
                 L = st.number_input('L', value = 10)      # Length (m)
+                if onComments:
+                    st.write(':blue[L]: Length (m)')
             with col_g3:
                 D = st.number_input('D', value = 2)       # Embedment (m)
-            if onComments:
-                st.write(':blue[B]: Width (m)')
-                st.write(':blue[L]: Length (m)')
-                st.write(':blue[D]: Embedment (m)')
+                if onComments:
+                    st.write(':blue[D]: Embedment (m)')
 
             ## Loads
             st.subheader('Loads')
