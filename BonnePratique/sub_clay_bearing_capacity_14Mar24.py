@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 def comment(toggle, symbol, note):
     if toggle:
-        st.write(:blue[symbol]: note)
+        st.write(':blue['+symbol+']: '+note)
 
 # ====================================================================
 ## 메인
