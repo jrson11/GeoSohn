@@ -82,12 +82,13 @@ def clay_bearing_capacity(project):
                 st.write('1 = yes, 0 = no')
             with col_s3:
                 α1 = st.number_input('α1 (-) ', value = 0.1)        # Horizontal friction factor along skirt (-)
-                comment(onComments, 'α1', 'rate of increasment with depth')
+                comment(onComments, 'α1', 'Horizontal friction factor along skirt')
                 Kru = st.number_input('Kru (-) ', value = 1)         # Earth pressure coefficient (no gap) (-)
-                comment(onComments, 'Kru', 'rate of increasment with depth')
+                comment(onComments, 'Kru', 'Earth pressure coefficient (no gap)')
                 Kru_gap = st.number_input('Kru_gap (-) ', value = 2)     # Earth pressure coefficient (with gap) (-)
-                comment(onComments, 'Kru_gap', 'rate of increasment with depth')
+                comment(onComments, 'Kru_gap', 'Earth pressure coefficient (with gap)')
                 flagRough = st.number_input('Rough?', value = 1)   # Is footing rough? 1 for yes, 0 for no
+                st.write('1 = yes, 0 = no')
 
             ## Factors
             st.subheader('Factors')
