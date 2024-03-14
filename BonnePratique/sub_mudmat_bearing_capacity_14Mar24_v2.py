@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 class Mudmat:
     Nc = 5.14
     
-    def __init__(self):
+    def __init__(self,B,L):
         self.B = 10
         self.L = 15
 
