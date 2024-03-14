@@ -36,8 +36,7 @@ def clay_bearing_capacity(project):
             col_g1,col_g2,col_g3 = st.columns(3)
             with col_g1:
                 B = st.number_input('B (m)', value = 10)
-                if onComments:
-                    st.write(':blue[B]: Width')
+                comment(onComments, B, Width):
             with col_g2:
                 L = st.number_input('L (m)', value = 10)      # Length (m)
                 if onComments:
