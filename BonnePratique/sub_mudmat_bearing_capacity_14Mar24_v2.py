@@ -18,7 +18,6 @@ def inputs_for_mudmat(project):
 
     
 
-'''
 # ====================================================================
 ## 서브펑션
 
@@ -28,7 +27,7 @@ def comment(toggle, symbol, note):
 
 # ====================================================================
 ## 메인
-def clay_bearing_capacity(project):
+def eg_clay_bearing_capacity():
 
     st.sidebar.subheader('Special thanks to the my Advisor Philippe Jeanjean, Ph.D., P.E., F.ASCE')
     st.sidebar.write(':blue[Purpose]: To estimate Factor of Safety from offshore mudmat bearing capacity analysis with CLAY soils.')
@@ -384,4 +383,3 @@ def clay_bearing_capacity(project):
         fig.suptitle('Undrained Load Interaction Envelopes', y=0.95)
 
         st.pyplot(fig)
-'''
