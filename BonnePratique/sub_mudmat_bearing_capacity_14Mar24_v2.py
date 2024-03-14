@@ -24,11 +24,11 @@ def inputs_for_mudmat(project):
         B = 15
         L = 15
 
-    object_input = Mudmat(B,L)
+    object_inputs = Mudmat(B,L)
 
     st.write('B = '+str(B))
-    st.write('class B = '+str(mudmat.B))
-    st.write('class Nc = '+str(mudmat.Nc))
+    st.write('class B = '+str(object_inputs.B))
+    st.write('class Nc = '+str(object_inputs.Nc))
 
     return object_input
 
@@ -63,7 +63,7 @@ def main(project):
         with tab1:
             st.header(':blue[Input Properties]')
             onComments = st.toggle('Comments On')
-            object_input = inputs_for_mudmat(project)
+            object_inputs = inputs_for_mudmat(project)
 
 
 def eg_clay_bearing_capacity():
