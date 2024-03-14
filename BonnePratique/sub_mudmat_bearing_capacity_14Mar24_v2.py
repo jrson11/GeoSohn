@@ -92,7 +92,7 @@ def main(project):
             st.header(':green[Deduced Values]')   
             st.write('Nc ='+str(Mudmat_soils.Nc))
             
-        with tab2:
+        with tab3:
             st.header(':red[Output Results]')        
 
 
