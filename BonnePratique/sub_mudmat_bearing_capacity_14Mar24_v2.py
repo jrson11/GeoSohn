@@ -49,8 +49,10 @@ def comment(toggle, symbol, note):
 
 # ====================================================================
 ## 메인
-def main():
+def main(project):
     sidebar()
+
+    st.write(project)
 
 def eg_clay_bearing_capacity():
     sidebar()
