@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 class Dog:
     breed = "Unknown"
     
-    def __init__(self, name):
+    def __init__(self, B):
         self.name = 10
         
 
