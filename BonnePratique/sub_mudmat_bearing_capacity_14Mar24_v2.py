@@ -21,8 +21,8 @@ class Mudmat:
 def inputs_for_mudmat(project):
 
     if project == '10inchFTA_Tortue':
-        B = 0
-        L = 0
+        B = 6
+        L = 12
     else:
         B = 15
         L = 15
@@ -65,7 +65,8 @@ def main(project):
             onComments = st.toggle('Comments On')
             Mudmat_inputs = inputs_for_mudmat(project)
             
-            st.write('B ='+str(Mudmat_inputs.B))
+            st.write('B (m) ='+str(Mudmat_inputs.B))
+            st.write('L (m) ='+str(Mudmat_inputs.L))
             
         with tab2:
             st.header(':green[Deduced Values]')   
