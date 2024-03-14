@@ -38,7 +38,7 @@ def clay_bearing_capacity(project):
             col_l1,col_l2,col_l3 = st.columns(3)
             with col_l1:
                 SW = st.number_input('SW: Self weight (kN)', value = 0)         # Self weight (kN)
-                Vext = st.number_input('Vect = ', value = 2000)  # External Vertical load (kN)
+                Vext = st.number_input('Vext: External V load', value = 2000)  # External Vertical load (kN)
             with col_l2:
                 Hext = st.number_input('Hext = ', value = 500)   # External Horizontal load (kN)
                 θ = st.number_input('θ = ', value = 0)           # angle between Hext and long axis (deg)
