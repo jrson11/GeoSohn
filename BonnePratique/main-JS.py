@@ -30,7 +30,8 @@ def bp_mudmat_bearing_capacity(project):
   #from sub_mudmat_bearing_capacity_14Mar24_v2 import clay_bearing_capacity
   #clay_bearing_capacity(project)
 
-  from sub_mudmat_bearing_capacity_14Mar24_v2 
+  from sub_mudmat_bearing_capacity_14Mar24_v2 import inputs_for_mudmat
+  inputs_for_mudmat(project)
 
 
 def bp_mudmat_settlement(project):
