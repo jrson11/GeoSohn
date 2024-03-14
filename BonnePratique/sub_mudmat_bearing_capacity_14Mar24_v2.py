@@ -10,14 +10,27 @@ class Dog:
     
     def __init__(self, B):
         self.name = 10
-        
+
+class Mudmat:
+    Nc = 5.14
+    
+    def __init__(self, B):
+        self.B = 10
+        self.L = 15
+
+
 def inputs_for_mudmat(project):
     st.write(project)
 
-    B = 15
+    if project == 'asdf':
+        B = 0
+    else:
+        B = 15
+
+    mudmat = Mudmat(B)
 
     st.write('B = '+str(B))
-    
+    st.write('B = '+str(mudmat.B))
     return B
 
 
