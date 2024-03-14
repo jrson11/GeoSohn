@@ -5,6 +5,13 @@ import matplotlib.pyplot as plt
 
 
 # ====================================================================
+## 서브펑션
+
+def comment(toggle, symbol, note):
+    if toggle:
+        st.write(:blue[symbol]: note)
+
+# ====================================================================
 ## 메인
 def clay_bearing_capacity(project):
 
