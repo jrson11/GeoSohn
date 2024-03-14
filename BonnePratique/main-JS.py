@@ -27,11 +27,10 @@ def bp_map(project):
   
 def bp_mudmat_bearing_capacity(project):
   st.header(project)
-  #from sub_mudmat_bearing_capacity_14Mar24_v2 import clay_bearing_capacity
-  #clay_bearing_capacity(project)
 
-  from sub_mudmat_bearing_capacity_14Mar24_v2 import inputs_for_mudmat
-  inputs_for_mudmat(project)
+  if project == "example_CLAY":
+    from sub_mudmat_bearing_capacity_14Mar24_v2 import eg_clay_bearing_capacity
+    eg_clay_bearing_capacity()
 
 
 def bp_mudmat_settlement(project):
