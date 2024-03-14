@@ -10,19 +10,9 @@ class Dog:
     def __init__(self, name):
         self.name = name
         
-dog1 = Dog("Fido")
-dog2 = Dog("Rover")
+dog1 = Dog(10)
+dog2 = Dog(20)
 
-print(dog1.breed)   # Output: Unknown
-print(dog2.breed)   # Output: Unknown
-
-print(dog1.name)   # Output: Fido
-print(dog2.name)   # Output: Rover    
-
-
-class CLAY_bearing_capacity:
-    def __init__(self, B):
-        self.B = st.number_input('B (m)', value = 10)
 
     
 
