@@ -369,7 +369,7 @@ def clay_bearing_capacity(project):
     
     # --------------------------------------------------------------------
     with col2:
-        pyplot_envelope
+        pyplot_envelope()
         '''
         ## Plot
         fig,ax = plt.subplots(2,1, figsize=(6,7), dpi=200, height_ratios=[3,1])
