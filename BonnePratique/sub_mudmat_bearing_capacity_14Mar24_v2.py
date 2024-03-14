@@ -21,7 +21,7 @@ def inputs_for_mudmat(project):
 
 class clay_bearing_capacity:
 
-    B = inputs_for_mudmat(project)
+    B = inputs_for_mudmat('asdf')
 
     st.write('B = '+str(B))
 
