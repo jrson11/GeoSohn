@@ -69,23 +69,18 @@ if password == st.secrets['DB_pw']:
 
   with col2: # Plaxis
     on_icon2 = st.toggle(':computer: PLAXIS3D Python script')  
-    on_icon6 = st.toggle(':alembic: NGI: Lab Data Interpretation')
       
   with col3: # Mudmat: Bearing Capacity 
     on_icon3 = st.toggle(':fire: Mudmat: Bearing Capacity')
     if on_icon3:
       example = st.sidebar.selectbox(':floppy_disk: Please select a project', ['example_CLAY','10inchFTA_Tortue','Raven_WND'])
 
-    on_icon7 = st.toggle(':book: API and ISO')
-    if on_icon7:
-      code = st.sidebar.selectbox(':floppy_disk: Please select a code', ['API_2A','API_2A_WSD/LRFD','API_2GEO','ISO_19901-4'])
-  
+
   with col4: # Mudmat: Settlement 
     on_icon4 = st.toggle(':rocket: Mudmat: Settlement')
     if on_icon4:
       project = st.sidebar.selectbox(':floppy_disk: Please select a project', ['example_CLAY','10inchFTA_Tortue'])
 
-    on_icon8 = st.toggle(':building_construction: AGS4 converter')
 
   # ---------------------------------------------------------------------------
   # 열을 나눠서 아이콘 버튼 추가
@@ -93,7 +88,17 @@ if password == st.secrets['DB_pw']:
 
   with col5:
     on_icon5 = st.toggle(':test_tube: Fugro: Lab Data Interpretation')
-
+    
+  with col6:
+    on_icon6 = st.toggle(':alembic: NGI: Lab Data Interpretation')
+    
+  with col7:
+    on_icon7 = st.toggle(':book: API and ISO')
+    if on_icon7:
+      code = st.sidebar.selectbox(':floppy_disk: Please select a code', ['API_2A','API_2A_WSD/LRFD','API_2GEO','ISO_19901-4'])
+  
+  with col8:
+    on_icon8 = st.toggle(':building_construction: AGS4 converter')
   
   # ---------------------------------------------------------------------------
   # 열이 끝나고 서브펑션을 실행
