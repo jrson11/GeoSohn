@@ -30,7 +30,7 @@ def inputs_for_mudmat(project):
     st.write('class B = '+str(object_inputs.B))
     st.write('class Nc = '+str(object_inputs.Nc))
 
-    return object_input
+    return object_inputs
 
 
 
