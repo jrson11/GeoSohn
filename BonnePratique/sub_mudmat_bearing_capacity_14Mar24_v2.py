@@ -49,13 +49,11 @@ def comment(toggle, symbol, note):
 
 # ====================================================================
 ## 메인
-def eg_clay_bearing_capacity():
-
+def main():
     sidebar()
-    #st.sidebar.subheader('Special thanks to the my Advisor Philippe Jeanjean, Ph.D., P.E., F.ASCE')
-    #st.sidebar.write(':blue[Purpose]: To estimate Factor of Safety from offshore mudmat bearing capacity analysis with CLAY soils.')
-    #st.sidebar.write(':blue[How to use]: Left columns has three tabs. Please fill out input data in the 1st tab.')
-    #st.sidebar.write(':blue[Last update]: 03/14/2024')
+
+def eg_clay_bearing_capacity():
+    sidebar()
     
     col1, col2 = st.columns([1,2])
 
