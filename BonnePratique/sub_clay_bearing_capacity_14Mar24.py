@@ -78,7 +78,7 @@ def clay_bearing_capacity(project):
                 comment(onComments, 'UWw', 'Water unit weight')
                 phi = st.number_input('phi (deg)', value = 0)         # Triaxial drained friction angle (deg)
                 comment(onComments, 'phi', 'Triaxial drained friction angle')
-                flagGap = st.number_input('Gap?' , value = 0)     
+                flagGap = st.number_input('Gap in soil?' , value = 0)     
                 st.write('1 = yes, 0 = no')
             with col_s3:
                 α1 = st.number_input('α1 (-) ', value = 0.1)        # Horizontal friction factor along skirt (-)
@@ -87,7 +87,7 @@ def clay_bearing_capacity(project):
                 comment(onComments, 'Kru', 'Earth pressure coefficient (no gap)')
                 Kru_gap = st.number_input('Kru_gap (-) ', value = 2)     # Earth pressure coefficient (with gap) (-)
                 comment(onComments, 'Kru_gap', 'Earth pressure coefficient (with gap)')
-                flagRough = st.number_input('Rough?', value = 1)   # Is footing rough? 1 for yes, 0 for no
+                flagRough = st.number_input('Rough surface?', value = 1)   # Is footing rough? 1 for yes, 0 for no
                 st.write('1 = yes, 0 = no')
 
             ## Factors
