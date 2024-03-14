@@ -94,14 +94,18 @@ def main(project):
             st.subheader('Loads')
             st.subheader('Soil')
             st.subheader('Factors')
-            st.write('FSbear_API ='+str(Mudmat_factors.FSbear_API))
-            st.write('FSslid_API ='+str(Mudmat_factors.FSslid_API))
-            st.write('γ_load_LRFD ='+str(Mudmat_factors.γ_load_LRFD))
-            st.write('γ_bear_LRFD ='+str(Mudmat_factors.γ_bear_LRFD))
-            st.write('γ_slid_LRFD ='+str(Mudmat_factors.γ_slid_LRFD))
-            st.write('γ_loadV_ISO ='+str(Mudmat_factors.γ_loadV_ISO))
-            st.write('γ_loadH_ISO ='+str(Mudmat_factors.γ_loadH_ISO))
-            st.write('γ_ISO_mat ='+str(Mudmat_factors.γ_ISO_mat))
+            col1,col2,col3 = st.columns(3)
+            with col1:
+                st.write('FSbear_API ='+str(Mudmat_factors.FSbear_API))
+                st.write('FSslid_API ='+str(Mudmat_factors.FSslid_API))
+            with col2:
+                st.write('γ_load_LRFD ='+str(Mudmat_factors.γ_load_LRFD))
+                st.write('γ_bear_LRFD ='+str(Mudmat_factors.γ_bear_LRFD))
+                st.write('γ_slid_LRFD ='+str(Mudmat_factors.γ_slid_LRFD))
+            with col3:
+                st.write('γ_loadV_ISO ='+str(Mudmat_factors.γ_loadV_ISO))
+                st.write('γ_loadH_ISO ='+str(Mudmat_factors.γ_loadH_ISO))
+                st.write('γ_ISO_mat ='+str(Mudmat_factors.γ_ISO_mat))
 
 
         with tab2:
