@@ -325,7 +325,7 @@ def clay_bearing_capacity(project):
         if D == 0:
             pass
         else:
-            ax[0].plot(Hext,Vext, 'bx', label='Load at the mudline')
+            ax[0].plot(Hext,Vext, 'bx', label='Load at the seafloor')
             ax[0].text(Hext*0.7,Vext-500, '('+str(Hext)+','+str(Vext)+')',color='b')
         #
         ax[0].plot(df_API['API_Hult'],df_API['API_Vult'],'-',c='C0', label='API 2A ultimate')
