@@ -10,7 +10,8 @@ class Dog:
     def __init__(self, B):
         self.name = 10
         
-
+def inputs_for_mudmat(project):
+    st.write(project)
 
     
 
