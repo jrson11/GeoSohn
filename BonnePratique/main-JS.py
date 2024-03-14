@@ -30,7 +30,7 @@ def bp_mudmat_bearing_capacity(project):
   #from sub_mudmat_bearing_capacity_14Mar24_v2 import clay_bearing_capacity
   #clay_bearing_capacity(project)
 
-  from sub_mudmat_bearing_capacity_14Mar24_v2 import all
+  from sub_mudmat_bearing_capacity_14Mar24_v2 import dog
   dog1 = Dog("Fido")
   dog2 = Dog("Rover")
 
