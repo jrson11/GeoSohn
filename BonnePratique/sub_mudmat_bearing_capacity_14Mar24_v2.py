@@ -5,11 +5,6 @@ import matplotlib.pyplot as plt
 
 # ====================================================================
 ## 클래스
-class Dog:
-    breed = "Unknown"
-    
-    def __init__(self, B):
-        self.name = 10
 
 class Mudmat:
     Nc = 5.14
@@ -31,7 +26,6 @@ def inputs_for_mudmat(project):
 
     st.write('B = '+str(B))
     st.write('B = '+str(mudmat.B))
-    return B
 
 
 
