@@ -44,8 +44,8 @@ def inputs_for_mudmat(project):
 
     Mudmat_inputs = Mudmat_Geometry(B,L,D)
     Mudmat_loads = Mudmat_Load(1)
-    Mudmat_soils = Mudmat_Load(1)
-    Mudmat_factorss = Mudmat_Load(1)
+    Mudmat_soils = Mudmat_Soil(1)
+    Mudmat_factorss = Mudmat_Factor(1)
 
     return Mudmat_inputs, Mudmat_soils
 
