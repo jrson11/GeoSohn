@@ -44,11 +44,11 @@ def clay_bearing_capacity(project):
             st.subheader('Loads')
             col_l1,col_l2,col_l3 = st.columns(3)
             with col_l1:
-                SW = st.number_input('SW: Self weight in vertical axis (kN)', value = 0)         # Self weight (kN)
-                Vext = st.number_input('Vext: External V load (kN)', value = 2000)  # External Vertical load (kN)
+                SW = st.number_input('SW (kN)', value = 0)         # Self weight (kN)
+                Vext = st.number_input('Vext (kN)', value = 2000)  # External Vertical load (kN)
             with col_l2:
-                Hext = st.number_input('Hext: External H load (kN)', value = 500)   # External Horizontal load (kN)
-                θ = st.number_input('θ: angle b/w Hext & L-axis (deg))', value = 0)           # angle between Hext and long axis (deg)
+                Hext = st.number_input('Hext (kN)', value = 500)   # External Horizontal load (kN)
+                θ = st.number_input('θ (deg))', value = 0)           # angle between Hext and long axis (deg)
             with col_l3:
                 Mext_B = st.number_input('Mext_B: Moment in B-axis (kNm)', value = 0) # Moment in B direction (kNm)
                 Mext_L = st.number_input('Mext_L: Moment in L-axis (kNm)', value = 0) # Moment in L direction (kNm)
@@ -57,8 +57,8 @@ def clay_bearing_capacity(project):
             st.subheader('Soil')
             col_s1,col_s2,col_s3 = st.columns(3)
             with col_s1:
-                Su0 = st.number_input('Su0: Su at the seafloor (kPa)', value = 10)        # Shear strength at mudline (kPa)
-                k = st.number_input('k: rate of increasement (kPa/m)', value = 1)           # rate of increasment with depth (kPa/m)
+                Su0 = st.number_input('Su0', value = 10)        # Shear strength at mudline (kPa)
+                k = st.number_input('k', value = 1)           # rate of increasment with depth (kPa/m)
             with col_s2:
                 SUW = st.number_input('SUW: submerged UW (kN/m3)', value = 4)         # Average submerged unit weight (kN/m3)
                 UWw = st.number_input('UWw: UW of water (kN/m3)', value = 10)        # Water unit weight (kN/m3)
