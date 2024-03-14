@@ -51,8 +51,18 @@ def comment(toggle, symbol, note):
 ## 메인
 def main(project):
     sidebar()
+    col1, col2 = st.columns([1,2])
 
-    inputs_for_mudmat(project)
+    # --------------------------------------------------------------------
+    with col1:
+
+        tab1,tab2,tab3 = st.tabs(['Input','Deduced','Output'])
+        
+        with tab1:
+            st.header(':blue[Input Properties]')
+            onComments = st.toggle('Comments On')
+            inputs_for_mudmat(project)
+
 
 def eg_clay_bearing_capacity():
     sidebar()
