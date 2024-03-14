@@ -24,7 +24,7 @@ Welcome to GeoSohn
    :caption: Python Applications
 
    1. MCMC <https://mcmcsoillayerspy-5twn22pprrmtclrnykhwze.streamlit.app/>
-   2. BestPractice <>
+   2. BonnePratique <>
 
 .. toctree::
    :maxdepth: 1
