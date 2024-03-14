@@ -11,6 +11,9 @@ def comment(toggle, symbol, note):
     if toggle:
         st.write(':blue['+symbol+']: '+note)
 
+def pyplot_envelope():
+    pass
+
 # ====================================================================
 ## 메인
 def clay_bearing_capacity(project):
