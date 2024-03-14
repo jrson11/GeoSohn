@@ -32,8 +32,8 @@ def bp_mudmat_bearing_capacity(project):
     from sub_mudmat_bearing_capacity_14Mar24_v2 import eg_clay_bearing_capacity
     eg_clay_bearing_capacity()
   else:
-    from sub_mudmat_bearing_capacity_14Mar24_v2 import inputs_for_mudmat
-    inputs_for_mudmat(project)
+    from sub_mudmat_bearing_capacity_14Mar24_v2 import main
+    main(project)
 
 def bp_mudmat_settlement(project):
   st.header(project)
