@@ -57,18 +57,18 @@ def clay_bearing_capacity(project):
             st.subheader('Soil')
             col_s1,col_s2,col_s3 = st.columns(3)
             with col_s1:
-                Su0 = st.number_input('Su0', value = 10)        # Shear strength at mudline (kPa)
-                k = st.number_input('k', value = 1)           # rate of increasment with depth (kPa/m)
+                Su0 = st.number_input('Su0 (kPa)', value = 10)        # Shear strength at mudline (kPa)
+                k = st.number_input('k (kPa/m)', value = 1)           # rate of increasment with depth (kPa/m)
             with col_s2:
-                SUW = st.number_input('SUW: submerged UW (kN/m3)', value = 4)         # Average submerged unit weight (kN/m3)
-                UWw = st.number_input('UWw: UW of water (kN/m3)', value = 10)        # Water unit weight (kN/m3)
-                phi = st.number_input('phi: friction angle (deg)', value = 0)         # Triaxial drained friction angle (deg)
+                SUW = st.number_input('SUW (kN/m3)', value = 4)         # Average submerged unit weight (kN/m3)
+                UWw = st.number_input('UWw (kN/m3)', value = 10)        # Water unit weight (kN/m3)
+                phi = st.number_input('phi (deg)', value = 0)         # Triaxial drained friction angle (deg)
             with col_s3:
-                α1 = st.number_input('α1 = ', value = 0.1)        # Horizontal friction factor along skirt (-)
-                Kru = st.number_input('Kru = ', value = 1)         # Earth pressure coefficient (no gap) (-)
-                Kru_gap = st.number_input('Kru_gap = ', value = 2)     # Earth pressure coefficient (with gap) (-)
-                flagGap = st.number_input('Gap? ' , value = 0)     # <-----------------------Gap is not ready yet
-                flagRough = st.number_input('Rough? ', value = 1)   # Is footing rough? 1 for yes, 0 for no
+                α1 = st.number_input('α1 (-) ', value = 0.1)        # Horizontal friction factor along skirt (-)
+                Kru = st.number_input('Kru (-) ', value = 1)         # Earth pressure coefficient (no gap) (-)
+                Kru_gap = st.number_input('Kru_gap (-) ', value = 2)     # Earth pressure coefficient (with gap) (-)
+                flagGap = st.number_input('Gap?' , value = 0)     # <-----------------------Gap is not ready yet
+                flagRough = st.number_input('Rough?', value = 1)   # Is footing rough? 1 for yes, 0 for no
 
             ## Factors
             st.subheader('Factors')
