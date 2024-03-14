@@ -17,7 +17,7 @@ class Mudmat:
 def inputs_for_mudmat(project):
     st.write(project)
 
-    if project == 'asdf':
+    if project == '10inchFTA_Tortue':
         B = 0
         L = 0
     else:
