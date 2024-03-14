@@ -31,13 +31,13 @@ def clay_bearing_capacity(project):
             with col_g2:
                 L = st.number_input('L: Length (m)', value = 10)      # Length (m)
             with col_g3:
-                D = st.number_input('D \n Embedment (m) ', value = 2)       # Embedment (m)
+                D = st.number_input('D: Embedment (m) ', value = 2)       # Embedment (m)
 
             ## Loads
             st.subheader('Loads')
             col_l1,col_l2,col_l3 = st.columns(3)
             with col_l1:
-                SW = st.number_input('SW = ', value = 0)         # Self weight (kN)
+                SW = st.number_input('SW: Self weight (kN)', value = 0)         # Self weight (kN)
                 Vext = st.number_input('Vect = ', value = 2000)  # External Vertical load (kN)
             with col_l2:
                 Hext = st.number_input('Hext = ', value = 500)   # External Horizontal load (kN)
