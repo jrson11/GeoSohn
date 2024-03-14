@@ -66,7 +66,6 @@ if password == st.secrets['DB_pw']:
       else:
         project = 'n/a'
 
-    on_icon5 = st.toggle(':test_tube: Fugro: Lab Data Interpretation')
 
   with col2: # Plaxis
     on_icon2 = st.toggle(':computer: PLAXIS3D Python script')  
@@ -90,7 +89,10 @@ if password == st.secrets['DB_pw']:
 
   # ---------------------------------------------------------------------------
   # 열을 나눠서 아이콘 버튼 추가
-  col1, col2, col3, col4 = st.columns(4)
+  col5, col6, col7, col8 = st.columns(4)
+
+  with col5:
+    on_icon5 = st.toggle(':test_tube: Fugro: Lab Data Interpretation')
 
   
   # ---------------------------------------------------------------------------
