@@ -47,7 +47,7 @@ if password == st.secrets['DB_pw']:
   st.markdown("#### Thanks for joining :blue[Jung]'s database. Please click one of below icons.")
 
   # ---------------------------------------------------------------------------
-  # 열을 나줘서 아이콘 버튼 추가
+  # 열을 나눠서 아이콘 버튼 추가
   col1, col2, col3, col4 = st.columns(4)
 
   with col1: # Map 
@@ -88,6 +88,9 @@ if password == st.secrets['DB_pw']:
 
     on_icon8 = st.toggle(':building_construction: AGS4 converter')
 
+  # ---------------------------------------------------------------------------
+  # 열을 나눠서 아이콘 버튼 추가
+  col1, col2, col3, col4 = st.columns(4)
 
   
   # ---------------------------------------------------------------------------
