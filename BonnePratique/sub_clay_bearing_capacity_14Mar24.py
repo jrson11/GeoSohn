@@ -27,7 +27,7 @@ def clay_bearing_capacity(project):
             st.subheader('Foundation Geometry')
             col_g1,col_g2,col_g3 = st.columns(3)
             with col_g1:
-                B = st.number_input('B = ', value = 10)      # Width (m)
+                B = st.number_input('B: Width (m)', value = 10)      # Width (m)
             with col_g2:
                 L = st.number_input('L = ', value = 10)      # Length (m)
             with col_g3:
