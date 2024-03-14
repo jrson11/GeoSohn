@@ -28,15 +28,15 @@ def clay_bearing_capacity(project):
             st.subheader('Foundation Geometry')
             col_g1,col_g2,col_g3 = st.columns(3)
             with col_g1:
-                B = st.number_input('B', value = 10)
+                B = st.number_input('B (m)', value = 10)
                 if onComments:
                     st.write(':blue[B]: Width (m)')
             with col_g2:
-                L = st.number_input('L', value = 10)      # Length (m)
+                L = st.number_input('L (m)', value = 10)      # Length (m)
                 if onComments:
                     st.write(':blue[L]: Length (m)')
             with col_g3:
-                D = st.number_input('D', value = 2)       # Embedment (m)
+                D = st.number_input('D (m)', value = 2)       # Embedment (m)
                 if onComments:
                     st.write(':blue[D]: Embedment (m)')
 
@@ -48,10 +48,10 @@ def clay_bearing_capacity(project):
                 Vext = st.number_input('Vext (kN)', value = 2000)  # External Vertical load (kN)
             with col_l2:
                 Hext = st.number_input('Hext (kN)', value = 500)   # External Horizontal load (kN)
-                θ = st.number_input('θ (deg))', value = 0)           # angle between Hext and long axis (deg)
+                θ = st.number_input('θ (deg)', value = 0)           # angle between Hext and long axis (deg)
             with col_l3:
-                Mext_B = st.number_input('Mext_B: Moment in B-axis (kNm)', value = 0) # Moment in B direction (kNm)
-                Mext_L = st.number_input('Mext_L: Moment in L-axis (kNm)', value = 0) # Moment in L direction (kNm)
+                Mext_B = st.number_input('Mext_B (kNm)', value = 0) # Moment in B direction (kNm)
+                Mext_L = st.number_input('Mext_L (kNm)', value = 0) # Moment in L direction (kNm)
 
             ## Soil
             st.subheader('Soil')
