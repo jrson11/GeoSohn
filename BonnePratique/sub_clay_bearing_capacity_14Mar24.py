@@ -37,7 +37,7 @@ def clay_bearing_capacity(project):
             st.subheader('Loads')
             col_l1,col_l2,col_l3 = st.columns(3)
             with col_l1:
-                SW = st.number_input('SW: Self weight (kN)', value = 0)         # Self weight (kN)
+                SW = st.number_input('SW: Self weight   (kN)', value = 0)         # Self weight (kN)
                 Vext = st.number_input('Vext: External V load (kN)', value = 2000)  # External Vertical load (kN)
             with col_l2:
                 Hext = st.number_input('Hext: External H load (kN)', value = 500)   # External Horizontal load (kN)
