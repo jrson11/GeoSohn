@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+'''
 # ====================================================================
 ## 서브펑션
 
@@ -369,3 +369,4 @@ def clay_bearing_capacity(project):
         fig.suptitle('Undrained Load Interaction Envelopes', y=0.95)
 
         st.pyplot(fig)
+'''
