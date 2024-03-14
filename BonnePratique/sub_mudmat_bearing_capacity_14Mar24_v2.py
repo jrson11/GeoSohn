@@ -19,7 +19,7 @@ def inputs_for_mudmat(project):
     return B
 
 
-class clay_bearing_capacity(project):
+class clay_bearing_capacity:
 
     B = inputs_for_mudmat(project)
 
