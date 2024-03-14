@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 # log
+#    02/28/2024: 진진 박사님께서 본인의 엑셀 템플릿 공유
 #    03/13/2024: 첫번째 버전 완성
 #    03/14/2024: 진진 박사님께 처음으로 시연
 #    03/14/2024: 클래스를 사용한 객체화 시도
