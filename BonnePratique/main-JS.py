@@ -121,11 +121,9 @@ if password == st.secrets['DB_pw']:
   elif on_icon8:
     st.subheader('TBD')
   else:
-    #st.image('https://en.wikipedia.org/wiki/BP#/media/File:BP_Helios_logo.svg')
     st.image('https://cdn.freelogovectors.net/wp-content/uploads/2023/05/bp_logo-freelogovectors.net_.png')
 
 
 # ====================================================================
-
 else: # 패스워드가 틀렸을 경우
   st.markdown('## Sorry \n #### Please get in touch with :blue[Jung] to get permission to access geotechnical web applications.')
