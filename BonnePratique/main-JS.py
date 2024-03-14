@@ -78,7 +78,7 @@ if password == st.secrets['DB_pw']:
   with col3: # Mudmat: Bearing Capacity 
     on_icon3 = st.toggle(':fire: Mudmat: Bearing Capacity')
     if on_icon3:
-      example = st.sidebar.selectbox(':floppy_disk: Please select a project', ['example_CLAY','10inchFTA_Tortue','Raven_WND'])
+      example = st.sidebar.selectbox(':floppy_disk: Please select a project', ['example_CLAY','10inchFTA_Tortue','Raven_WND','Argos'])
 
 
   with col4: # Mudmat: Settlement 
