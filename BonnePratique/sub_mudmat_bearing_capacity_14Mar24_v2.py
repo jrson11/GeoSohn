@@ -46,12 +46,9 @@ def inputs_for_mudmat(project):
     Mudmat_inputs = Mudmat_Geometry(B,L,D)
     Mudmat_loads = Mudmat_Load(1)
     Mudmat_soils = Mudmat_Soil(1,1)
-    Mudmat_factorss = Mudmat_Factor(1)
+    Mudmat_factors = Mudmat_Factor(1)
 
-    return Mudmat_inputs, Mudmat_soils
-
-
-
+    return Mudmat_inputs, Mudmat_loads, Mudmat_soils, Mudmat_factors
 
 def sidebar():
     st.sidebar.subheader('Special thanks to the my Advisor Philippe Jeanjean, Ph.D., P.E., F.ASCE')
@@ -78,7 +75,7 @@ def main(project):
         with tab1:
             st.header(':blue[Input Properties]')
             onComments = st.toggle('Comments On')
-            Mudmat_inputs, Mudmat_soils = inputs_for_mudmat(project)
+            Mudmat_inputs, Mudmat_loads, Mudmat_soils, Mudmat_factors = inputs_for_mudmat(project)
             
             st.subheader('Foundation Geometry')
             st.write('B (m) ='+str(Mudmat_inputs.B))
