@@ -41,7 +41,7 @@ def clay_bearing_capacity(project):
                 Vext = st.number_input('Vext: External V load', value = 2000)  # External Vertical load (kN)
             with col_l2:
                 Hext = st.number_input('Hext: External H load', value = 500)   # External Horizontal load (kN)
-                θ = st.number_input('θ: angle(Hext/Laxis)', value = 0)           # angle between Hext and long axis (deg)
+                θ = st.number_input('θ: angle b/w Hext & L-axis)', value = 0)           # angle between Hext and long axis (deg)
             with col_l3:
                 Mext_B = st.number_input('Mext_B = ', value = 0) # Moment in B direction (kNm)
                 Mext_L = st.number_input('Mext_L = ', value = 0) # Moment in L direction (kNm)
