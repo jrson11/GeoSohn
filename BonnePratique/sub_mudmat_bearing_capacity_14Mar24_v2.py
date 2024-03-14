@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 # log
 #    03/13/2024: Made the first version
 #    03/14/2024: First time to introduce this web-app to Dr.Jeanjean
-
+#    03/14/2024: Tried to convert code into class objects
 
 # ====================================================================
 ## 클래스
