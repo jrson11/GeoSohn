@@ -369,7 +369,8 @@ def clay_bearing_capacity(project):
     
     # --------------------------------------------------------------------
     with col2:
-
+        pyplot_envelope
+        '''
         ## Plot
         fig,ax = plt.subplots(2,1, figsize=(6,7), dpi=200, height_ratios=[3,1])
         #
@@ -422,3 +423,4 @@ def clay_bearing_capacity(project):
         fig.suptitle('Undrained Load Interaction Envelopes', y=0.95)
 
         st.pyplot(fig)
+        '''
