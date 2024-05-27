@@ -7,12 +7,13 @@
 6.1.1 Soil Constitutive Models
 .........
 
-a. Linear Elastic Model
+a. Linear Elastic (LE) model
 
-  a.1.
-  a.2.
-  a.3.
+  a.1. LE represents soil behavior using Hooke's law, treating soils as isotropic linear elastic materials with parameters like elastic modulus (E) and Poisson's ratio (v).
 
+  a.2. Limitations: While useful for certain applications, the LE model may not fully account for the mechanical behavior of soils, especially in scenarios involving non-linear and plasticity.
+
+b. Mohr-Coulomb (MC) model
 
 6.1.1 Mudmat
 .........
