@@ -15,6 +15,34 @@ a. Linear Elastic (LE) model
 
 b. Mohr-Coulomb (MC) model
 
+  b.1. MC represents stress-strain behavior in an elasto-plastic form, requiring specification of five material parameters: Elastic modulus (E), Poisson's ratio (v), cohesion (c), internal friction angle (phi), and dilation angle (psi).
+
+  b.2. Limitations: Selecting the correct lateral earth pressure coefficient at rest (K0)  is crucial factors to define soil properties accurately.
+
+c. Soft Soil (SS) model
+
+  c.1. SS designed for analyzing high-compressibility soils like consolidated clayey soils, peat soils, and clayey silt soils, which exhibit unique stress-strain behavior. Suitable for primary consolidation.
+
+  c.2. Key parameters: Internal friction angle (phi), cohesion (c), dilatation angle (psi), modified compaction index (lambda*), and modified swelling index (k*).
+
+d. Soft Soil Creep (SSC) model
+
+  d.1. SSC tailored for time-dependent behavior in soils like consolidated clays. Crucial for calculating settlement evaluation in foundations, embankments, and assessing tunnel stability.
+
+  d.2. Key parameters: All in the SS model, and modified creep index (mu*)
+
+e. Hardening Soil (HS) model
+
+  e.1. HS enhances accuracy for both soft and hard soil behavior. This requires observed data from drained triaxial pressure stests.
+
+  e.2. Key parameters: three elastic moduli: Secant elastic modulus (E50), Unloaded/Reloaded elastic modulus (Eur), and Oedometer elastic (Eoed).
+
+f. Hardening Soil model with Small-Strain Stiffness (HSsmall)
+
+  f.1. HSsmall enhances precision in representing soil behavior at very low strain. Valuable for settlement during construction, where early-stage soil response is crucial. Also particularly suitablee for dynamic analysis, offering a comprehensive method for capturing soil behavior in various loading conditions.
+
+  f.2. Key parameters: Power for stress-level dependency of stiffness (m), E50, Eur, Eoed in HS model, and shear modulus at very small strains (G0), and threshold shear strain at Gs (=0.722*G0).
+
 6.1.1 Mudmat
 .........
 
