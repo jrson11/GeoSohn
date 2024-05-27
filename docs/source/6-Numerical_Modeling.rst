@@ -4,6 +4,16 @@
 6.1 Paxis3D
 ---------
 
+6.1.1 Soil Constitutive Models
+.........
+
+a. Linear Elastic Model
+
+  a.1.
+  a.2.
+  a.3.
+
+
 6.1.1 Mudmat
 .........
 
