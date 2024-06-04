@@ -11,9 +11,9 @@
 2. Resistance: Sliding (API RP 2GEO-7.15) / Overturning (API RP 2GEO-7.16) / Torsion
 3. Settlement (API RP 2GEO-7.8.1 / API RP 2GEO-7.8.2)
 4. Skirt penetration (DNV RP C212 / DNV RP N103 / API RP 2GEO-7.12)
-5. Recovery
+5. Retreival
 
- A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.1.-Shallow_Foundation(23Feb24).pptx?d=wef67f2ce02934dea9e5e7ad0329de0a7&csf=1&web=1&e=sPpUkq>`_
+A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.1.-Shallow_Foundation(23Feb24).pptx?d=wef67f2ce02934dea9e5e7ad0329de0a7&csf=1&web=1&e=sPpUkq>`_
 
 3.1.2 Others
 ..............
