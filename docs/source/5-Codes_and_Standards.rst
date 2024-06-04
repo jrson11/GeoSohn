@@ -42,4 +42,4 @@
 -----------
 
 - Safebuck for PSI
-- AGS4 reference (unofficial): `Link: <https://open-geotechnical.github.io/unofficial-ags4-data-dict/groups.html>`_
+- AGS4 reference (unofficial): `Link <https://open-geotechnical.github.io/unofficial-ags4-data-dict/groups.html>`_
