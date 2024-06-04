@@ -39,6 +39,8 @@ A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_
 3. Pile Installation (API RP 2A-WSD 15)
 4. Pile Driving Analysis (PDA)
 
+A. PresentationL: `PPT <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.2-Deep_Foundation(02Jan24).pptx?d=wac9ab0e835254a738bd4197ba84e442e&csf=1&web=1&e=TXGLbl>`_
+
 3.2.2 Suction Pile
 ...................
 
