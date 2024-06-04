@@ -41,8 +41,5 @@
 5.5 Others
 -----------
 
-A. Safebuck for PSI
-....................
-
-B. Joing for ??
-................
+- Safebuck for PSI
+- AGS4 reference (unofficial): `Link: <https://open-geotechnical.github.io/unofficial-ags4-data-dict/groups.html>`_
