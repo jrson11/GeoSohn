@@ -23,18 +23,14 @@
 
 
 
-5.3 Others
-------
-
-
-5.3.1 Best of all Practical analysis
-..............................
+5.3 Best of all Practical analysis
+-----------------------------------
 
 - GP 04-50
 - GP 04-52
 
-5.3.2 DNV
-..........
+5.4 DNV
+--------
 
 - DNVGL-RP-B401: CP Design
 - DNVGL-RP-C212: Offshore soil mechanics and geotechnical
@@ -42,5 +38,11 @@
 - DNVGL-RP-F114: Pipe-Soil Interaction for submarine pipelines
 - DNVGL-RP-N103: Modelling and analysis of marine operations
 
-5.3.3 Safebuck
-.............
+5.5 Others
+-----------
+
+A. Safebuck for PSI
+....................
+
+B. Joing for ??
+................
