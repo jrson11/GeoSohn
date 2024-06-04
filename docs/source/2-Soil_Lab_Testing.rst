@@ -11,7 +11,7 @@
 4. Particle: SA / HY
 5. Others: CC / OC / TC / Resistivity
 
-A. PPT: `Confidential Link <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EcLJuO6Q9GpIoOd_3kCbZAIBSMTNgwTqhe-V7y1JErsoxQ?e=loPYYx>`_
+A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EcLJuO6Q9GpIoOd_3kCbZAIBSMTNgwTqhe-V7y1JErsoxQ?e=loPYYx>`_
 
 2.2 Advanced Lab Testing
 ------------------------
@@ -22,4 +22,4 @@ A. PPT: `Confidential Link <https://bp365-my.sharepoint.com/:p:/g/personal/jung_
 4. Permeability / Thixotropy / EFA / Theology
 
 
-A. PPT: `Confidential Link <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/Ee4gSjaBULJMi40h53tNJJoBCghvTM6sLjvmfBtNXyYszw?e=qdoQ58>`_
+A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/Ee4gSjaBULJMi40h53tNJJoBCghvTM6sLjvmfBtNXyYszw?e=qdoQ58>`_
