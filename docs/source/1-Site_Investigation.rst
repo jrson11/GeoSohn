@@ -22,11 +22,7 @@
 
 1. Seabed Sampling
 
-2. Core Sampling Methods
-
-    - Box Core
-    - Piston Core
-    - Jumbo Piston Core
+2. Core Sampling Methods: BC, PC, JPC
 
 3. Cone Penetration Testing (CPT)
 
