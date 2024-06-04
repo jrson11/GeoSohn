@@ -37,7 +37,7 @@
 
 Presentations
 .............
-Drill ship vs PROD (Jan.2024): `Confidential Link <https://>`_
+Drill ship vs PROD (Jan.2024): `Confidential Link <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EU_X7owC-gFBvuH80eOZSUABVG--Z-htr7CU14buP3owXg?e=m9wsk2>`_
 
 Integration
 --------------------
