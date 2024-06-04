@@ -20,3 +20,6 @@ A. Confidential PPT: `Link <https://bp365-my.sharepoint.com/:p:/g/personal/jung_
 2. Static: DSS / RS / TX
 3. Dynamic: cyDSS / cyTX / RC / BE
 4. Permeability / Thixotropy / EFA / Theology
+
+
+A. Confidential PPT: `Link <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/Ee4gSjaBULJMi40h53tNJJoBCghvTM6sLjvmfBtNXyYszw?e=qdoQ58>`_
