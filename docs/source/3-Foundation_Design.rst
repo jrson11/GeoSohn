@@ -18,10 +18,10 @@ A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_
 B. Excel spreadsheets
 
   - `Mudmat bearing capacity <https://bp365-my.sharepoint.com/:x:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.1.1.1-Mudmat_Bearing_Capacity(22Feb24).xlsx?d=w6f34c2f22235494d8bfe25fd4a7ea1e3&csf=1&web=1&e=LIrwRz>`_
-  - `Mudmat sliding and Torsion <>`_
-  - `Mudmat skirt penetration <>`_
-  - `Mudmat retreival <>`_
-  - `Mudmat settlement <>`_
+  - `Mudmat sliding and Torsion <https://>`_
+  - `Mudmat skirt penetration <https://>`_
+  - `Mudmat retreival <https://>`_
+  - `Mudmat settlement <https://>`_
 
 3.1.2 Others
 ..............
