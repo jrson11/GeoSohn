@@ -14,6 +14,12 @@
 5. Retreival
 
 A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.1.-Shallow_Foundation(23Feb24).pptx?d=wef67f2ce02934dea9e5e7ad0329de0a7&csf=1&web=1&e=sPpUkq>`_
+B. Excel spreadsheets
+  - `Mudmat bearing capacity <>`_
+  - `Mudmat sliding and Torsion <>`_
+  - `Mudmat skirt penetration <>`_
+  - `Mudmat retreival <>`_
+  - `Mudmat settlement <>`_
 
 3.1.2 Others
 ..............
