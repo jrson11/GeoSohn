@@ -54,6 +54,9 @@ f. Hardening Soil model with Small-Strain Stiffness (HSsmall)
   - Benchmark: Edger, Andresen, and Jostad, 2008, "Capacity analysis of suction anchors in clay by Plaxis 3D foundation"
   - Range of mooring line angle at padeye: 15 ~ 45 (API RP 2SK-R2015, Figure E.3)
 
+- Excel templates
+
+  - `Plaxis Soil <https://bp365-my.sharepoint.com/:x:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/6.1.1-Plaxis_Soils.xlsx?d=w03a66e141f57472faa0aa5cdd06178e8&csf=1&web=1&e=hoakva>`_
 
 6.2 Slope Stability
 ..................
