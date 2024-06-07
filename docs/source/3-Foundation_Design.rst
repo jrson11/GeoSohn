@@ -34,7 +34,7 @@ B. Excel spreadsheets
 3.1.3 Challenging Topics
 .........................
 
-- `V-H envelops for mudmat <https://github.com/jrson11/GeoSohn/blob/main/docs/source/zzz.md>`_
+  - `V-H envelops for mudmat <https://github.com/jrson11/GeoSohn/blob/main/docs/source/zzz.md>`_
 
 3.2 Deep Foundation
 ----------------------
