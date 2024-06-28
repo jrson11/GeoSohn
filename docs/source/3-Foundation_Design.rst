@@ -16,7 +16,7 @@
 A. Presentation: 
 
   - `Background threory <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.1.-Shallow_Foundation(23Feb24).pptx?d=wef67f2ce02934dea9e5e7ad0329de0a7&csf=1&web=1&e=sPpUkq>`_
-  - `Comparison:NGI_Fugro_TFMC <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EZ_hYJ4Aq5VAp-CFKEIJyBEBS_UU26llxnfRCU3C_Sapig?e=8zH1Oa>`_
+  - `Comparison:NGI_TFMC_OSS <https://bp365-my.sharepoint.com/:p:/g/personal/jung_sohn_bp_com/EZ_hYJ4Aq5VAp-CFKEIJyBEBS_UU26llxnfRCU3C_Sapig?e=8zH1Oa>`_
 
 B. Excel spreadsheets
 
