@@ -13,7 +13,10 @@
 4. Skirt penetration (DNV RP C212 / DNV RP N103 / API RP 2GEO-7.12)
 5. Retreival
 
-A. Presentation: `PPT <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.1.-Shallow_Foundation(23Feb24).pptx?d=wef67f2ce02934dea9e5e7ad0329de0a7&csf=1&web=1&e=sPpUkq>`_
+A. Presentation: 
+
+  - `Background threory <https://bp365-my.sharepoint.com/:p:/r/personal/jung_sohn_bp_com/Documents/bp_Areas/_GeoSohn/3.1.-Shallow_Foundation(23Feb24).pptx?d=wef67f2ce02934dea9e5e7ad0329de0a7&csf=1&web=1&e=sPpUkq>`_
+  - `Comparison:NGI_Fugro_TFMC`_
 
 B. Excel spreadsheets
 
